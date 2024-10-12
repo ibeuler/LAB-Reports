@@ -300,6 +300,48 @@ TSWLatexianTemp*
 
 # xwatermark package
 *.xwm
+# Ignore virtual environment
+venv/
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+
+# Ignore Google Drive sync files
+*.gsync
+*.goutputstream*
+*~lock.*
+
+# Ignore Microsoft Office temporary files
+~$*
+
+# Ignore Google Drive checkpoints (if applicable)
+.gdoc
+.gsheet
+.gslides
+.gdraw
+.gform
+
+# Ignore configuration files
+*.ini
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore other temporary or backup files
+*.bak
+*.tmp
+*.swp
 
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
