@@ -60,19 +60,19 @@ The experiment was conducted in three parts:
 
 \section{Procedure}
 \subsection{Part I: Induced EMF as a Function of Current}
-1. The primary coil was connected to a function generator set at a frequency of 10 kHz.
-2. The secondary coil, with 300 turns and a diameter of 41 mm, was placed inside the primary coil.
-3. The current in the primary coil was varied, and the induced EMF in the secondary coil was measured for each current value using a voltmeter. The results were recorded in Table~\ref{tab:emf_current}.
+1. The primary coil was connected to a function generator set at a frequency of 10 kHz.\\
+2. The secondary coil, with 300 turns and a diameter of 41 mm, was placed inside the primary coil.\\
+3. The current in the primary coil was varied, and the induced EMF in the secondary coil was measured for each current value using a voltmeter. The results were recorded in Table~\ref{tab:emf_current}.\\
 
 \subsection{Part II: Induced EMF as a Function of Number of Turns}
-1. The current in the primary coil was fixed at 25 mA, and the frequency remained at 10 kHz.
-2. Secondary coils with varying numbers of turns (100, 200, and 300) were placed inside the primary coil.
-3. The induced EMF was measured for each coil configuration and recorded in Table~\ref{tab:emf_turns}.
+1. The current in the primary coil was fixed at 25 mA, and the frequency remained at 10 kHz.\\
+2. Secondary coils with varying numbers of turns (100, 200, and 300) were placed inside the primary coil.\\
+3. The induced EMF was measured for each coil configuration and recorded in Table~\ref{tab:emf_turns}.\\
 
 \subsection{Part III: Induced EMF as a Function of Coil Diameter}
-1. The current in the primary coil was held constant at 25 mA, with a frequency of 10 kHz.
-2. The secondary coils of varying diameters (30 mm, 41 mm, and 50 mm) were placed inside the primary coil.
-3. The induced EMF was measured for each diameter and recorded in Table~\ref{tab:emf_diameter}.
+1. The current in the primary coil was held constant at 25 mA, with a frequency of 10 kHz.\\
+2. The secondary coils of varying diameters (26 mm, 33 mm and 41 mm) were placed inside the primary coil.\\
+3. The induced EMF was measured for each diameter and recorded in Table~\ref{tab:emf_diameter}.\\
 
 \section{Results}
 \subsection{Induced EMF as a Function of Current}
@@ -154,23 +154,32 @@ The graph for EMF as a function of coil diameter is shown in Fig.~\ref{fig:epsil
 \end{figure}
 
 \section{Discussion}
-The results confirm the theoretical relationships governing electromagnetic induction. In Part I, we observed that the induced EMF increased as the current in the primary coil increased, consistent with the proportional relationship predicted by Faraday’s Law. The log-log plot of \(\varepsilon\) vs. \(I\) (not shown here) yielded a linear relationship, confirming that \(\varepsilon \propto I\).
+The results confirm the theoretical relationships governing electromagnetic 
+induction. In Part I, we observed that the induced EMF increased as the current
+ in the primary coil increased, consistent with the proportional relationship 
+predicted by Faraday’s Law. The log-log plot of \(\varepsilon\) vs. \(I\) (Fig.~\ref{fig:epsilon_current}) yielded a linear relationship, confirming that \(\varepsilon \propto I\).
 
 In Part II, the induced EMF increased with the number of turns in the secondary coil, as expected from the equation:
 \begin{equation}
     \varepsilon \propto n_2
 \end{equation}
-Finally, in Part III, increasing the diameter of the secondary coil resulted in higher induced EMF, as larger coils enclose more magnetic flux.
+Finally, in Part III, increasing the diameter of the secondary coil resulted in 
+higher induced EMF, as larger coils enclose more magnetic flux.
 
 \section{Conclusion}
 This experiment successfully demonstrated the principles of electromagnetic induction using coils. The induced EMF was found to be directly proportional to the current in the primary coil, the number of turns in the secondary coil, and the diameter of the coil. The results align well with theoretical predictions, confirming the validity of Faraday's Law in practical scenarios.
 
 \section{Additional Resources}
-For further analysis, you can find supplementary resources in the QR code links below.
+For more detailed information, including the Lab Manual, source code, and other experiments, visit the GitHub repository linked via the QR code Fig~\ref{fig:qr}.
 
 \begin{figure}[H]
     \centering
-    \qrcode{https://github.com/ibeuler/LAB-Reports}
-    \caption{Link to Supplementary Data \& github repo}
+    % Adjust the size of the QR code
+    \qrcode[height=2.5cm]{https://github.com/ibeuler/LAB-Reports}
+    \caption{Access the full lab report and additional resources via the GitHub repository: 
+    \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+    \label{fig:qr}
 \end{figure}
+
+
 \end{document}
