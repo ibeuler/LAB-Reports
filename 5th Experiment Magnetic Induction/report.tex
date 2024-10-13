@@ -14,7 +14,7 @@
 \author{IBRAHIM H.I. ABUSHAWISH\\
 Istanbul University Physics Department\\
 Instructor: \hspace{10px} \\
-Experiment Date: 07.10.2024 , Report Submission Date:  .10.2024\\
+Experiment Date: 07.10.2024 , Report Submission Date: 14.10.2024\\
 Course \& Section Number: PHYS2305}
 
 \maketitle
@@ -26,7 +26,7 @@ Course \& Section Number: PHYS2305}
 \section{Introduction}
 Magnetic induction, discovered by Michael Faraday, describes how a changing magnetic field induces an electromotive force (EMF) in a conductor. This experiment aims to explore how the induced EMF in a coil depends on various parameters: the magnetic field intensity, the number of turns in the coil, and the diameter of the coil. Faraday’s Law of Induction states that the induced EMF is directly proportional to the rate of change of the magnetic flux passing through a loop.
 
-The setup used to perform this experiment consists of two coils—primary and secondary—with varying configurations to measure induced EMF under different conditions, following the theoretical principles of Faraday's and Lenz's laws.
+The setup \cite[3.1.2]{lab_manual} used to perform this experiment consists of two coils—primary and secondary—with varying configurations to measure induced EMF under different conditions, following the theoretical principles of Faraday's and Lenz's laws.
 
 \section{Theory}
 The induced EMF (\(\varepsilon\)) in a coil due to a changing magnetic flux (\(\Phi_B\)) is given by Faraday’s Law:
@@ -75,6 +75,8 @@ The experiment was conducted in three parts:
 3. The induced EMF was measured for each diameter and recorded in Table~\ref{tab:emf_diameter}.\\
 
 \section{Results}
+The source code for the experiment data visualizations is available at \cite[5th Experiment Magnetic Introduction/Calculations.ipynb]{github}.
+
 \subsection{Induced EMF as a Function of Current}
 Table~\ref{tab:emf_current} presents the measured EMF for varying primary coil currents.
 
@@ -170,16 +172,36 @@ higher induced EMF, as larger coils enclose more magnetic flux.
 This experiment successfully demonstrated the principles of electromagnetic induction using coils. The induced EMF was found to be directly proportional to the current in the primary coil, the number of turns in the secondary coil, and the diameter of the coil. The results align well with theoretical predictions, confirming the validity of Faraday's Law in practical scenarios.
 
 \section{Additional Resources}
-For more detailed information, including the Lab Manual, source code, and other experiments, visit the GitHub repository linked via the QR code Fig~\ref{fig:qr}.
+For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below or scan the QR code in Fig.~\ref{fig:qr}.
+
+\begin{thebibliography}{9}
+
+\bibitem{lab_manual}
+    ISTANBUL UNIVERSITY, 
+    \textit{Physics Laboratory II Experiment Book: Electricity and Magnetism}, 
+    Department of Physics, 2024.
+
+\bibitem{github}
+    \textit{Source code and additional experiments are available in the GitHub repository.} \\ 
+    Access it at: \url{https://github.com/ibeuler/LAB-Reports}
+
+\end{thebibliography}
 
 \begin{figure}[H]
+    
     \centering
-    % Adjust the size of the QR code
-    \qrcode[height=2.5cm]{https://github.com/ibeuler/LAB-Reports}
-    \caption{Access the full lab report and additional resources via the GitHub repository: 
-    \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+    \begin{minipage}{0.15\textwidth}
+        \centering
+        \qrcode[height=2cm]{https://github.com/ibeuler/LAB-Reports}
+    \end{minipage}%
+    \begin{minipage}{0.2\textwidth}
+        \raggedright
+        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+    \end{minipage}
     \label{fig:qr}
 \end{figure}
+
+
 
 
 \end{document}
