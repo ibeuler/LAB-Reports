@@ -2,6 +2,8 @@
 
 This repository contains various physics experiments, data analysis projects, and simulations aimed at enhancing understanding of key concepts in physics and mathematics. The projects include detailed reports, experimental setups, and analytical models related to topics such as gravitational acceleration, elastic extension, and uniformly accelerating motion.
 
+**Purpose**: The main objective of this repository is to share the complete working environment, including the experimental setup, data analysis tools, and scripts. This allows others to reproduce the experiments, build upon the models, and further explore the physics behind these concepts.
+
 ## Table of Contents
 
 - [Features](#features)
