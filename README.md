@@ -25,6 +25,7 @@ This repository contains various physics experiments, data analysis projects, an
 - **Matplotlib**: Library for creating static, animated, and interactive visualizations in Python.
 - **LaTeX**: Typesetting system used for formatting reports and documents.
 - **Jupyter Notebook**: Environment for interactive data analysis and visualization.
+- **LLMs**: Large language models and AI tools were used to enhance the readability and clarity of the reports globally.
 
 ## Installation
 
