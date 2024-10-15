@@ -1,8 +1,10 @@
 # Physics Experiments and Analysis
 
-This repository contains various physics experiments, data analysis projects, and simulations aimed at enhancing understanding of key concepts in physics and mathematics. The projects include detailed reports, experimental setups, and analytical models related to topics such as gravitational acceleration, elastic extension, and uniformly accelerating motion.
+This repository is created by a student and features a collection of physics experiments, data analysis projects, and simulations. Its purpose is to enhance the understanding of key physics and mathematics concepts through hands-on experimentation and detailed analysis. The projects include comprehensive reports, experimental setups, and analytical models covering topics such as gravitational acceleration, elastic extension, and uniformly accelerating motion.
 
-**Purpose**: The main objective of this repository is to share the complete working environment, including the experimental setup, data analysis tools, and scripts. This allows others to reproduce the experiments, build upon the models, and further explore the physics behind these concepts.
+Purpose: The main objective of this repository is to provide a complete learning environment, including experimental setups, data analysis tools, and scripts. By sharing these resources, others can reproduce the experiments, build upon the models, and further explore the physics underlying these concepts.
+
+> Disclaimer: This repository was created by a student and may contain errors or inaccuracies. It is intended for learning purposes, and feedback or corrections are always welcome.
 
 ## Table of Contents
 
