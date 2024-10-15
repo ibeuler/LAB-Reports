@@ -84,8 +84,14 @@ If you'd like to contribute to this project, please follow these steps:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+
 ## Contact
 
-Ibrahim - [ibrahim.hamed2701@gmail.com](mailto:ibrahim.hamed2701@gmail.com)
+Have any questions or feedback? I'd love to hear from you! Feel free to reach out at:
 
-Project Link: [GitHub Repository Link](https://github.com/ibeuler/LAB-Reports/)
+- **Name**: Ibrahim  
+- **Email**: [ibrahim.hamed2701@gmail.com](mailto:ibrahim.hamed2701@gmail.com)  
+- **GitHub**: [github.com/ibeuler](https://github.com/ibeuler)  
+- **LinkedIn**: [linkedin.com/in/ibrahim-abu-shawish-26798a1bb](https://www.linkedin.com/in/ibrahim-abu-shawish-26798a1bb)
+
+Check out the project here: [Physics Experiments and Analysis GitHub Repository](https://github.com/ibeuler/LAB-Reports/)
