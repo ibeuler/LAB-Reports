@@ -118,12 +118,73 @@ As the water is heated in steps of 5°C, the current is recorded and the resista
     \item Calculate the resistance at each temperature using Ohm’s Law.
     \item Plot the graph of resistance versus temperature and analyze the behavior of the thermistor.
 \end{enumerate}
+\section{Results and Data}
 
-\section{Results and Analysis}
-\textit{[This section will include the data tables and graphs from the calculations and measurements once they are available.]}
+\subsection{Table 2.3: Current and Resistance}
+The following table shows the measured current and resistance values, along with the calculated voltage:
+
+\input{Table_2_3.tex}
+
+\subsection{Table 2.4: Resistance Values for Series and Parallel}
+The measured and calculated resistances for the series and parallel connections are shown below:
+
+\input{Table_2_4.tex}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/current_vs_resistance_table_2_3.png}
+    \caption{Current vs Resistance from Table 2.3. The red line represents the polynomial fit.}
+\end{figure}
+  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Voltage_vs_current_table_2_3.png}
+    \caption{Voltage vs Current from Table 2.3. The green line indicates the extrapolated voltage when current is 0.}
+\end{figure}
+  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Current_vs_Temperature.png}
+    \caption{Current vs Temperature for the thermistor experiment (Table 2.5).}
+\end{figure}
+  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Resistance_vs_Temperature.png}
+    \caption{Resistance vs Temperature for the thermistor experiment (Table 2.5).}
+\end{figure}
+
+\subsection{Comparison of Resistor Values by Color Code}
+The color codes for the resistors used in our setup are referenced in Fig. 5. The calculated resistor values are shown in the following table:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\hline
+Current (mA) & Resistor (K$\Omega$) & $R_{\text{color\_code}}$ (K$\Omega$) \\
+\hline
+0.089 & 5.6 & 5.60 \\
+0.119 & 3.2 & 3.20 \\
+0.074 & 7.8 & 7.80 \\
+0.129 & 2.5 & 2.50 \\
+\hline
+\end{tabular}
+\caption{Comparison of measured resistances and color code resistances for the resistors used in the experiment.}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\linewidth]{IMAGES/ColorCode.png}
+    \includegraphics[width=0.45\linewidth]{IMAGES/Used_Resistors.jpg}
+    \caption{Left: General color code reference. Right: Resistors used in our setup.}
+\end{figure}
 
 \section{Discussion}
-\textit{[This section will discuss the results, including any deviations from theoretical expectations, possible sources of error, and interpretations based on the graphs and tables generated from the data. Calculations for series and parallel circuits, as well as the thermistor behavior, will be examined.]}
+The experimental results confirm the theoretical expectations of Ohm's Law, as shown in the $I(R)$ and $V(I)$ graphs. The polynomial fits closely follow the measured data, confirming that the resistance remains constant over the tested range.
+
+In comparing the resistor values calculated from the color codes with the experimentally measured values, we observe strong agreement. For example, the resistors identified as $R_1$ and $R_2$ through their color codes showed resistance values of $4.60 \pm 1.0\% \, k\Omega$ and $2.2 \pm 1.0\% \, k\Omega$, respectively, which closely match our experimental findings. Some deviations is likely due to measurement and graph reading inaccuracies.
+
+For the thermistor experiment, the $I(T)$ and $R(T)$ graphs show a clear trend that aligns with the negative temperature coefficient behavior of the NTC thermistor. As the temperature increases, the current rises, and the resistance decreases, as expected. The regression models fit the data well, with minor deviations likely due to measurement inaccuracies.
 
 \section{Conclusion}
 This experiment successfully demonstrated Ohm’s Law by measuring the relationship between current, voltage, and resistance. The equivalent resistances for series and parallel connections were calculated and verified through measurement. Furthermore, the thermistor experiment showed how resistance decreases as temperature increases in an NTC thermistor. This behavior aligns with theoretical predictions, highlighting the effectiveness of thermistors in temperature measurement applications.
@@ -142,10 +203,13 @@ For detailed information, including the Lab Manual, source code, and related exp
     \textit{Source code and additional experiments are available in the GitHub repository.} \\ 
     Access it at: \url{https://github.com/ibeuler/LAB-Reports}
 
+\bibitem{colorcode}
+    \textit{General resistor color code diagram.}\\
+    Taken From: \url{https://www.te.com/en/products/passive-components/resistors/intersection/resistor-color-codes.html}
+
 \end{thebibliography}
 
 \begin{figure}[H]
-    
     \centering
     \begin{minipage}{0.15\textwidth}
         \centering
@@ -157,6 +221,5 @@ For detailed information, including the Lab Manual, source code, and related exp
     \end{minipage}
     \label{fig:qr}
 \end{figure}
-
 
 \end{document}
