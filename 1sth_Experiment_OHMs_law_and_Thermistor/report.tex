@@ -50,11 +50,13 @@ where \( V \) is the voltage (in volts), \( I \) is the current (in amperes), an
 For circuits with resistors in series, the equivalent resistance is the sum of all resistances:
 \begin{equation}
     R_{\text{eq}} = R_1 + R_2 + \dots + R_n
+    \label{eq:series}
 \end{equation}
 
 For resistors in parallel, the equivalent resistance is given by:
 \begin{equation}
     \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
+    \label{eq:parallel}
 \end{equation}
 
 \subsection{Thermistors}
@@ -71,6 +73,19 @@ Thermistors are classified into two types:
 \end{itemize}
 
 In this experiment, an NTC thermistor is used to measure the temperature by observing the change in resistance as the water temperature rises.
+\subsection{Internal Resistance}
+Internal resistance (\( R_i \)) is a crucial parameter that affects the performance of batteries and other energy sources. It represents the resistance within the battery itself, which can lead to a voltage drop when a current flows. This phenomenon can be described by the equation:
+
+\begin{equation}
+    R_{i} = \frac{\mathcal{E} - V_x}{I_x}
+\end{equation}
+
+where:
+- \( R_i \) is the internal resistance,
+- \( \mathcal{E} \) is the electromotive force (emf) of the battery,
+- \( V_x \) is the voltage across the load for a specific current \( I_x \).
+
+Understanding internal resistance is vital for predicting how a battery will behave under load, as higher internal resistance can lead to lower output voltage and efficiency. In this experiment, we will calculate the internal resistance using measured voltage and current values to assess the battery's performance accurately.
 
 \section{Experimental Setup}
 \subsection{Ohm's Law Experiment}
@@ -81,7 +96,7 @@ The circuit diagram used in the experiment is shown in Figure~\ref{fig:ohmslaw}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{IMAGES/Ohms_Law_Setup_only.png} % Placeholder, replace with actual image
-    \caption{Ohm's Law Experimental Setup}
+    \caption{Ohm's Law Experimental Setup\cite{lab_manual}}
     \label{fig:ohmslaw}
 \end{figure}
 
@@ -95,7 +110,7 @@ The experimental setup for the thermistor experiment is shown in Figure~\ref{fig
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{IMAGES/Thermistor_Setup.png} % Placeholder, replace with actual image
-    \caption{Thermistor Experimental Setup}
+    \caption{Thermistor Experimental Setup\cite{lab_manual}}
     \label{fig:thermistor}
 \end{figure}
 
@@ -125,51 +140,54 @@ The following table shows the measured current and resistance values, along with
 
 \input{Table_2_3.tex}
 
-\subsection{Table 2.4: Resistance Values for Series and Parallel}
-The measured and calculated resistances for the series and parallel connections are shown below:
-
-\input{Table_2_4.tex}
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/current_vs_resistance_table_2_3.png}
-    \caption{Current vs Resistance from Table 2.3. The red line represents the polynomial fit.}
+    \caption{Current vs. Resistance from Table 2.3\cite{lab_manual}. The red line represents the polynomial fit.}
+    \label{fig:current_vs_resistance}
 \end{figure}
-  
+\textbf{Figure \ref{fig:current_vs_resistance}} illustrates the relationship between current and resistance based on the experimental data collected. The red line indicates the polynomial fit, which closely follows the trend of the measured data points, confirming the linearity predicted by Ohm’s Law.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/Voltage_vs_current_table_2_3.png}
-    \caption{Voltage vs Current from Table 2.3. The green line indicates the extrapolated voltage when current is 0.}
+    \caption{Voltage vs. Current from Table 2.3. The green line indicates the extrapolated voltage when current is 0.}
+    \label{fig:voltage_vs_current}
 \end{figure}
-  
+\textbf{Figure \ref{fig:voltage_vs_current}} shows the voltage-current relationship derived from the experimental measurements. The green text line extrapolates the voltage when the current is zero, providing insights into the behavior of the circuit under test conditions.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/Current_vs_Temperature.png}
-    \caption{Current vs Temperature for the thermistor experiment (Table 2.5).}
+    \caption{Current vs. Temperature for the thermistor experiment (Table 2.5 \cite{lab_manual}).}
+    \label{fig:current_vs_temperature}
 \end{figure}
-  
+\textbf{Figure \ref{fig:current_vs_temperature}} displays the current measured through the thermistor as the temperature of the water increases. This figure illustrates the NTC thermistor behavior, showing an increase in current as temperature rises.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/Resistance_vs_Temperature.png}
-    \caption{Resistance vs Temperature for the thermistor experiment (Table 2.5).}
+    \caption{Resistance vs. Temperature for the thermistor experiment (Table 2.5 ).}
+    \label{fig:resistance_vs_temperature}
 \end{figure}
+\textbf{Figure \ref{fig:resistance_vs_temperature}} presents the relationship between resistance and temperature for the thermistor. As anticipated, the figure indicates that resistance decreases as temperature increases, consistent with the characteristics of NTC thermistors.
 
 \subsection{Comparison of Resistor Values by Color Code}
-The color codes for the resistors used in our setup are referenced in Fig. 5. The calculated resistor values are shown in the following table:
+The color codes for the resistors used in our setup are referenced in Fig. \ref{fig:color_code}. The calculated resistor values are shown in the following table:
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ccc}
+\begin{tabular}{cccc}
 \hline
-Current (mA) & Resistor (K$\Omega$) & $R_{\text{color\_code}}$ (K$\Omega$) \\
+Configuration & Current (mA) & R (K$\Omega$) - Graph & $R_{\text{calculated}}$ (K$\Omega$) \\
 \hline
-0.089 & 5.6 & 5.60 \\
-0.119 & 3.2 & 3.20 \\
-0.074 & 7.8 & 7.80 \\
-0.129 & 2.5 & 2.50 \\
+$R_1$ & 0.089 & 5.6 & 4.6 $\pm$ 1.0\% fig.~\ref{fig:color_code}\\
+$R_2$ & 0.119 & 3.2 & 2.2 $\pm$ 1.0\% fig.~\ref{fig:color_code}\\
+$R_s$ & 0.074 & 7.8 & 8.8 eq.~\ref{eq:series}\\
+$R_p$ & 0.129 & 2.5 & 2.04 eq.~\ref{eq:parallel}\\
 \hline
 \end{tabular}
-\caption{Comparison of measured resistances and color code resistances for the resistors used in the experiment.}
+\caption{Comparison of measured resistances, color code and formulas for resistances for the resistors used in the experiment.}
 \end{table}
 
 \begin{figure}[H]
@@ -177,7 +195,10 @@ Current (mA) & Resistor (K$\Omega$) & $R_{\text{color\_code}}$ (K$\Omega$) \\
     \includegraphics[width=0.45\linewidth]{IMAGES/ColorCode.png}
     \includegraphics[width=0.45\linewidth]{IMAGES/Used_Resistors.jpg}
     \caption{Left: General color code reference. Right: Resistors used in our setup.}
+    \label{fig:color_code}
 \end{figure}
+\textbf{Figure \ref{fig:color_code}} includes a reference for the general resistor color code on the left and an image of the resistors used in our experimental setup on the right. This helps in validating the measured resistance values against standard color codes.
+
 
 \section{Discussion}
 The experimental results confirm the theoretical expectations of Ohm's Law, as shown in the $I(R)$ and $V(I)$ graphs. The polynomial fits closely follow the measured data, confirming that the resistance remains constant over the tested range.
@@ -206,7 +227,10 @@ For detailed information, including the Lab Manual, source code, and related exp
 \bibitem{colorcode}
     \textit{General resistor color code diagram.}\\
     Taken From: \url{https://www.te.com/en/products/passive-components/resistors/intersection/resistor-color-codes.html}
-
+\bibitem{graphonmillimetricpaper}
+    \textit{The graph $I(R)$ ~\ref{fig:I_R} is alsow drown by hand on mellimetric paper.}\\
+    Available at: \url{https://github.com/ibeuler/LAB-Reports}
+    and attached to the report.
 \end{thebibliography}
 
 \begin{figure}[H]
