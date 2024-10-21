@@ -78,6 +78,7 @@ Internal resistance (\( R_i \)) is a crucial parameter that affects the performa
 
 \begin{equation}
     R_{i} = \frac{\mathcal{E} - V_x}{I_x}
+    \label{eq:internal}
 \end{equation}
 
 where:
@@ -156,6 +157,9 @@ The following table shows the measured current and resistance values, along with
 \end{figure}
 \textbf{Figure \ref{fig:voltage_vs_current}} shows the voltage-current relationship derived from the experimental measurements. The green text line extrapolates the voltage when the current is zero, providing insights into the behavior of the circuit under test conditions.
 
+Using eq.~\ref{eq:internal}, the $V(0) = \mathcal{E}$ is found to be $0.948 V$ from fig.~\ref{fig:voltage_vs_current}. The internal resistance of the resistor $R_i$ is found as: $6.7269 k\Omega$ 
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/Current_vs_Temperature.png}
@@ -222,14 +226,15 @@ For detailed information, including the Lab Manual, source code, and related exp
 
 \bibitem{github}
     \textit{Source code and additional experiments are available in the GitHub repository.} \\ 
-    Access it at: \url{https://github.com/ibeuler/LAB-Reports}
+    Access it at: \url{https://github.com/ibeuler/LAB-Reports} \\
+    under \texttt{1sth\_Experiment\_OHMs\_law\_and\_Thermistor/}
 
 \bibitem{colorcode}
     \textit{General resistor color code diagram.}\\
     Taken From: \url{https://www.te.com/en/products/passive-components/resistors/intersection/resistor-color-codes.html}
 \bibitem{graphonmillimetricpaper}
     \textit{The graph $I(R)$ fig~\ref{fig:current_vs_resistance} is alsow drown by hand on mellimetric paper.}\\
-    Available at: \url{https://github.com/ibeuler/LAB-Reports}
+    Available at: \url{https://github.com/ibeuler/LAB-Reports/blob/main/1sth_Experiment_OHMs_law_and_Thermistor/output_plots/Current_vs_Resistor_millimetric.pdf}
     and attached to the report.
 \end{thebibliography}
 
