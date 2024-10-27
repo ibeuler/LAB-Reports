@@ -82,8 +82,7 @@ If you'd like to contribute to this project, please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). This license allows others to use, share, and adapt the work non-commercially, as long as they provide appropriate credit. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
