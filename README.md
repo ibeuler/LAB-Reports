@@ -27,7 +27,7 @@ Purpose: The main objective of this repository is to provide a complete learning
 
 - **Python**: Programming language for data analysis and modeling.
 - **Matplotlib**: Library for creating static, animated, and interactive visualizations in Python.
-- **LaTeX**: Typesetting system used for formatting reports and documents.
+- **LaTeX**: Typesetting system used for formatting reports and documents. You can find how its used with the enviroment from this [wiki](https://github.com/ibeuler/LAB-Reports/wiki).
 - **Jupyter Notebook**: Environment for interactive data analysis and visualization.
 - **LLMs**: Large language models and AI tools were used to enhance the readability and clarity of the reports globally.
 
@@ -60,6 +60,15 @@ To run a specific analysis or experiment, navigate to the appropriate directory 
 2. In the Jupyter interface, navigate to the desired notebook (`.ipynb` file) for the experiment or analysis you want to explore.
 
 3. Once the notebook is open, run the cells to execute the analysis and visualize the results.
+
+## Environment Setup 
+
+It is recommended that users maintain a single workplace in a Virtual environment for package management, and to be able to compile and edit LaTex files in the same directory.
+
+### Compile Latex on VS Code (Optional)
+Distributions like MikTex and VS Code Extensions help us run calculations, store plots, and edit our LaTex document in the same environment.
+
+You can visit this [wiki](https://github.com/ibeuler/LAB-Reports/wiki) for helpful tutorials.
 
 ## Contributing
 
