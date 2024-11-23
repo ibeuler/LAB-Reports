@@ -334,6 +334,7 @@ __pycache__/
 
 # Ignore configuration files
 *.ini
+desktop.ini
 
 # Ignore macOS files
 .DS_Store
