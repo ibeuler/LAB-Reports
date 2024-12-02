@@ -1,4 +1,4 @@
-x (mm),(n:75 turns 2a:26mm) B (mT),(n:150 turns 2a:26mm) B (mT),(n:300 turns 2a:26mm) B (mT),(n:300 turns 2a:33mm) B (mT),(n:300 turns 2a:41mm) B (mT)
+x (mm),n:75 turns 2a:26mm B (mT) ,n:150 turns 2a:26mm B (mT),n:300 turns 2a:26mm B (mT),n:300 turns 2a:33mm B (mT),n:300 turns 2a:41mm  B (mT)
 0,0.02,0.0,0.0,0.0,0.0
 10,0.02,0.02,0.02,0.02,0.1
 20,0.03,0.03,0.07,0.08,0.22
