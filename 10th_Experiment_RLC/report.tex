@@ -17,8 +17,8 @@
 \title{Analysis of RLC Circuits: Serial and Parallel Configurations}
 \author{IBRAHIM H.I. ABUSHAWISH \\
 Istanbul University, Department of Physics \\
-Instructor: Lect.  \\
-Experiment Date: .2024, Report Submission Date: .2024\\
+Instructor: Res. Asst. Öznur ARSLAN \\
+Experiment Date: 6.12.2024, Report Submission Date: 16.12.2024\\
 Course \& Section Number: PHYS2305}
 
 \maketitle
@@ -82,12 +82,45 @@ The experimental setup~\ref{fig:experimental_setup} involves several essential c
     \label{fig:parallel_circuit}
 \end{figure}
 
+\section{Experimental Procedure}
+The experiment began by configuring the RLC circuit components as per the schematic diagrams for both serial and parallel configurations. Each component, including resistors, capacitors, and inductors, was connected appropriately, and the AC power source was attached to provide the required alternating current. The Cobra3 PowerGraph software was used to monitor the circuit's response in real time.
+
+For the fixed capacitance analysis, the capacitance value was set to 2.2 µF for both serial and parallel configurations. The resistance was then varied, and measurements of the impedance and resonance frequencies were recorded for each resistance value. This process allowed for the observation of the impact of resistance on the resonance behavior of the RLC circuits.
+
+In the fixed resistance analysis, the resistance was set to 220 ohms, and the capacitance was varied for both the serial and parallel configurations. Measurements of the impedance and resonance frequencies were recorded for capacitance values of 1 µF, 2.2 µF, and 4.7 µF. This part of the procedure highlighted the impact of capacitance on the resonance frequency of the circuits.
+
+The recorded data for all measurements was saved for subsequent analysis. Impedance vs. frequency graphs were plotted for the fixed capacitance and fixed resistance configurations. These visualizations provided a clear representation of the resonance peaks and shifts in impedance, aiding in the analysis and discussion of the RLC circuit behavior.
+
+
 \section{Results}
 
 \subsection{Raw Data}
 Raw data is available in the GitHub repository \cite{github}, in \verb|10th_Experiment_RLC/DATA/|.
 
+\subsection{Configurations and Notation}
+Table \ref{tab:configurations} provides the naming conventions used in the graphs and their corresponding configurations.
 
+\begin{table}[H]
+    \centering
+    \caption{Configurations and Notations Used in Graphs}
+    \label{tab:configurations}
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{Notation} & \textbf{Configuration} & \textbf{Capacitance µF} &  \textbf{Resistance $\Omega$} \\
+    \midrule
+    P\_22c\_220R       & Parallel & 2.2 &220\\
+    P\_22c\_470R       & Parallel & 2.2 &470\\
+    P\_22c\_680R       & Parallel & 2.2 &680\\
+    S\_22c\_220R       & Series & 2.2 &220\\
+    S\_22c\_470R       & Series & 2.2 &470\\
+    S\_22c\_680R       & Series & 2.2 &680\\
+    P\_1c\_220R        & Parallel & 1 &220\\
+    P\_47c\_220R       & Parallel & 4.7 &220\\
+    S\_1c\_220R        & Series & 1 &220\\
+    S\_47c\_220R       & Series & 4.7 &220\\
+    \bottomrule
+    \end{tabular}
+\end{table}
 \subsection{Graphical Analysis}
 The following figures illustrate the relationship between impedance and frequency for both RLC circuit types, analyzed for fixed capacitance and resistance values. Key resonance peaks are identified and labeled in the graphs.
 
