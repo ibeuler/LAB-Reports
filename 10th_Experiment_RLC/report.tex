@@ -13,22 +13,22 @@
 \pgfplotsset{compat=1.18}
 
 \begin{document}
-
+ 
 \title{Analysis of RLC Circuits: Serial and Parallel Configurations}
 \author{IBRAHIM H.I. ABUSHAWISH \\
 Istanbul University, Department of Physics \\
-Instructor: Lect. Deniz Bozo\u{g}lu Parto \\
-Experiment Date: 21.10.2024, Report Submission Date: 28.10.2024\\
+Instructor: Lect.  \\
+Experiment Date: .2024, Report Submission Date: .2024\\
 Course \& Section Number: PHYS2305}
 
 \maketitle
 
 \begin{abstract}
-This report presents a comprehensive analysis of RLC circuits, including serial and parallel configurations. It provides a detailed theoretical overview, experimental procedures, data analysis, and discussion of key findings. The analysis is supported by code-based calculations and graphical visualizations produced using Python.
+    This report presents a comprehensive analysis of RLC circuits, including serial and parallel configurations. It provides a detailed theoretical overview, experimental procedures, data analysis, and discussion of key findings. The analysis is supported by code-based calculations and graphical visualizations produced using Python. Key conclusions indicate that resonance frequency shifts are primarily determined by capacitance in fixed resistance scenarios, while resistance impacts peak sharpness and impedance values. Experimental results revealed resonance peaks at approximately 230 Hz for the parallel RLC circuit with fixed capacitance and 200 Hz for the series RLC circuit with fixed capacitance. Practical implications include the design of frequency filters and oscillators based on RLC circuit configurations.
 \end{abstract}
-
+    
 \section{Introduction}
-RLC circuits are fundamental in the study of alternating current (AC) electrical systems. They serve as essential components in filters, oscillators, and resonant circuits. This report aims to explore the behavior of both serial and parallel RLC circuits. Key objectives include analyzing the resonance phenomenon, calculating impedance, and visualizing phase shifts.
+RLC circuits are fundamental in the study of alternating current (AC) electrical systems. They serve as essential components in filters, oscillators, and resonant circuits. This report aims to explore the behavior of both serial and parallel RLC circuits. Key objectives include analyzing the resonance phenomenon, calculating impedance, and visualizing phase shifts. The study emphasizes how resistance, capacitance, and inductance interact under varying frequencies.
 
 \section{Theory}
 
@@ -45,6 +45,7 @@ The resonance frequency $f_0$ occurs when the impedance is minimal and is calcul
 \begin{equation}
     f_0 = \frac{1}{2\pi \sqrt{LC}}
 \end{equation}
+At resonance, the current is maximum, and the circuit appears purely resistive.
 
 \subsection{Parallel RLC Circuit}
 A parallel RLC circuit has R, L, and C elements connected in parallel. The total impedance $Z$ is calculated as:
@@ -55,9 +56,17 @@ The condition for resonance in a parallel RLC circuit is when the reactive compo
 \begin{equation}
     \omega_0 = \frac{1}{\sqrt{LC}}
 \end{equation}
+The quality factor, bandwidth, and impedance characteristics of parallel RLC circuits are analyzed to identify the conditions for maximum energy transfer.
 
 \section{Experimental Setup}
-The experimental setup involves several essential components, including resistors, capacitors, and inductors, which are connected to form serial and parallel RLC circuits. An AC power source is used to provide alternating current, and measurements are taken using the Cobra3 PowerGraph software. The circuit diagrams for both serial and parallel RLC circuits are illustrated in Figures \ref{fig:serial_circuit} and \ref{fig:parallel_circuit}, respectively. 
+The experimental setup~\ref{fig:experimental_setup} involves several essential components, including resistors, capacitors, and inductors, which are connected to form serial and parallel RLC circuits. An AC power source is used to provide alternating current, and measurements are taken using the Cobra3 PowerGraph software. The circuit diagrams for both serial and parallel RLC circuits are illustrated in Figures \ref{fig:serial_circuit} and \ref{fig:parallel_circuit}, respectively.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{IMAGES/Experimental_setup.png}
+    \caption{Circuit elements and experimental setup.}
+    \label{fig:experimental_setup}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -73,65 +82,87 @@ The experimental setup involves several essential components, including resistor
     \label{fig:parallel_circuit}
 \end{figure}
 
-\section{Data and Calculations}
-Data was collected for both serial and parallel RLC circuits. The key calculations performed are listed below:
-\begin{itemize}
-    \item Calculation of impedance as a function of frequency.
-    \item Determination of resonance frequency for various RLC configurations.
-    \item Calculation of the quality factor $Q$ for each configuration.
-\end{itemize}
+\section{Results}
 
-\subsection{Calculation of Resonance Frequency}
-Using the equation for resonance frequency:
-\begin{equation}
-    f_0 = \frac{1}{2\pi \sqrt{LC}}
-\end{equation}
-The resonance frequency was calculated for each combination of L and C values. The calculated values are compared to experimental measurements.
+\subsection{Raw Data}
+Raw data is available in the GitHub repository \cite{github}, in \verb|10th_Experiment_RLC/DATA/|.
+
 
 \subsection{Graphical Analysis}
-The following figures illustrate the relationship between impedance and frequency for both RLC circuit types.
+The following figures illustrate the relationship between impedance and frequency for both RLC circuit types, analyzed for fixed capacitance and resistance values. Key resonance peaks are identified and labeled in the graphs.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{output_plots/Fixed_C/Parallel.png}
-    \caption{Impedance as a function of frequency for serial and parallel RLC circuits.}
-    \label{fig:impedance}
+    \caption{Parallel RLC circuit with fixed capacitance. The resonance peak is observed at approximately 230 Hz.}
+    \label{fig:parallel_fixed_c}
 \end{figure}
 
-\section{Results}
-\subsection{Impedance vs. Frequency}
-The plots in Figure \ref{fig:impedance} show how impedance varies with frequency. Resonance frequencies are clearly observed as points where the impedance is minimal.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Fixed_C/Series.png}
+    \caption{Serial RLC circuit with fixed capacitance. The resonance peak is observed at approximately 200 Hz.}
+    \label{fig:series_fixed_c}
+\end{figure}
 
-\subsection{Quality Factor}
-The quality factor $Q$ is calculated as:
-\begin{equation}
-    Q = \frac{f_0}{f_2 - f_1}
-\end{equation}
-where $f_1$ and $f_2$ are the half-power frequencies.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Fixed_R/Parallel.png}
+    \caption{Parallel RLC circuit with fixed resistance. The resonance peaks are observed at approximately 150 Hz, 250 Hz, and 350 Hz for 4.7 µF, 2.2 µF, and 1 µF capacitance, respectively.}
+    \label{fig:parallel_fixed_r}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{output_plots/Fixed_R/Series.png}
+    \caption{Serial RLC circuit with fixed resistance. The resonance peaks are observed at approximately 100 Hz, 200 Hz, and 300 Hz for 4.7 µF, 2.2 µF, and 1 µF capacitance, respectively.}
+    \label{fig:series_fixed_r}
+\end{figure}
+
 
 \section{Discussion}
-The experimental results are compared to theoretical predictions. Deviations are analyzed, and sources of error such as measurement inaccuracies and component tolerances are identified.
+\subsection{Horizontal Shifts}
+\textbf{Fixed Resistance, Variable Capacitance:} In Figures \ref{fig:parallel_fixed_r} and \ref{fig:series_fixed_r}, resonance frequency shifts horizontally due to the dependence on capacitance: \(f_0 = \frac{1}{2\pi\sqrt{LC}}\). Increasing capacitance lowers resonance frequency by increasing the effective reactive impedance.
+
+\textbf{Fixed Capacitance, Variable Resistance:} In Figures \ref{fig:parallel_fixed_c} and \ref{fig:series_fixed_c}, resonance frequency remains constant. However, the sharpness of the resonance peaks is heavily impacted, as resistance directly influences the quality factor \(Q\).
+
+\subsection{Vertical Shifts}
+\textbf{Parallel Configurations:} Vertical shifts are pronounced in parallel circuits (Figure \ref{fig:parallel_fixed_c}) as impedance at resonance is inversely proportional to resistance. Higher resistance results in sharper peaks and higher impedance.
+
+\textbf{Series Configurations:} Vertical shifts in series circuits (Figure \ref{fig:series_fixed_c}) show increased minimum impedance values with higher resistance, as impedance at resonance aligns with the resistive component of the circuit.
+
+\subsection{Quality Factor Analysis}
+The quality factor \(Q\) determines the sharpness of resonance. Higher \(Q\) values are observed for lower resistance in series circuits, reflecting minimal energy dissipation. Conversely, in parallel circuits, the quality factor improves with increased resistance due to enhanced impedance.
+
+\subsection{Practical Implications}
+These behaviors have significant implications for designing filters and oscillators. For example, in communication systems, parallel RLC circuits with high \(Q\) values are used to isolate specific frequency bands, while series circuits are often employed in impedance matching.
 
 \section{Conclusion}
-This experiment provides a comprehensive understanding of RLC circuit behavior. Resonance, impedance, and phase shift were analyzed and validated with theoretical predictions.
+This experiment provides a comprehensive understanding of RLC circuit behavior, emphasizing the effects of varying resistance and capacitance on resonance. From the discussion, it is evident that resonance frequency shifts are primarily determined by capacitance in fixed resistance scenarios, while resistance impacts peak sharpness and impedance values. Practical insights into designing efficient AC circuit components were highlighted.
 
-\section*{References}
-\begin{thebibliography}{1}
-    \bibitem{example1} A. Author, \emph{Title of the Book}, 2nd ed. Location: Publisher, 2024.
-    \bibitem{example2} B. Researcher, ``Title of the Article,'' \emph{Journal Name}, vol. 12, no. 3, pp. 45-67, 2023.
-    \bibitem{example3} C. Scientist, \emph{Understanding RLC Circuits}, IEEE Press, 2022.
+\section{Additional Resources}
+For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below or scan the QR code in Fig.~\ref{fig:qr_code}.
+
+\begin{figure}[H]
+    
+    \centering
+    \begin{minipage}{0.15\textwidth}
+        \centering
+        \qrcode[height=2cm]{https://github.com/ibeuler/LAB-Reports}
+    \end{minipage}%
+    \begin{minipage}{0.2\textwidth}
+        \raggedright
+        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+        \label{fig:qr_code}
+    \end{minipage}
+\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{lab_manual}
+    ISTANBUL UNIVERSITY, \textit{Physics Laboratory II Experiment Book: Electricity and Magnetism}, Department of Physics, 2024.
+
+\bibitem{github}
+    \textit{Source code and additional experiments are available in the GitHub repository.} \url{https://github.com/ibeuler/LAB-Reports}
 \end{thebibliography}
-
-\appendices
-
-\section{Python Code}
-\begin{verbatim}
-% Insert contents from Calculations.py
-\end{verbatim}
-
-\section{Lab Manual Excerpts}
-\begin{verbatim}
-% Insert relevant excerpts from PHYSICS_LAB_II-2.txt
-\end{verbatim}
 
 \end{document}
