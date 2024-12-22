@@ -1,0 +1,10 @@
+Parameter,Measured,Calculated
+Current (i),0.2 ampere,0.2 ampere
+Voltage across R (v_R),43.7 volt,43.7 volt
+Voltage across L (v_L),26.0 volt,23.0 volt
+Total Voltage (v),60.0 volt,60.0 volt
+Resistance (R),218.5 volt / ampere,218.5 volt / ampere
+Inductance (L),0.36605636911135925 second * volt / ampere,0.36605636911135925 henry
+Reactance (X_L),115.0 volt / ampere,115.0 volt / ampere
+Impedance (Z),299.0 volt / ampere,299.0 volt / ampere
+Phase Angle (phi),22.619864948040426 degree,63.43494882292201 degree

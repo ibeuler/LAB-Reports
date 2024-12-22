@@ -1,0 +1,9 @@
+Configuration,Quantity,Value
+RL,i,0.2 ampere
+RL,v_R,43.7 volt
+RL,v_L_,26.0 volt
+RL,v,60.0 volt
+RC,i,0.6 ampere
+RC,v_R,40.0 volt
+RC,v_C,30.0 volt
+RC,v,50.0 volt
