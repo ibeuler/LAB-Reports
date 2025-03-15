@@ -1,0 +1,309 @@
+\documentclass[journal]{IEEEtran}
+
+% Additional packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{hyperref} 
+\usepackage{qrcode}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\title{Determination of Resistance Using Wheatstone Bridge Method}
+\author{IBRAHIM H.I. ABUSHAWISH\\
+ISTANBUL UNIVERSITY FACULTY OF SCIENCE 
+DEPARTMENT OF PHYSICS\\
+Instructor: Lect. Deniz BOZOĞLU PARTO\\
+Experiment Date: 21.10.2024 , Report Submission Date: 28.10.2024\\
+Course \& Section Number: PHYS2305}
+
+\maketitle
+
+\begin{abstract}
+    This experiment investigates the measurement of an unknown resistance using the Wheatstone Bridge method and the determination of resistivity based on the dimensions of the conductor. The experiment employs a precise Wheatstone Bridge setup to establish the relationship between resistance, resistivity, length, and cross-sectional area of conductors. The findings demonstrate the reliability of the Wheatstone Bridge for accurate resistance measurements, which are cross-verified with a hand-drawn graph on millimetric paper. The results are consistent with theoretical predictions, indicating that the resistivity values obtained align with standard values for the materials tested, thus validating the methodology and principles of the Wheatstone Bridge.
+\end{abstract}
+    
+
+\section{Introduction}
+The purpose of this experiment is to measure an unknown resistance using the Wheatstone Bridge and to determine the resistivity based on conductor dimensions. The Wheatstone Bridge is widely used for precise resistance measurements and operates on a balance of voltage in a four-resistor network. Additionally, by measuring resistance and wire dimensions, we can calculate the resistivity, an intrinsic property that affects a material's conductive behavior. Understanding resistivity is essential in material science and circuit design, where it directly impacts current flow and energy efficiency.
+\section{Theory}
+Ohm’s Law describes the fundamental relationship between current, voltage, and resistance in a conductor, expressed mathematically as:
+\begin{equation}
+    R = \frac{V}{I}
+    \label{eq:ohmslaw}
+\end{equation}
+where \( R \) is the resistance in ohms, \( V \) is the voltage in volts, and \( I \) is the current in amperes. This law forms the basis for understanding how resistances behave in an electrical circuit.
+
+In a Wheatstone Bridge configuration, four resistors are arranged in a diamond shape. When the bridge reaches equilibrium—meaning there is no current flowing through the galvanometer connected between the midpoints of two branches—the ratio of the resistances can be expressed as:
+\begin{equation}
+    \frac{R_1}{R_2} = \frac{R_3}{R_4}
+    \label{eq:wheatstone}
+\end{equation}
+This equation arises from the principle of balance in the bridge, where the potential difference across the galvanometer is zero. The balance condition allows us to determine an unknown resistance \( R_1 \) by using known resistances \( R_2, R_3, \) and \( R_4 \). This relationship is fundamental for accurately measuring unknown resistances in a circuit.
+
+Additionally, the resistivity (\(\rho\)) of a conductor, an intrinsic property based on material, relates resistance to its physical dimensions:
+\begin{equation}
+    R = \rho \frac{L}{A}
+    \label{eq:resistivity}
+\end{equation}
+In this equation, \( R \) is the resistance, \( L \) is the length of the conductor, \( A \) is the cross-sectional area, and \( \rho \) is the resistivity in ohm-centimeters (\(\Omega \cdot \text{cm}\)). This formula highlights that resistance increases with length and decreases with a larger cross-sectional area.
+
+In the context of the Wheatstone Bridge, we can also derive another important relationship. Considering the lengths of the segments of the bridge, the ratio of the unknown resistance \( R_1 \) to one of the known resistances \( R_4 \) can be expressed in terms of the lengths \( L_2 \) and \( L_3 \):
+\begin{equation}
+    \frac{R_1}{R_4} = \frac{L_2}{L_3}
+    \label{eq:wheatstone_length}
+\end{equation}
+This derivation stems from the understanding that, at equilibrium, the voltage drop across \( R_1 \) is equal to the voltage drop across \( R_4 \). By knowing the lengths \( L_2 \) and \( L_3 \), we can effectively calculate the unknown resistance \( R_1 \), further reinforcing the accuracy of the Wheatstone Bridge method in resistance measurement.
+
+The resistivity concept is vital as it affects the conductive properties of materials used in electrical circuits. Understanding the relationship between resistance, resistivity, and physical dimensions of conductors is essential for the design and analysis of electrical systems.
+
+
+\section{Experimental Setup}
+\label{sec:setup}
+The experiment utilizes a Wheatstone Bridge setup to measure an unknown resistance. The equipment includes a galvanometer, voltage source, a known resistance box, and a variable length of resistance wire. Additionally, resistors of different values are used in various configurations to explore the Wheatstone Bridge balance condition. Figure~\ref{fig:setup} illustrates the Wheatstone Bridge configuration as referenced in the lab manual \cite{lab_manual}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{IMAGES/wheatstone_bridge.png} % Replace with actual image path
+    \caption{Wheatstone Bridge Experimental Setup \cite{lab_manual}.}
+    \label{fig:setup}
+\end{figure}
+
+The first part of the experiment aimed to proof the relationship, $\frac{R_1}{R_4} = \frac{L_2}{L_3}$ as explained in Section~\ref{sec:procedure} 
+using the setup shown in Figure~\ref{fig:known_diagram}. 
+
+while the second part of the experiment aimed to calculate unknown resistances with different configurations 
+with the help of wheatstone bridge as explained in Section~\ref{sec:procedure} 
+using the setup shown in Figure~\ref{fig:unknown_diagram}. 
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGES/known_resistors_diagram.png} % Replace with actual image path
+        \subcaption{Setup with known resistors to verify length-resistance relationships.}
+        \label{fig:known_diagram}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGES/unknown_resistor_diagram.png} % Replace with actual image path
+        \subcaption{Setup with unknown resistors for resistance calculation.}
+        \label{fig:unknown_diagram}
+    \end{minipage}
+    \caption{Wheatstone bridge experimental setups \cite{lab_manual}.}
+    \label{fig:combined_diagram}
+\end{figure}
+
+
+
+
+
+\section{Procedure}
+The experiment was conducted in two stages. First, the circuit was set up as shown in Figure~\ref{fig:setup}, with known resistors in a Wheatstone Bridge configuration to verify the relationship in Eq.~\ref{eq:wheatstone_length}. Various known resistors \( R_2 \) were used, and the slider was adjusted along the resistance wire until the galvanometer indicated zero current, signaling a balanced bridge. At this point, the lengths \( L_2 \) and \( L_3 \) were recorded, and the calculated ratios were compared to verify the relationship between resistance and length.
+
+In the second part, the setup was adjusted to include unknown resistors in place of the known resistors, as shown in Figure~\ref{fig:unknown_diagram}. The same process was followed to calculate the unknown resistance \( R_1 \), and as an example, the resistivity was specifically calculated for a wire with a diameter of 0.5 mm, using its length and measured resistance.
+
+\label{sec:procedure}
+\section{Results and Data}
+
+\subsection{Measured Values}
+Table~\ref{tab:results} presents the recorded lengths and calculated 
+ratios of lengths and resistances for various configurations for known ($R_1$, $R_4$) resistances. The calculations were performed using 
+the formulas derived in the previous sections, as documented in the 
+\texttt{Calculations.ipynb} notebook \cite{github}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccccc}
+\hline
+$R_1$ (k$\Omega$) & $R_4$ (k$\Omega$) & $L_2$ (cm) & $L_3$ (cm) & $\frac{R_1}{R_2}$ & $\frac{L_2}{L_3}$\\
+\hline
+4.7 & 10 & 31.6 & 68.4 & 0.47 & 0.462 \\
+0.330 & 0.150 & 68.6 & 31.4 & 2.2 & 2.185\\
+\hline
+\end{tabular}
+\caption{Measured values of resistances and lengths for verifying Eq.~\ref{eq:wheatstone_length} in the known-resistor configuration.}
+\label{tab:results}
+\end{table}
+
+The purpose of Table~\ref{tab:results} is for the experimental analysis of Eq.~\ref{eq:wheatstone_length}.
+
+As the second part of the experiment was determination of unknown resistances 
+with different diameters, experimantal data was governed and noted on Table~\ref{tab:results_part2}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+    \hline
+    d (mm) & $L_2$ (cm) & $L_3$ (cm) & $R_1$ ($\Omega$) & $R_4$ ($\Omega$) \\
+    \hline
+    1 & 61.6 & 38.4 & 0.625 & 1\\
+    0.7 & 43.5 & 56.5 & 1.295 & 1\\
+    0.5 & 28.5 & 71.5 & 2.51 & 1\\
+    0.35 & 15.8 & 84.2 & 5.32 & 1\\
+    \hline
+    \end{tabular}
+    \caption{Measured values of lengths for calculating unknown resistances in the Wheatstone Bridge configuration.}
+    \label{tab:results_part2}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{output_plots/resistance_vs_diameter_table_2_7.png} % Replace with actual image path
+    \caption{Plot of Resistance vs. Diameter based on experimental values \cite{lab_manual}. A hand-drawn version on millimetric paper is available in the GitHub repository \cite{graphonmillimetricpaper}.}
+    \label{fig:resistance_vs_diameter}
+\end{figure}
+
+
+\subsection{Resistivity Calculation}
+As an example, the resistivity (\(\rho\)) of a wire with a diameter of 0.5 mm was calculated using its measured resistance and length. Using the measured resistance of \( R = 2.770 \, \Omega \) for a 0.5 mm diameter wire of length \( L = 100 \, \text{cm} \), the resistivity was calculated using the following formula:
+\[
+\rho = \frac{R \cdot \pi \cdot \left(\frac{d}{2}\right)^2}{L}
+\]
+Substituting the values, the resistivity \(\rho\) was found to be approximately \(5.44 \times 10^{-5} \, \Omega \cdot \text{cm}\). This value is shown in Table~\ref{tab:resistivity}, consistent with standard resistivity values for the material used.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\hline
+Diameter (mm) & Length (cm) & $\rho$ ($\Omega\cdot$cm)\\
+\hline
+0.5 & 100 & \(5.44 \times 10^{-5}\) \\ % Calculated resistivity value
+\hline
+\end{tabular}
+\caption{Resistivity values for the wire with a diameter of 0.5 mm.}
+\label{tab:resistivity}
+\end{table}
+
+
+
+\subsection{A Proof by Kirchhoff's Rules}
+To confirm the Wheatstone Bridge balance condition, Kirchhoff’s Voltage Law (KVL) and Kirchhoff’s Current Law (KCL) are applied to prove that, at equilibrium, the relationship \( \frac{R_1}{R_2} = \frac{R_3}{R_4} \) holds.
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+        
+        \draw (0,2) to[R=$R_1$, i=$I_1$] (3,2) node[midway, above] {} -- (3,2) to[R=$R_4$, i>=$I_4$] (6,2) node[midway, above] {B};
+        \draw (0,-2) to[R=$R_2$, i=$I_2$] (3,-2) node[midway, below] {} -- (3,-2) to[R=$R_3$, i>=$I_3$] (6,-2) node[midway, below] {D};
+    
+        \draw (0,2) -- (0,-4) node[midway, left] {}; 
+        \draw (6,2) -- (6,-4) node[midway, right] {};
+        \draw (3,2) to[generic, l=$G$, i=$I_G$] (3,-2); 
+
+        \draw (0,-4) to[battery, l=$V_{supply}$] (6,-4); 
+    
+        \node at (1.5, 0) {Loop 1};
+        \node at (4.5, 0) {Loop 2};
+    \end{circuitikz}
+    \caption{Wheatstone Bridge configuration with labeled resistors and currents for Kirchhoff's loop analysis. The galvanometer \( G \) indicates zero current at equilibrium, with labeled junctions B and D .}
+    \label{fig:wheatstone_kirchhoff}
+\end{figure}
+
+\subsubsection{ Applying Kirchhoff's Voltage Law (KVL)}
+Kirchhoff’s Voltage Law states that the sum of the potential differences in any closed loop in a circuit is zero.
+
+\textbf{For Loop 1 (Path: \( R_1 \), \( G \), \( R_2 \))}  
+If we assume that the current through the galvanometer \( I_G = 0 \) at equilibrium (\( R_1 \) and \( R_2 \). Applying KVL:
+
+\begin{equation}
+    I_1 R_1 = I_2 R_2
+\end{equation}
+
+Rearranging, we get:
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{R_2}{R_1}
+    \label{eq:KVL1}
+\end{equation}
+
+\textbf{For Loop 2 (Path: \( R_3 \), \( G \), \( R_4 \))}
+Similarly, applying KVL to the loop containing \( R_3 \) and \( R_4 \), we have:
+
+\begin{equation}
+    I_3 R_3 = I_4 R_4
+\end{equation}
+
+which gives:
+\begin{equation}
+    \frac{I_3}{I_4} = \frac{R_4}{R_3}
+    \label{eq:KVL2}
+\end{equation}
+
+\subsubsection{Applying Kirchhoff's Current Law (KCL)}
+According to KCL, the total current entering a junction must equal the total current leaving the junction.
+
+At node B (between \( R_1 \) and \( R_4 \)):
+\begin{equation}
+    I_1 = I_G + I_4
+\end{equation}
+
+And at node D (between \( R_2 \) and \( R_3 \)):
+\begin{equation}
+    I_3 = I_G + I_2
+\end{equation}
+
+Since the bridge is balanced and \( I_G = 0 \), currents entering and leaving the nodes must satisfy:
+\begin{equation}
+    I_1 = I_4 \quad \text{and} \quad I_2 = I_3
+\end{equation}
+
+Hence, from Eq.~\ref{eq:KVL1} and \ref{eq:KVL2}
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{R_2}{R_1} = \frac{I_4}{I_3} = \frac{R_3}{R_4}
+\end{equation}
+
+\subsubsection{ Deriving the Wheatstone Bridge Condition}
+At equilibrium, the ratios of resistances must satisfy:
+\begin{equation}
+    \frac{R_1}{R_2} = \frac{R_4}{R_3}
+\end{equation}
+
+This relationship confirms that the Wheatstone Bridge is balanced when the ratio \( \frac{R_1}{R_2} \) equals \( \frac{R_4}{R_3} \), proving the initial assumption using Kirchhoff's rules.
+
+\section{Discussion}
+The experiment highlights the significance of accurate resistance measurements and the underlying principles of the Wheatstone Bridge. By carefully calibrating the setup and ensuring a balanced condition, we achieved reliable measurements for both known and unknown resistors. The analysis of resistivity based on conductor dimensions elucidates how geometric factors play a critical role in electrical resistance.
+
+In addition to verifying the theoretical relationships, this experiment serves as a practical demonstration of Kirchhoff's Laws, which govern circuit behavior. The balance condition of the Wheatstone Bridge, as derived from these laws, reaffirms the interconnected nature of resistance, voltage, and current in electrical circuits.
+
+Furthermore, the consistency of the calculated resistivity values with standard literature demonstrates the robustness of our experimental approach. Future experiments could explore the effects of temperature on resistivity and resistance, further enhancing our understanding of material properties under varying conditions. Overall, this experiment not only reinforces fundamental electrical principles but also lays the groundwork for advanced studies in material science and circuit design.
+\section{Conclusion}
+The Wheatstone Bridge method proves to be an effective and precise technique for measuring unknown resistances and determining resistivity in conductors. The experimental results align well with theoretical expectations, confirming the validity of the relationships described in Ohm’s Law and the principles governing the Wheatstone Bridge. This experiment successfully illustrates how resistance is influenced by both the material properties and the geometrical dimensions of the conductor. The calculated resistivity values for various wire diameters reinforce the importance of understanding material properties in electrical engineering and physics.
+\section{Additional Resources}
+For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below or scan the QR code in Figure~\ref{fig:qr}.
+
+\begin{thebibliography}{9}
+\bibitem{lab_manual}
+    ISTANBUL UNIVERSITY, 
+    \textit{Physics Laboratory II Experiment Book: Electricity and Magnetism}, 
+    Department of Physics, 2024.
+
+\bibitem{github}
+    \textit{Source code and additional experiments are available in the GitHub repository.} \\ 
+    Access it at: \url{https://github.com/ibeuler/LAB-Reports}.
+
+\bibitem{graphonmillimetricpaper}
+    \textit{The graph $R(d)$ fig~\ref{fig:resistance_vs_diameter} is also 
+    drawn by hand on millimetric paper.}\\
+    Available at: \url{https://github.com/ibeuler/LAB-Reports/blob/main/2nd_Experiment_DETERMINATION_OF_RESISTANCE%20BY_WHEATSTONE_BRIDGE_METHOD/output_plots/millimeteic_graph_of_rd.jpg}
+    and attached to the report.
+
+\end{thebibliography}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.15\textwidth}
+        \centering
+        \qrcode[height=2cm]{https://github.com/ibeuler/LAB-Reports}
+    \end{minipage}%
+    \begin{minipage}{0.2\textwidth}
+        \raggedright
+        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+        \label{fig:qr}
+    \end{minipage}
+\end{figure}
+
+\end{document}

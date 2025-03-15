@@ -1,0 +1,6 @@
+,Point 1:,Point 2:
+(n:75 turns 2a:26mm) B (mT),"(<Quantity(91.9269478, 'millimeter')>, <Quantity(0.32218156, 'microtesla')>)",
+(n:150 turns 2a:26mm) B (mT),"(<Quantity(112.991192, 'millimeter')>, <Quantity(0.558956469, 'microtesla')>)",
+(n:300 turns 2a:26mm) B (mT),"(<Quantity(117.688646, 'millimeter')>, <Quantity(1.11948975, 'microtesla')>)",
+(n:300 turns 2a:33mm) B (mT),"(<Quantity(122.713099, 'millimeter')>, <Quantity(1.11846959, 'microtesla')>)","(<Quantity(89.6856922, 'millimeter')>, <Quantity(1.1489383, 'microtesla')>)"
+(n:300 turns 2a:41mm) B (mT),"(<Quantity(148.92623, 'millimeter')>, <Quantity(1.09552542, 'microtesla')>)","(<Quantity(112.131724, 'millimeter')>, <Quantity(1.05090684, 'microtesla')>)"
