@@ -21,10 +21,15 @@ Instructor: Res. Asst. Dilan AKHAN \\
 Experiment Date: 11.03.2025, Report Submission Date: 18.03.2025\\
 Course \& Section Number: PHYS2405}
 
+\markboth{Physics Laboratory Reports, March 2025}{}
+
 \maketitle
+
+
 \begin{abstract}
-    This report presents an experimental investigation of Malus's Law and Newton's Rings phenomena. The study examines the relationship between light intensity and the angle of polarization using polarizing filters, as well as the formation of Newton's Rings due to interference of light waves. Key findings demonstrate the cosine-squared dependence of transmitted light intensity on the angle between polarizer axes and the linear relationship between the square of the radius of Newton's Rings and the ring order. The analysis includes detailed measurements, graphical representations, and theoretical comparisons that validate both Malus's Law and the principles behind Newton's Rings. Numerical findings include the maximum intensity observed at nearly $10^\circ$ instead of $0^\circ$ due to slight misalignment, and the average radius of curvature $R_{\text{average}}$ calculated to be approximately $2.262 \, \text{m}$, with a slope-derived radius of curvature of approximately $1.887 \, \text{m}$.
+    This report presents an experimental investigation of Malus's Law and Newton's Rings phenomena. The study examines the relationship between light intensity and the angle of polarization using polarizing filters, as well as the formation of Newton's Rings due to interference of light waves. Key findings demonstrate the cosine-squared dependence of transmitted light intensity on the angle between polarizer axes and the linear relationship between the square of the radius of Newton's Rings and the ring order. The analysis includes detailed measurements, graphical representations, and theoretical comparisons that validate both Malus's Law and the principles behind Newton's Rings. Numerical findings include the maximum intensity observed at nearly $10^\circ$ instead of $0^\circ$ due to slight misalignment, and the average radius of curvature $R_{\text{average}}$ calculated to be approximately $22.3896 \, \text{m}$, with a slope-derived radius of curvature of approximately $18.6757 \, \text{m}$.
 \end{abstract}
+
 \section{Introduction}
 Light polarization and interference are fundamental concepts in optics. Malus's Law, discovered by Étienne-Louis Malus in 1808, quantifies how polarized light is transmitted through a polarizer. Newton's Rings, observed due to the interference of light waves reflected between a spherical surface and an adjacent flat surface, provide insights into wave interference and lens curvature. This report aims to verify Malus's Law and analyze the formation of Newton's Rings through experimental procedures.
 
@@ -82,7 +87,7 @@ Understanding Malus's Law and Newton's Rings is crucial for various applications
 \subsection{Part One: Malus's Law}
 The experimental setup consists of:
 \begin{itemize}
-    \item Polarized light source ($\lambda = 5830 \, \text{nm}$ laser)
+    \item Polarized light source red laser
     \item One polarizing filter (analyzer)
     \item Light intensity detector (photometer)
     \item Angular measurement system
@@ -100,7 +105,7 @@ The experimental setup consists of:
 \subsection{Part Two: Newton's Rings}
 The experimental setup for Newton's Rings consists of:
 \begin{itemize}
-    \item Monochromatic light source.
+    \item Monochromatic light source $\lambda = 589 \, \text{nm}$.
     \item Plano-convex lens placed on a flat glass plate
     \item Microscope or camera for observing the rings
     \item Measurement scale for determining ring radii
@@ -196,18 +201,17 @@ Table \ref{tab:newtons_rings_measurements} presents the measured radii of Newton
         every last row/.style={after row=\bottomrule},
     ]{
         m,r,r_squared,R
-        1,4,16,2.744
-        2,5,25,2.144
-        3,6,36,2.058
-        4,7,49,2.101
+        1,4,16,27.1647
+        2,5,25,21.2224
+        3,6,36,20.3735
+        4,7,49,20.7980
     }
 \end{table}
 
 The calculations for the radius of curvature $R$ were performed using the measured radii of the rings and the wavelength of the light, as presented in Table \ref{tab:newtons_rings_measurements}.
 
-The average radius of curvature $R_{\text{average}}$ was calculated to be approximately $2.262 \, \text{m}$.
-
-Additionally, the slope of the $r^2$ versus $m$ graph was determined to be $11.0 \, \text{mm}^2$, which corresponds to $\lambda R$. Using this slope, the radius of curvature $R$ was calculated to be approximately $1.887 \, \text{m}$.
+The average radius of curvature $R_{\text{average}}$ was calculated to be approximately $22.3896 \, \text{m}$.
+Additionally, the slope of the $r^2$ versus $m$ graph was determined to be $11.0 \, \text{mm}^2$, which corresponds to $\lambda R$. Using this slope, the radius of curvature $R$ was calculated to be approximately $18.6757 \, \text{m}$.
 
 These values are consistent with the theoretical expectations and validate the experimental setup and measurements.
 
