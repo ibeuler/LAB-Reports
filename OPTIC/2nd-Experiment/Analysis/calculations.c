@@ -68,11 +68,10 @@ void calculations() {
     double max_alpha = *max_element(alpha_values.begin(), alpha_values.end());
 
 //
-    TF1 *fit_perp = new TF1("fit_perp", "[0]*exp(-[1]*x) + [2]", min_alpha, max_alpha);
-    fit_perp->SetParameters(1, 0.01, 0.1); // Adjust initial parameters as needed
+    TF1 *fit_perp = new TF1("fl", fline, 10 ,200, 6);
+    fit_perp->SetParameters(0,0,0,0,0,0);
 
-    TF1 *fit_paral = new TF1("fit_paral", "pol4", min_alpha, max_alpha);
-    fit_paral->SetParameters(1, -0.01, 0.001, 0, 0); // Adjust initial parameters as needed
+    TF1 *fit_paral = new TF1("fit_paral", "pol4", *min_element(alpha_values.begin(), alpha_values.end()), *max_element(alpha_values.begin(), alpha_values.end()));
 
     perp_g->Fit(fit_perp, "L");
     paral_g->Fit(fit_paral, "R");
