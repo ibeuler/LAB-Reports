@@ -64,48 +64,21 @@ void calculations() {
     paral_g->SetMarkerSize(0.8);
     paral_g->SetMarkerColor(kBlue);
 
-    double min_alpha = *min_element(alpha_values.begin(), alpha_values.end());
-    double max_alpha = *max_element(alpha_values.begin(), alpha_values.end());
-
-//
-    TF1 *fit_perp = new TF1("fit_perp", "[0]*exp(-[1]*x) + [2]", min_alpha, max_alpha);
-    fit_perp->SetParameters(1, 0.01, 0.1); // Adjust initial parameters as needed
-
-    TF1 *fit_paral = new TF1("fit_paral", "pol4", min_alpha, max_alpha);
-    fit_paral->SetParameters(1, -0.01, 0.001, 0, 0); // Adjust initial parameters as needed
-
-    perp_g->Fit(fit_perp, "L");
-    paral_g->Fit(fit_paral, "R");
-
-   // perp_g->GetYaxis()->SetRangeUser(*min_element(perpendicular_i.begin(), perpendicular_i.end()) - 2, *max_element(perpendicular_i.begin(), perpendicular_i.end()) + 2);
-    //paral_g->GetYaxis()->SetRangeUser(*min_element(parallel_i.begin(), parallel_i.end()) - 10, *max_element(parallel_i.begin(), parallel_i.end()) + 15);
-
     TCanvas *c1 = new TCanvas("c1", "#alpha vs #xi - Parallel Polarization", 800, 600);
     paral_g->Draw("AP");
-    fit_paral->Draw("same");
     auto legend1 = new TLegend(0.15, 0.15, 0.35, 0.3);
     legend1->AddEntry(paral_g, "Data", "p");
-    legend1->AddEntry(fit_paral, "Poly4 Fit", "l");
     legend1->SetTextSize(0.03);    
     legend1->Draw();
     gPad->Update();
-
-
-    // Parabolic fit for perpendicular polarization
-
     c1->SaveAs("../plots/parallel_plot.png");
-
 
     TCanvas *c2 = new TCanvas("c2", "#alpha vs #xi - Perpendicular Polarization", 800, 600);
     perp_g->Draw("AP");
-    fit_perp->Draw("same");
     auto *legend2 = new TLegend();  // Fixed here
     legend2->AddEntry(perp_g, "Data", "p");
-    legend2->AddEntry(fit_perp, "Exp Fit", "l");
     legend2->SetTextSize(0.03);
     legend2->Draw();
     gPad->Update();
     c2->SaveAs("../plots/perpendicular_plot.png");
 }
-
-
