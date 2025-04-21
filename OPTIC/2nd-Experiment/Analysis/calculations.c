@@ -30,7 +30,9 @@ void calculations() {
         perpendicular_i.push_back(perp_i);
         alpha_values.push_back(alpha);
     }
-
+    cout << "parallel_0: " << parallel_i[0] << endl;
+    cout << "perpendicular_0: " << perpendicular_i[0] << endl;
+    
     if (parallel_i.empty() || parallel_i[0] == 0 || perpendicular_i[0] == 0) {
         cout << "Error: Invalid data (empty or division by zero)!" << endl;
         return;
