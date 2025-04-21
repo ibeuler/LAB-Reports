@@ -2,6 +2,10 @@
     "files.associations": {
         "deque": "c",
         "string": "c",
-        "vector": "c"
+        "vector": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "ostream": "c"
     }
 }
