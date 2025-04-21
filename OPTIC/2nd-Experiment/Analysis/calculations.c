@@ -15,8 +15,8 @@ void calculations() {
 
     double paral_i = 0, perp_i = 0, alpha = 0;
     tree->SetBranchAddress("alpha", &alpha);
-    tree->SetBranchAddress("Parallel", &paral_i);
-    tree->SetBranchAddress("Perpendicular", &perp_i);
+    tree->SetBranchAddress("ParallelCurrent", &paral_i);
+    tree->SetBranchAddress("PerpendicularCurrent", &perp_i);
 
     Long64_t nentries = tree->GetEntries();
     vector<double> parallel_i, perpendicular_i, alpha_values;
