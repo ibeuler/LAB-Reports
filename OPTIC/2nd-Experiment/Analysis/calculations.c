@@ -47,7 +47,7 @@ void calculations() {
 
     cout << "parallel_xi: ";
     for (const auto& val : parallel_xi) {
-        cout << val << " ";
+        cout << val << " ";	
     }
     cout << endl;
 
