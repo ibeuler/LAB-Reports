@@ -16,24 +16,22 @@
 \author{{\large IBRAHIM H.I. ABUSHAWISH} \\ % Replace with actual name
 {\small Istanbul University, Dept. of Physics \\ 
 Instructor: Res. Asst. Selen Nur YILMAZ \\ 
-Experiment Date: 25.04.2025, Submission: \\ 
-Course: PHYS2405}}
+Experiment Date: 25.04.2025, Submission Date: \\ 
+Course \& Section Number: PHYS2405}}
 
-\markboth{Physics Laboratory Report, Month Year}{} % Adjust month/year
+\markboth{Physics Laboratory Report, April 2025}{} % Adjust month/year
 
 \maketitle
-
 \begin{abstract}
-    This report details an experimental investigation into the reflection of polarized light from a dielectric surface (likely glass) as a function of the angle of incidence ($\alpha$). The intensities of reflected light for polarizations parallel ($I_{\parallel}$) and perpendicular ($I_{\perp}$) to the plane of incidence were measured. The quantity $\xi$, representing the measured reflected intensity (proportional to actual intensity), was plotted against the angle of incidence $\alpha$. For perpendicular polarization, the reflected intensity $\xi_{\perp}$ generally increases with $\alpha$. For parallel polarization, the reflected intensity $\xi_{\parallel}$ exhibits a distinct minimum at a specific angle, known as Brewster's angle ($\theta_B$), before increasing again. Analysis of the parallel polarization data indicates a minimum intensity around $\alpha \approx \SI{55}{\degree}$, suggesting Brewster's angle is near this value. This experiment provides verification of the principles described by Fresnel's equations for light reflection at an interface.
+    This report presents an experimental study on the reflection of polarized light from a dielectric surface as a function of the angle of incidence ($\alpha$). The reflected intensities for light polarized parallel ($I_{\parallel}$) and perpendicular ($I_{\perp}$) to the plane of incidence were measured and analyzed. The results show that $\xi_{\perp}$, representing the reflected intensity for perpendicular polarization, increases with $\alpha$, while $\xi_{\parallel}$, for parallel polarization, exhibits a minimum at Brewster's angle ($\theta_B$). The minimum intensity for $\xi_{\parallel}$ was observed around $\alpha \approx \SI{55}{\degree}$, consistent with theoretical predictions. This experiment validates Fresnel's equations and highlights the phenomenon of Brewster's angle, providing insights into polarization-dependent reflection.
 \end{abstract}
- 
-
 \section{Introduction}
 The interaction of light with matter, particularly reflection and refraction at interfaces, is a cornerstone of optics. When light encounters a boundary between two media with different refractive indices, part of it is reflected, and part is transmitted (refracted). The amount of light reflected and transmitted depends on the angle of incidence, the polarization state of the light relative to the plane of incidence, and the refractive indices of the two media.
 
 Polarization describes the orientation of the electric field oscillations of light waves. Unpolarized light has electric field vectors oscillating in random directions perpendicular to the direction of propagation. Linear polarization occurs when the electric field oscillates along a single fixed direction.
 
 This experiment focuses on how linearly polarized light reflects off a dielectric surface. Specifically, it investigates the difference in reflectivity for light polarized parallel to the plane of incidence (p-polarized) and light polarized perpendicular to the plane of incidence (s-polarized). A key phenomenon observed is Brewster's angle, the angle of incidence at which p-polarized light is perfectly transmitted (zero reflection), resulting in the reflected light being purely s-polarized. This experiment aims to measure the reflected intensities for both polarizations as the angle of incidence varies and to identify Brewster's angle.
+
 \section{Theory}
 \subsection{Reflection and Refraction}
 When light travels from a medium with refractive index $n_1$ to a medium with refractive index $n_2$, the angles of incidence ($\theta_i$), reflection ($\theta_r$), and refraction ($\theta_t$) are related by the Law of Reflection ($\theta_i = \theta_r$) and Snell's Law:
@@ -113,13 +111,14 @@ The data collection process emphasized consistency and accuracy, with repeated m
 \end{table}
 \subsection{Graphical Analysis}
 The measured reflected intensities ($\xi$) for perpendicular and parallel polarizations were plotted as a function of the angle of incidence ($\alpha$).
+Figure \ref{fig:perpendicular} shows the reflected intensity for perpendicularly polarized light ($\xi_{\perp}$) versus the angle of incidence ($\alpha$). The intensity generally increases as the angle of incidence increases, consistent with the behavior predicted by Fresnel's equations (Eq.~(2)).
 
-Figure \ref{fig:perpendicular} shows the reflected intensity for perpendicularly polarized light ($\xi_{\perp}$) versus the angle of incidence ($\alpha$). The intensity generally increases as the angle of incidence increases, consistent with the behavior predicted by Fresnel's equations for $R_s$. An exponential fit was applied to the data points in the original analysis.
+Figure \ref{fig:exponential_fit} provides an exponential fit for the $\xi_{\perp}$ data, illustrating the close agreement between the experimental results and the theoretical model. The fitted curve highlights the monotonic increase in reflected intensity for perpendicular polarization as the angle of incidence approaches grazing incidence.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../plots/perpendicular_plot.png}
-    \caption{$\xi_{\perp}$ vs $\alpha$ - Perpendicular Polarization. Data points (blue) show increasing reflected intensity with angle. The red line represents an exponential fit.}
+    \caption{$\xi_{\perp}$ vs $\alpha$ - Perpendicular Polarization. Data points show increasing reflected intensity with angle.}
     \label{fig:perpendicular}
 \end{figure}
 \begin{figure}[H]
@@ -128,43 +127,48 @@ Figure \ref{fig:perpendicular} shows the reflected intensity for perpendicularly
     \caption{Exponential fit for $\xi_{\perp}$ vs $\alpha$ - Perpendicular Polarization. The orange curve represents the fitted exponential model, closely matching the experimental data points (blue).}
     \label{fig:exponential_fit}
 \end{figure}
-Figure \ref{fig:parallel} shows the reflected intensity for parallel polarized light ($\xi_{\parallel}$) versus the angle of incidence ($\alpha$). The intensity first decreases, reaches a minimum value at an intermediate angle, and then increases again at larger angles. This behavior is characteristic of $R_p$ according to Fresnel's equations. The minimum intensity corresponds to Brewster's angle ($\theta_B$). A polynomial fit (Poly4) was applied in the original analysis.
+
+Figure \ref{fig:parallel} shows the reflected intensity for parallel polarized light ($\xi_{\parallel}$) versus the angle of incidence ($\alpha$). The intensity first decreases, reaches a minimum value at an intermediate angle, and then increases again at larger angles. This behavior is consistent with the theoretical prediction of $I_{\parallel}$ as described by Eq.~(4). The minimum intensity corresponds to Brewster's angle ($\theta_B$), where the reflection coefficient for parallel polarization ($\xi_{\parallel}$) approaches zero. Figure \ref{fig:polynomial_fit} introduces a polynomial fit (degree 5) for the experimental data, illustrating the close agreement between the measured values and the theoretical model.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../plots/parallel_plot.png}
-    \caption{$\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. Data points (blue) show a minimum intensity around $\alpha \approx \SI{55}{\degree}$. The red line represents a polynomial (degree 4) fit.}
+    \caption{$\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. Data points show a minimum intensity around $\alpha \approx \SI{55}{\degree}$.}
     \label{fig:parallel}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../plots/polynomial_fit.png}
-    \caption{Polynomial fit for $\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. The orange curve represents the fitted polynomial model (degree 3), closely matching the experimental data points (blue).}
+    \caption{Polynomial fit for $\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. The orange curve represents the fitted polynomial model (degree 5), closely matching the experimental data points (blue).}
     \label{fig:polynomial_fit}
 \end{figure}
+A combined plot comparing the reflected intensities for both perpendicular ($\xi_{\perp}$) and parallel ($\xi_{\parallel}$) polarizations as a function of the angle of incidence ($\alpha$) is available in the repository \cite{github}. This visualization clearly contrasts the monotonic increase of $\xi_{\perp}$ with the characteristic minimum of $\xi_{\parallel}$ near Brewster's angle. The plot also highlights the experimental observation that $\xi_{\perp} < \xi_{\parallel}$ across most of the measured angles, which is discussed further in Section \ref{sec:discussion}.
+
 \section{Discussion}
-The experimental results align well with the theoretical predictions based on Fresnel's equations.
+\label{sec:discussion}
+The experimental findings provide valuable insights into the behavior of polarized light reflection from a dielectric surface. 
 
-For perpendicular (s-) polarization, the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$, as shown in Figure \ref{fig:exponential_fit}. The exponential fit applied to the data closely matches the experimental points, confirming the expected behavior of $R_s$, which increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$). This trend is consistent with Fresnel's equations for s-polarized light.
+For perpendicular (s-) polarization, the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$, as shown in Figure \ref{fig:exponential_fit}. This trend aligns with the theoretical predictions of Fresnel's equations, where $R_s$ increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$). The exponential fit applied to the data closely matches the experimental points, confirming the expected behavior.
 
-For parallel (p-) polarization, the reflected intensity $\xi_{\parallel}$ exhibits the characteristic dip associated with Brewster's angle, as shown in Figure \ref{fig:polynomial_fit}. The polynomial fit (degree 3) highlights a minimum intensity near $\alpha \approx \SI{55}{\degree}$. The minimum value is approximately $\xi_{\parallel} \approx 1.2$ (arbitrary units) at $\alpha = \SI{60}{\degree}$, but visually inspecting the data points suggests the minimum might occur between $\SI{50}{\degree}$ and $\SI{60}{\degree}$. The polynomial fit provides a smooth representation of the data, suggesting Brewster's angle is approximately $\theta_B \approx \SI{55 \pm 5}{\degree}$.
+For parallel (p-) polarization, the reflected intensity $\xi_{\parallel}$ exhibits a distinct local minimum near Brewster's angle, as shown in Figure \ref{fig:polynomial_fit}. The polynomial fit suggests that the minimum occurs at $\alpha \approx \SI{55}{\degree}$, which corresponds to Brewster's angle $\theta_B$. This finding is consistent with the theoretical prediction that the reflected intensity for p-polarized light reaches zero at Brewster's angle. The minimum occurs because, at Brewster's angle, the reflected and refracted rays are perpendicular, causing the reflected p-polarized light to vanish. However, the observed non-zero minimum intensity ($\xi_{\parallel} \approx 1.2$ in arbitrary units) may be attributed to experimental limitations, such as imperfect polarization, alignment errors, or detector noise.
 
-Ideally, the intensity at Brewster's angle should be zero for p-polarized light. The observed non-zero minimum ($\xi_{\parallel} \approx 1.2$) could be attributed to several factors:
-\begin{itemize}
-    \item The incident light might not have been perfectly linearly polarized.
-    \item The polarization axis might not have been perfectly aligned parallel to the plane of incidence.
-    \item The light source might not have been perfectly monochromatic.
-    \item Scattering from surface imperfections.
-    \item Detector noise or offset.
-    \item Finite angular resolution of the setup.
-\end{itemize}
+Interestingly, the experimental results indicate that $\xi_{\perp} < \xi_{\parallel}$ for most angles of incidence, which conflicts with the theoretical background provided in the lab manual. This discrepancy may arise from the specific definition of $\xi$ used in this experiment, where $\xi = \sqrt{I_i / I_0}$. While this definition is suitable for studying the relative behavior of the reflection coefficients, it does not directly correspond to the ratios predicted by Fresnel's equations. A more accurate calculation of $\xi_{\perp}$ and $\xi_{\parallel}$ using Fresnel's equations would likely resolve this inconsistency.
 
-Assuming Brewster's angle is approximately $\theta_B \approx \SI{55}{\degree}$, and the incident medium is air ($n_1 \approx 1$), we can estimate the refractive index ($n_2$) of the dielectric material using Equation \ref{eq:brewster}:
+Assuming Brewster's angle is approximately $\theta_B \approx \SI{55}{\degree}$ and the incident medium is air ($n_1 \approx 1$), the refractive index of the dielectric material can be estimated using:
 \begin{equation}
-    n_2 = \tan(\theta_B) \approx \tan(\SI{55}{\degree}) \approx 1.43
+    n_2 = \tan(\theta_B)
 \end{equation}
-If we take the minimum closer to $\SI{58}{\degree}$ (based on the fit's appearance near the minimum), $n_2 \approx \tan(\SI{58}{\degree}) \approx 1.60$. A value around 1.5 is typical for glass. The uncertainty in determining the exact minimum from the discrete data points and the non-zero minimum intensity limits the precision of this estimation.
+Using the experimentally determined Brewster's angle $\theta_B \approx \SI{55}{\degree}$, the refractive index of the dielectric material can be calculated as:
+\begin{equation}
+    n_2 = \tan(\SI{55}{\degree}) \approx 1.428
+\end{equation}
+This value is consistent with typical refractive indices for materials like glass. The calculation assumes the incident medium is air with $n_1 \approx 1$.
+This value is consistent with typical refractive indices for glass. The uncertainty in determining the exact minimum and the non-zero minimum intensity limit the precision of this estimation.
 
 \section{Conclusion}
+In conclusion, this experiment successfully demonstrated the polarization-dependent reflection of light and the phenomenon of Brewster's angle. The local minimum in $\xi_{\parallel}$ was found to occur at $\theta_B \approx \SI{55}{\degree}$, consistent with theoretical predictions. However, the observed relationship $\xi_{\perp} < \xi_{\parallel}$ highlights the limitations of the experimental approximation for $\xi$. Future work could involve a more rigorous calculation of reflection coefficients using Fresnel's equations to address this discrepancy.
+The data, analysis, and additional plots are available in the GitHub repository \cite{github}.
+
 This experiment successfully investigated the reflection of linearly polarized light from a dielectric surface as a function of the angle of incidence. The measured reflected intensities for perpendicular ($\xi_{\perp}$) and parallel ($\xi_{\parallel}$) polarizations generally followed the trends predicted by Fresnel's equations. The intensity for perpendicular polarization increased with the angle of incidence. The intensity for parallel polarization showed a distinct minimum, identifying Brewster's angle.
 
 From the data, Brewster's angle for the sample material was estimated to be $\theta_B \approx \SI{55 \pm 5}{\degree}$. This corresponds to an estimated refractive index of the material $n_2 \approx 1.43 - 1.73$ (using $\SI{55}{\degree}$ to $\SI{60}{\degree}$), consistent with common materials like glass. The non-zero minimum intensity observed for parallel polarization suggests minor experimental imperfections or limitations. Overall, the experiment provides a clear demonstration of polarization-dependent reflection and the phenomenon of Brewster's angle.
