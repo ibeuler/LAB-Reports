@@ -1,6 +1,4 @@
 \documentclass[journal]{IEEEtran}
-
-% Basic Packages
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb} % For math symbols like \parallel, \perp
@@ -12,17 +10,14 @@
 \usepackage{siunitx} % For units like \si{\degree}, \si{\nano\meter}
 \usepackage{qrcode}
 
-% Document Setup
-
-
 \begin{document}
 
-\title{Investigation of Light Reflection and Polarization: Brewster's Angle}
-\author{Your Name Here \\ % Replace with actual name
-Your Institution Here \\ % Replace with actual institution
-Instructor: Instructor Name Here \\ % Replace with actual instructor name
-Experiment Date: DD.MM.YYYY, Report Submission Date: DD.MM.YYYY\\ % Replace dates
-Course \& Section Number: Course Number Here} % Replace course number
+\title{Investigation of Light Reflection and Polarization: Fresnel Equations - Reflection Theory}
+\author{{\large IBRAHIM H.I. ABUSHAWISH} \\ % Replace with actual name
+{\small Istanbul University, Dept. of Physics \\ 
+Instructor: Res. Asst. Selen Nur YILMAZ \\ 
+Experiment Date: 25.04.2025, Submission: \\ 
+Course: PHYS2405}}
 
 \markboth{Physics Laboratory Report, Month Year}{} % Adjust month/year
 
@@ -31,6 +26,7 @@ Course \& Section Number: Course Number Here} % Replace course number
 \begin{abstract}
     This report details an experimental investigation into the reflection of polarized light from a dielectric surface (likely glass) as a function of the angle of incidence ($\alpha$). The intensities of reflected light for polarizations parallel ($I_{\parallel}$) and perpendicular ($I_{\perp}$) to the plane of incidence were measured. The quantity $\xi$, representing the measured reflected intensity (proportional to actual intensity), was plotted against the angle of incidence $\alpha$. For perpendicular polarization, the reflected intensity $\xi_{\perp}$ generally increases with $\alpha$. For parallel polarization, the reflected intensity $\xi_{\parallel}$ exhibits a distinct minimum at a specific angle, known as Brewster's angle ($\theta_B$), before increasing again. Analysis of the parallel polarization data indicates a minimum intensity around $\alpha \approx \SI{55}{\degree}$, suggesting Brewster's angle is near this value. This experiment provides verification of the principles described by Fresnel's equations for light reflection at an interface.
 \end{abstract}
+ 
 
 \section{Introduction}
 The interaction of light with matter, particularly reflection and refraction at interfaces, is a cornerstone of optics. When light encounters a boundary between two media with different refractive indices, part of it is reflected, and part is transmitted (refracted). The amount of light reflected and transmitted depends on the angle of incidence, the polarization state of the light relative to the plane of incidence, and the refractive indices of the two media.
@@ -47,39 +43,33 @@ When light travels from a medium with refractive index $n_1$ to a medium with re
 In this experiment, the angle of incidence is denoted by $\alpha$, so $\theta_i = \alpha$.
 
 \subsection{Fresnel's Equations}
-The amplitudes (and thus intensities) of the reflected and transmitted light depend on the polarization. Fresnel's equations describe the reflection coefficients ($r$) and transmission coefficients ($t$) for the electric field amplitudes. For light incident from medium 1 to medium 2, the reflection coefficients for s-polarization ($r_s$) and p-polarization ($r_p$) are:
+The amplitudes (and thus intensities) of the reflected and transmitted light depend on the polarization. Fresnel's equations describe the reflection coefficients ($\xi$) for the electric field amplitudes. For light incident from medium 1 to medium 2, the reflection coefficients for s-polarization ($\xi_s$) and p-polarization ($\xi_p$) are:
 \begin{align}
-    r_s &= \frac{n_1 \cos(\theta_i) - n_2 \cos(\theta_t)}{n_1 \cos(\theta_i) + n_2 \cos(\theta_t)} \\
-    r_p &= \frac{n_2 \cos(\theta_i) - n_1 \cos(\theta_t)}{n_2 \cos(\theta_i) + n_1 \cos(\theta_t)}
+    \xi_{\perp} &= \frac{n_1 \cos(\theta_i) - n_2 \cos(\theta_t)}{n_1 \cos(\theta_i) + n_2 \cos(\theta_t)} \\
+    \xi_{\parallel} &= \frac{n_2 \cos(\theta_i) - n_1 \cos(\theta_t)}{n_2 \cos(\theta_i) + n_1 \cos(\theta_t)}
 \end{align}
-The reflectance (or reflectivity) $R$ is the ratio of reflected intensity to incident intensity and is given by the square of the reflection coefficient:
-\begin{equation}
-    R_s = |r_s|^2 \quad \text{and} \quad R_p = |r_p|^2
-\end{equation}
-The measured reflected intensities $\xi_{\perp}$ (for s-pol) and $\xi_{\parallel}$ (for p-pol) are proportional to these reflectances:
-\begin{equation}
-    \xi_{\perp} \propto R_s \quad \text{and} \quad \xi_{\parallel} \propto R_p
-\end{equation}
-Here, $\xi_{\perp}$ and $\xi_{\parallel}$ represent the measured reflected intensities for perpendicular and parallel polarizations, respectively, as defined in the general information section of the lab manual.
 
-\subsection{Brewster's Angle}
-Brewster's angle ($\theta_B$) is the specific angle of incidence $\theta_i$ at which the reflection coefficient for p-polarized light ($r_p$) becomes zero. This occurs when the reflected and refracted rays are perpendicular to each other ($\theta_i + \theta_t = \SI{90}{\degree}$). Using Snell's Law, this condition leads to:
-\begin{equation}
-    n_1 \sin(\theta_B) = n_2 \sin(\SI{90}{\degree} - \theta_B) = n_2 \cos(\theta_B)
-\end{equation}
+where $\theta_t$ is determined using Snell's Law. The intensity of the reflected light is proportional to the square of the amplitude, so the reflected intensities for s- and p-polarized light are given by:
+\begin{align}
+    I_{\perp} &= \left| \xi_{\perp} \right|^2 \\
+    I_{\parallel} &= \left| \xi_{\parallel} \right|^2
+\end{align}
+
+The intensity of the reflected light is also related to the angle of incidence. The Brewster angle ($\theta_B$) is defined as the angle at which p-polarized light is perfectly transmitted, resulting in zero reflection. It can be calculated using:
 \begin{equation}
     \tan(\theta_B) = \frac{n_2}{n_1}
-    \label{eq:brewster}
 \end{equation}
-If the incident medium is air ($n_1 \approx 1$), then $\tan(\theta_B) = n_2$, where $n_2$ is the refractive index of the reflecting material. At Brewster's angle, only s-polarized light is reflected. Therefore, measuring the reflected intensity of p-polarized light ($\xi_{\parallel}$) as a function of the angle of incidence $\alpha$ should reveal a minimum (ideally zero) at $\alpha = \theta_B$.
+where $n_1$ is the refractive index of the incident medium (air, typically $n_1 \approx 1$) and $n_2$ is the refractive index of the dielectric material.
+The Brewster angle is significant because it marks the transition between maximum and minimum reflectivity for p-polarized light. At this angle, the reflected light is completely s-polarized, and the intensity of the reflected light for p-polarization approaches zero.
 
-\subsection{Calculation of $\xi$}
-The reflected intensities $\xi_{\perp}$ and $\xi_{\parallel}$ were calculated as suggested in the lab manual \cite{lab_manual} using the formula:
+\subsection{Determination of Reflection Coefficients}
+The reflection coefficients $\xi_{\perp}$ and $\xi_{\parallel}$ were determined using the relationship:
 \begin{equation}
-    \xi = \sqrt{\frac{I}{I_0}}
+    \xi = \sqrt{\frac{I_i}{I_0}}
 \end{equation}
-where $I$ is the measured intensity of the reflected light, and $I_0$ is the intensity of the incident light. Since this is a ratio, $\xi$ is dimensionless.
+where $I_i$ is the detected current value for each configuration (parallel or perpendicular polarization) as recorded in Table~\ref{tab:reflection_data}, and $I_0$ is the reference intensity corresponding to the incident light.
 
+For each angle of incidence $\alpha$, the detected current values $I_{\parallel}$ and $I_{\perp}$ were used to calculate $\xi_{\parallel}$ and $\xi_{\perp}$, respectively. The results were plotted against $\alpha$ to analyze the variation of the reflection coefficients with the angle of incidence.
 \section{Experimental Setup}
 \subsection{Equipment and Properties}
 The experimental setup consisted of the following main components:
@@ -98,9 +88,12 @@ The experimental setup consisted of the following main components:
 \section{Experimental Procedure}
 The optical components were arranged on the optical bench to ensure the laser beam was incident on the prism at the desired location and angle. The polarization filter was adjusted to set the polarization direction of the incident light (parallel or perpendicular to the plane of incidence). The prism was securely mounted in its holder, and the angle of incidence was set using the protractor and scaled radial holder for precise alignment. The photodetector, mounted on the jointed radial holder, was carefully aligned to detect the reflected beam at each angle.
 
-For each measurement, the angle of incidence was incrementally varied (typically from $0^\circ$ to $80^\circ$ or $90^\circ$). At each angle, the intensity of the reflected light was measured for both polarization states by adjusting the polarization filter and ensuring proper alignment of the detector. The output voltage from the photodetector, proportional to the reflected intensity, was recorded using the digital multimeter. All measurements of angle and intensity were systematically documented for subsequent analysis and plotting of $\xi_{\perp}$ and $\xi_{\parallel}$ versus $\alpha$.
+The laser was allowed to heat for approximately 15 minutes before starting the procedures to ensure stable operation. The laser beam was positioned over the center of the prism table to find the zero position, and the protractor scale was set to zero to determine the $\alpha = 0$ angle of incidence. The prism was placed on the table so that it reflected the incoming light back along its path.
+For each measurement, the angle of incidence was incrementally varied, starting from $\alpha = 0^\circ$ to $\alpha = 85^\circ$ in 5° increments. At each angle, the intensity of the reflected light was measured for both polarization states by adjusting the polarization filter and ensuring proper alignment of the detector. The photocell was rotated to obtain the maximum current for determining the intensity $i_{\parallel}$ or $i_{\perp}$. The output voltage from the photodetector, proportional to the reflected intensity, was recorded using the digital multimeter.
 
-The data collection process emphasized consistency and accuracy, with repeated measurements taken at critical angles to ensure reliability. The recorded data were later analyzed to identify trends, such as the monotonic increase in $\xi_{\perp}$ and the characteristic minimum in $\xi_{\parallel}$, corresponding to Brewster's angle.
+To determine the degree of rotation of the plane of polarization due to reflection, the photocell was placed in the path of the beam without the prism, and a polarization filter was attached in front of the laser. The filter was rotated until the recorded intensity reached a minimum, and then rotated by 45° before placing the prism in position. A second polarization filter was placed between the prism and the detector to measure the rotation angle of the plane of polarization for the reflected beam.
+
+The data collection process emphasized consistency and accuracy, with repeated measurements taken at critical angles to ensure reliability. The recorded data were later analyzed to determine the reflection coefficients for polarized light perpendicular and parallel to the plane of incidence as a function of the angle of incidence. These coefficients were represented graphically and compared with theoretical predictions using Fresnel's formulas. Additionally, the refractive index of the crystal prism and the rotation of the plane of polarization were determined and presented graphically.
 
 \section{Results}
 \subsection{Data Table}
@@ -129,24 +122,33 @@ Figure \ref{fig:perpendicular} shows the reflected intensity for perpendicularly
     \caption{$\xi_{\perp}$ vs $\alpha$ - Perpendicular Polarization. Data points (blue) show increasing reflected intensity with angle. The red line represents an exponential fit.}
     \label{fig:perpendicular}
 \end{figure}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../plots/exponential_fit.png}
+    \caption{Exponential fit for $\xi_{\perp}$ vs $\alpha$ - Perpendicular Polarization. The orange curve represents the fitted exponential model, closely matching the experimental data points (blue).}
+    \label{fig:exponential_fit}
+\end{figure}
 Figure \ref{fig:parallel} shows the reflected intensity for parallel polarized light ($\xi_{\parallel}$) versus the angle of incidence ($\alpha$). The intensity first decreases, reaches a minimum value at an intermediate angle, and then increases again at larger angles. This behavior is characteristic of $R_p$ according to Fresnel's equations. The minimum intensity corresponds to Brewster's angle ($\theta_B$). A polynomial fit (Poly4) was applied in the original analysis.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../plots/parallel_plot.png}
     \caption{$\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. Data points (blue) show a minimum intensity around $\alpha \approx \SI{55}{\degree}$. The red line represents a polynomial (degree 4) fit.}
     \label{fig:parallel}
 \end{figure}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../plots/polynomial_fit.png}
+    \caption{Polynomial fit for $\xi_{\parallel}$ vs $\alpha$ - Parallel Polarization. The orange curve represents the fitted polynomial model (degree 3), closely matching the experimental data points (blue).}
+    \label{fig:polynomial_fit}
+\end{figure}
 \section{Discussion}
 The experimental results align well with the theoretical predictions based on Fresnel's equations.
 
-For perpendicular (s-) polarization (Figure \ref{fig:perpendicular}), the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$. This matches the expected behavior of $R_s$, which increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$).
+For perpendicular (s-) polarization, the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$, as shown in Figure \ref{fig:exponential_fit}. The exponential fit applied to the data closely matches the experimental points, confirming the expected behavior of $R_s$, which increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$). This trend is consistent with Fresnel's equations for s-polarized light.
 
-For parallel (p-) polarization (Figure \ref{fig:parallel}), the reflected intensity $\xi_{\parallel}$ exhibits the characteristic dip associated with Brewster's angle. The minimum reflected intensity is observed near $\alpha \approx \SI{55}{\degree}$. According to the plot, the minimum value is approximately $\xi_{\parallel} \approx 1.2$ (arbitrary units) at $\alpha = \SI{60}{\degree}$, but visually inspecting the data points suggests the minimum might be slightly lower and occur between $\SI{50}{\degree}$ and $\SI{60}{\degree}$. The data point at $\alpha = \SI{55}{\degree}$ has $\xi_{\parallel} = 3.0$, while at $\alpha = \SI{50}{\degree}$ it's $\xi_{\parallel} = 5.4$, and at $\alpha = \SI{60}{\degree}$ it's $\xi_{\parallel} = 1.2$. The polynomial fit suggests a minimum closer to $\SI{50}{\degree}$. However, the lowest data point is at $\SI{60}{\degree}$. Let's estimate Brewster's angle from the data points as being around $\alpha = \theta_B \approx \SI{55 \pm 5}{\degree}$.
+For parallel (p-) polarization, the reflected intensity $\xi_{\parallel}$ exhibits the characteristic dip associated with Brewster's angle, as shown in Figure \ref{fig:polynomial_fit}. The polynomial fit (degree 3) highlights a minimum intensity near $\alpha \approx \SI{55}{\degree}$. The minimum value is approximately $\xi_{\parallel} \approx 1.2$ (arbitrary units) at $\alpha = \SI{60}{\degree}$, but visually inspecting the data points suggests the minimum might occur between $\SI{50}{\degree}$ and $\SI{60}{\degree}$. The polynomial fit provides a smooth representation of the data, suggesting Brewster's angle is approximately $\theta_B \approx \SI{55 \pm 5}{\degree}$.
 
-Ideally, the intensity at Brewster's angle should be zero for p-polarized light. The observed minimum is non-zero ($\xi_{\parallel} \approx 1.2$ at $\SI{60}{\degree}$). This discrepancy could be due to several factors:
+Ideally, the intensity at Brewster's angle should be zero for p-polarized light. The observed non-zero minimum ($\xi_{\parallel} \approx 1.2$) could be attributed to several factors:
 \begin{itemize}
     \item The incident light might not have been perfectly linearly polarized.
     \item The polarization axis might not have been perfectly aligned parallel to the plane of incidence.

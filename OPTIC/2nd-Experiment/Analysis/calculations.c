@@ -45,9 +45,17 @@ void calculations() {
         perpendicular_xi.push_back(sqrt(perpendicular_i[i] / perpendicular_i[0]));
     }
 
-    cout << "parallel_xi: ";
-    for (const auto& val : parallel_xi) {
-        cout << val << " ";
+    cout << setw(15) << "alpha" << setw(15) << "parallel_i" << setw(15) << "perpendicular_i" 
+         << setw(15) << "parallel_xi" << setw(15) << "perpendicular_xi" << endl;
+    cout << string(75, '-') << endl;
+
+    for (size_t i = 0; i < parallel_xi.size(); i++) {
+        cout << setw(15) << alpha_values[i]
+             << setw(15) << parallel_i[i]
+             << setw(15) << perpendicular_i[i]
+             << setw(15) << parallel_xi[i]
+             << setw(15) << perpendicular_xi[i] << endl;
+    }
     }
     cout << endl;
 
