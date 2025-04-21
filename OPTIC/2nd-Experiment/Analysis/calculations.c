@@ -61,8 +61,9 @@ void calculations() {
     }
     cout << endl;
 
-    TGraph *perp_g = new TGraph(alpha_values.size(), alpha_values.data(), perpendicular_xi.data());
-    TGraph *paral_g = new TGraph(alpha_values.size(), alpha_values.data(), parallel_xi.data());
+    vector<double> alpha_values_shifted(alpha_values.begin() + 1, alpha_values.end());
+    TGraph *perp_g = new TGraph(alpha_values_shifted.size(), alpha_values_shifted.data(), perpendicular_xi.data());
+    TGraph *paral_g = new TGraph(alpha_values_shifted.size(), alpha_values_shifted.data(), parallel_xi.data());
 
     perp_g->SetTitle("#alpha vs #xi - Perpendicular Polarization;#alpha (deg);#xi");
     perp_g->SetMarkerStyle(20);
