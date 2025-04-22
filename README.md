@@ -1,6 +1,6 @@
 # Physics Experiments and Analysis
 
-This repository is created by a student and features a collection of physics experiments, data analysis projects, and simulations. Its purpose is to enhance the understanding of key physics and mathematics concepts through hands-on experimentation and detailed analysis. The projects include comprehensive reports, experimental setups, and analytical models covering topics such as gravitational acceleration, elastic extension, and uniformly accelerating motion.
+This repository, created by a student, features a collection of physics experiments, data analysis projects, and simulations. Its purpose is to enhance the understanding of key physics and mathematics concepts through hands-on experimentation and detailed analysis. The projects include comprehensive reports, experimental setups, and analytical models covering topics such as electromagnetism and optics.
 
 Purpose: The main objective of this repository is to provide a complete learning environment, including experimental setups, data analysis tools, and scripts. By sharing these resources, others can reproduce the experiments, build upon the models, and further explore the physics underlying these concepts.
 
@@ -27,6 +27,7 @@ Purpose: The main objective of this repository is to provide a complete learning
 
 - **Python**: Programming language for data analysis and modeling.
 - **Matplotlib**: Library for creating static, animated, and interactive visualizations in Python.
+- **ROOT**: CERN’s data analysis framework, used primarily for self-learning and exploring `.root` files, TTrees, and basic visualization techniques.
 - **LaTeX**: Typesetting system used for formatting reports and documents. You can find how its used with the enviroment from this [wiki](https://github.com/ibeuler/LAB-Reports/wiki).
 - **Jupyter Notebook**: Environment for interactive data analysis and visualization.
 - **LLMs**: Large language models and AI tools were used to enhance the readability and clarity of the reports globally.
