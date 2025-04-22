@@ -73,16 +73,21 @@ For each angle of incidence $\alpha$, the detected current values $I_{\parallel}
 The experimental setup consisted of the following main components:
 
 \begin{itemize}
-    \item \textbf{Light Source:} A Helium-Neon (He-Ne) laser with an output power of 1.0~mW (operating at 230~VAC) was used to provide a stable, monochromatic, and collimated light beam.
-    \item \textbf{Polarization Filter:} A linear polarization filter was placed in the beam path to control and select the polarization state (parallel or perpendicular) of the incident light.
-    \item \textbf{Prism:} A glass prism with a $60^\circ$ apex angle and height $h = 36$~mm served as the dielectric reflecting surface. The prism was mounted securely in a dedicated prism holder.
-    \item \textbf{Prism Holder:} Provided stable and precise positioning of the prism on the optical bench.
-    \item \textbf{Si-Photodetector Amplifier and Control Unit:} A silicon photodetector, together with its amplifier and control unit, was used to measure the intensity of the reflected light with high sensitivity and linear response.
-    \item \textbf{Digital Multimeter:} Connected to the photodetector output to accurately read and record the measured voltage, which is proportional to the reflected light intensity.
-    \item \textbf{Connection Cables:} Used for electrical connections between the photodetector, amplifier, control unit, and multimeter.
-    \item \textbf{Protractor:} Used to set and verify the angle of incidence on the prism with precision.
-    \item \textbf{Scaled Jointed Radial Holder:} Allowed for precise angular adjustment and alignment of the photodetector to follow the reflected beam as the angle of incidence was varied.
+    \item \textbf{Light Source:} He-Ne laser (1.0~mW, 230~VAC) for a stable, monochromatic beam.
+    \item \textbf{Polarization Filter:} Controls the polarization state (parallel or perpendicular).
+    \item \textbf{Prism:} Glass prism ($60^\circ$ apex, $h = 36$~mm) as the reflecting surface.
+    \item \textbf{Prism Holder:} Ensures stable prism positioning.
+    \item \textbf{Photodetector:} Measures reflected light intensity with high sensitivity.
+    \item \textbf{Multimeter:} Reads voltage proportional to reflected intensity.
+    \item \textbf{Protractor:} Sets and verifies the angle of incidence.
+    \item \textbf{Radial Holder:} Aligns the photodetector with the reflected beam.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../IMAGES/Experimental_Setup.png}
+    \caption{Experimental setup used.}
+    \label{fig:experimental_setup}
+\end{figure}
 \section{Experimental Procedure}
 The optical components were arranged on the optical bench to ensure the laser beam was incident on the prism at the desired location and angle. The polarization filter was adjusted to set the polarization direction of the incident light (parallel or perpendicular to the plane of incidence). The prism was securely mounted in its holder, and the angle of incidence was set using the protractor and scaled radial holder for precise alignment. The photodetector, mounted on the jointed radial holder, was carefully aligned to detect the reflected beam at each angle.
 
@@ -144,11 +149,13 @@ Figure \ref{fig:parallel} shows the reflected intensity for parallel polarized l
 \end{figure}
 A combined plot comparing the reflected intensities for both perpendicular ($\xi_{\perp}$) and parallel ($\xi_{\parallel}$) polarizations as a function of the angle of incidence ($\alpha$) is available in the repository \cite{github}. This visualization clearly contrasts the monotonic increase of $\xi_{\perp}$ with the characteristic minimum of $\xi_{\parallel}$ near Brewster's angle. The plot also highlights the experimental observation that $\xi_{\perp} < \xi_{\parallel}$ across most of the measured angles, which is discussed further in Section \ref{sec:discussion}.
 
+\subsection{Technical Note}
+The data analysis for this experiment was conducted using both Python and ROOT frameworks. The raw data was initially recorded as a CSV file and subsequently converted to ROOT files for advanced analysis. The source code for the analysis scripts, including the CSV-to-ROOT conversion, data processing, fitting, and visualization routines, is available in the repository under the directory \texttt{2nd-Experiment/}.
+
 \section{Discussion}
 \label{sec:discussion}
 The experimental findings provide valuable insights into the behavior of polarized light reflection from a dielectric surface. 
-
-For perpendicular (s-) polarization, the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$, as shown in Figure \ref{fig:exponential_fit}. This trend aligns with the theoretical predictions of Fresnel's equations, where $R_s$ increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$). The exponential fit applied to the data closely matches the experimental points, confirming the expected behavior.
+For perpendicular (s-) polarization, the reflected intensity $\xi_{\perp}$ increases monotonically with the angle of incidence $\alpha$, as shown in Figure \ref{fig:exponential_fit}. This trend aligns with the theoretical predictions of Fresnel's equations, where the reflection coefficient for s-polarized light increases from a value at normal incidence ($\alpha=0$) towards 1 at grazing incidence ($\alpha=\SI{90}{\degree}$). The exponential fit applied to the data closely matches the experimental points, confirming the expected behavior.
 
 For parallel (p-) polarization, the reflected intensity $\xi_{\parallel}$ exhibits a distinct local minimum near Brewster's angle, as shown in Figure \ref{fig:polynomial_fit}. The polynomial fit suggests that the minimum occurs at $\alpha \approx \SI{55}{\degree}$, which corresponds to Brewster's angle $\theta_B$. This finding is consistent with the theoretical prediction that the reflected intensity for p-polarized light reaches zero at Brewster's angle. The minimum occurs because, at Brewster's angle, the reflected and refracted rays are perpendicular, causing the reflected p-polarized light to vanish. However, the observed non-zero minimum intensity ($\xi_{\parallel} \approx 1.2$ in arbitrary units) may be attributed to experimental limitations, such as imperfect polarization, alignment errors, or detector noise.
 
