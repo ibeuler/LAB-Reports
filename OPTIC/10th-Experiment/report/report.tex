@@ -1,0 +1,188 @@
+\documentclass[journal]{IEEEtran}
+
+% Additional packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{qrcode}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\title{Diffraction Grating Experiment: Determination of Grating Parameters and Spectral Resolution}
+\author{IBRAHIM H.I. ABUSHAWISH \\
+
+{\small Student ID: \hspace{1.5cm}. \\ 
+Istanbul University, Department of Physics \\
+Instructor: Res. Asst. Selen Nur YILMAZ\\
+Experiment Date: 29.04.2025, Report Submission Date: \\
+Course \& Section Number: PHYS2405}}
+
+\markboth{Physics Laboratory Reports, April 2025}{}
+
+\maketitle
+
+\begin{abstract}
+    This report investigates the diffraction grating experiment to determine the grating constant, number of lines per millimeter, and spectral resolution. The experiment involves measuring diffraction angles for various orders and calculating key parameters such as grating spacing, spectral resolving power, and minimum resolvable wavelength difference. The results validate theoretical predictions and provide insights into the behavior of light in diffraction gratings.
+\end{abstract}
+
+\section{Introduction}
+Diffraction gratings are essential tools in optics for dispersing light into its constituent wavelengths. This experiment aims to determine the grating constant, number of lines per millimeter, and spectral resolution using diffraction patterns. These principles are fundamental for understanding light behavior and designing optical instruments.
+
+\section{Theory}
+
+\subsection{Diffraction Grating Equation}
+The diffraction grating equation relates the diffraction angle $\theta$ to the wavelength $\lambda$ and grating spacing $a$:
+\begin{equation}
+    m\lambda = a \sin\theta
+    \label{eq:diffraction_grating}
+\end{equation}
+where:
+\begin{itemize}
+    \item $m$ is the diffraction order of bright fringes,
+    \item $\lambda$ is the wavelength of light,
+    \item $a$ is the grating spacing,
+    \item $\theta$ is the diffraction angle.
+\end{itemize}
+
+\subsection{Dispersion and Resolving Power}
+The angular dispersion $D$ of a grating is defined as:
+\begin{equation}
+    D = \frac{d\theta}{d\lambda} = \frac{m}{a \cos\theta}
+    \label{eq:angular_dispersion}
+\end{equation}
+where:
+\begin{itemize}
+    \item $D$ is the angular dispersion,
+    \item $m$ is the diffraction order,
+    \item $a$ is the grating spacing,
+    \item $\theta$ is the diffraction angle.
+\end{itemize}
+
+The resolving power $R$ of a grating is given by:
+\begin{equation}
+    R = mN
+    \label{eq:resolving_power}
+\end{equation}
+where:
+\begin{itemize}
+    \item $m$ is the diffraction order,
+    \item $N$ is the total number of illuminated lines.
+\end{itemize}
+
+The minimum resolvable wavelength difference is:
+\begin{equation}
+    \Delta\lambda_{\text{min}} = \frac{\lambda}{R}
+    \label{eq:delta_lambda_min}
+\end{equation}
+ 
+\section{Experimental Setup}
+The experimental setup includes:
+\begin{itemize}
+    \item A diffraction grating with unknown grating spacing,
+    \item A monochromatic light source (wavelength $\lambda = 650 \, \text{nm}$),
+    \item A goniometer for measuring diffraction angles.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+    \item Align the monochromatic light source, diffraction grating, and detector.
+    \item Measure the diffraction angles $\theta_k$ for the left and right sides of each diffraction order $m$.
+    \item Calculate the average diffraction angle $\theta_{\text{average}}$ for each order.
+    \item Use the diffraction grating equation to calculate the grating spacing $a$.
+    \item Determine the number of lines per millimeter $N = 1/a$.
+    \item Calculate the resolving power $R$ and minimum resolvable wavelength difference $\Delta\lambda_{\text{min}}$.
+\end{enumerate}
+
+\section{Results}
+The processed data from the experiment is summarized in Table \ref{tab:processed_data}.
+
+Additional spectral information is presented in Table \ref{tab:other_spectral_info}.
+
+\begin{table*}[t]
+    \centering
+    \caption{Processed data for the diffraction grating experiment.}
+    \label{tab:processed_data}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        columns={m,theta_k_left,theta_k_right,theta_left,theta_right,theta_average,sin_theta,a,N},
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        columns/m/.style={column name=$m$},
+        columns/theta_k_left/.style={fixed, fixed zerofill,precision=4,column name=$\theta_{k,\text{left}}$ (deg)},
+        columns/theta_k_right/.style={fixed, fixed zerofill,precision=4,column name=$\theta_{k,\text{right}}$ (deg)},
+        columns/theta_left/.style={fixed, fixed zerofill,precision=4,column name=$\theta_{\text{left}}$ (deg)},
+        columns/theta_right/.style={fixed, fixed zerofill,precision=4,column name=$\theta_{\text{right}}$ (deg)},
+        columns/theta_average/.style={fixed, fixed zerofill,precision=4,column name=$\theta_{\text{average}}$ (deg)},
+        columns/sin_theta/.style={fixed, fixed zerofill,precision=4,column name=$\sin\theta$ (deg)},
+        columns/a/.style={fixed, fixed zerofill,precision=4,column name=$a$ (m)},
+        columns/N/.style={fixed, fixed zerofill,precision=4,column name=$N$ (m$^{-1}$)},
+        columns/D/.style={fixed, fixed zerofill,precision=4,column name=$D$ (m$^{-1}$)},
+        columns/R/.style={fixed, fixed zerofill,precision=4,column name=$R$},
+        columns/Delta_Lambda_min/.style={fixed, fixed zerofill,precision=4,column name=$\Delta\lambda_{\text{min}}$ (m)}
+    ]{../DATA/processed_data.csv} % Ensure the file path is correct and underscores in the CSV are escaped like this: processed\_data.csv
+\end{table*}
+
+\begin{table*}[t]
+    \centering
+    \caption{Other spectral information.}
+    \label{tab:other_spectral_info}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        columns={m,D,R,Delta_Lambda_min},
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        columns/m/.style={column name=$m$},
+        columns/D/.style={fixed, fixed zerofill,precision=4,column name=$D$ (m$^{-1}$)},
+        columns/R/.style={fixed, fixed zerofill,precision=4,column name=$R$},
+        columns/Delta_Lambda_min/.style={fixed, fixed zerofill,precision=4,column name=$\Delta\lambda_{\text{min}}$ (m)}
+    ]{../DATA/processed_data.csv} % Ensure the file path is correct and underscores in the CSV are escaped like this: processed\_data.csv
+\end{table*}
+\section{Discussion}
+The experimental results validate the theoretical principles of diffraction gratings. However, the restricted amount of data collected during the experiment due to complications in the setup limits the comprehensiveness of the analysis. These complications, such as alignment issues and time constraints, reduced the number of diffraction orders and angles measured, potentially affecting the accuracy of calculated parameters like grating spacing $a$, number of lines per millimeter $N$, and resolving power $R$. Future experiments should aim to optimize the setup to allow for more extensive data collection.
+
+\subsection{Sources of Error}
+Potential sources of error include:
+\begin{itemize}
+    \item Misalignment of the optical components,
+    \item Inaccuracies in angle measurements due to parallax or instrument limitations,
+    \item Wavelength variations in the light source,
+    \item Environmental factors such as temperature fluctuations affecting the apparatus.
+\end{itemize}
+
+\section{Conclusion}
+The diffraction grating experiment successfully determined the grating constant, number of lines per millimeter, and spectral resolution. Despite some limitations, the results align well with theoretical predictions, demonstrating the effectiveness of diffraction gratings in optical analysis. Future improvements in experimental setup and data collection can further enhance the accuracy and reliability of the results.
+
+\section{Additional Resources}
+For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.15\textwidth}
+        \centering
+        \qrcode[height=2cm]{https://github.com/ibeuler/LAB-Reports}
+    \end{minipage}%
+    \begin{minipage}{0.2\textwidth}
+        \raggedright
+        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+        \label{fig:qr_code}
+    \end{minipage}
+\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{lab_manual}
+    ISTANBUL UNIVERSITY, \textit{OPTICS LABORATORY
+    EXPERIMENTS MANUAL}, Department of Physics.
+
+\bibitem{github}
+    \textit{Source code and additional experiments are available in the GitHub repository.} \url{https://github.com/ibeuler/LAB-Reports}
+\end{thebibliography}
+
+\end{document}

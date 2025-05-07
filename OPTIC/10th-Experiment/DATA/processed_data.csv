@@ -1,0 +1,3 @@
+m,theta_k_left,theta_k_right,theta_left,theta_right,theta_average,sin_theta,a,N,D,R,Delta_Lambda_min
+0,9.100e+01,9.100e+01,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+1,6.710e+01,1.131e+02,3.361e+02,2.210e+01,1.791e+02,1.571e-02,4.138e-05,2.417e+04,-2.417e+04,2.417e+04,2.690e-11
