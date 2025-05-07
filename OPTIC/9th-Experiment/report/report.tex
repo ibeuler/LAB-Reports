@@ -157,6 +157,29 @@ The average time delays and calculated speeds of light in air, water, and resin 
 \subsection{Part Two: Absorption Behavior of Materials}
 The absorption coefficients for semi-permeable plates and glass were determined from the slope of $\ln T$ versus $x$. The results are summarized in Table \ref{tab:attenuation_coefficients}.
 
+Additionally, the log transmission values ($\ln T$) and intensity ratios ($I/I_0$) for the materials were calculated and are presented in Table \ref{tab:log_transmission}.
+
+\begin{table}[H]
+    \centering
+    \caption{Log Transmission and Intensity Ratios for Materials.}
+    \label{tab:log_transmission}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        header=true,
+        columns={Label,Distance_mm,I0_Voltage, I_Voltage,I_Ratio,Log_Transmission},
+        columns/Label/.style={string type, column name=Material},
+        columns/Distance_mm/.style={fixed, fixed zerofill, precision=4, column name=$\Delta x$ (mm)},
+        columns/I0_Voltage/.style={fixed, fixed zerofill, precision=4, column name=$I_0$},%Distance_mm,I0_Voltage,I_Voltage
+        columns/I_Voltage/.style={fixed, fixed zerofill, precision=4, column name=$I$},
+        columns/I_Ratio/.style={fixed, fixed zerofill, precision=4, column name=$I/I_0$},
+        columns/Log_Transmission/.style={fixed, fixed zerofill, precision=4, column name=$\ln T$},
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule}
+    ]{../results/calculations.csv}
+\end{table}
+
+
+
 \begin{table}[H]
     \centering
     \caption{Absorption coefficients for semi-permeable plates and glass.}

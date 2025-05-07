@@ -112,7 +112,6 @@ void calculations(){
     vector<double> SP_I_ratio_values;
     vector<double> SP_logT_values;
 
-
     vector<double> G_d_mm_values;
     vector<double> G_I_ratio_values;
     vector<double> G_logT_values;
@@ -135,6 +134,28 @@ void calculations(){
             G_logT_values.push_back(log(I_ratio)); // 'log' in C++ computes the natural logarithm (ln)
         }
     }
+
+    // Save calculations in a CSV file
+    ofstream csv_file("../results/calculations.csv");
+    if (!csv_file.is_open()) {
+        cout << "Error: Could not open file ../results/calculations.csv for writing." << endl;
+        return;
+    }
+
+    csv_file << "Label,Distance_mm,I0_Voltage,I_Voltage,I_Ratio,Log_Transmission\n";
+
+    for (int i = 0; i < number_of_entries2; i++) {
+        tree2->GetEntry(i);
+        if (I_0 != 0) {
+            I_ratio = I / I_0;
+        } else {
+            continue;
+        }
+        csv_file << label << "," << d_mm << "," << I_0 << "," << I << "," << I_ratio << "," << log(I_ratio) << "\n";
+    }
+    
+    csv_file.close();
+    cout << "Calculations saved to ../results/calculations.csv" << endl;
 
     // Plot for Semi-permeable plates
     TGraph *SP_graph = new TGraph(SP_d_mm_values.size(), &SP_d_mm_values[0], &SP_logT_values[0]);
