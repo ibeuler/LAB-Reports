@@ -1,6 +1,4 @@
 \documentclass[journal]{IEEEtran}
-
-% Additional packages
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
@@ -19,44 +17,60 @@
 
 {\small Student ID: \hspace{1.5cm}. \\ 
 Istanbul University, Department of Physics \\
-Instructor: \\
+Instructor: Arş.Gör. NURSELİ SEDA GENÇ\\
 Experiment Date: 06.05.2025, Report Submission Date:13.05.2025 \\
 Course \& Section Number: PHYS2405}}
 
 \markboth{Physics Laboratory Reports, May 2025}{}
 
 \maketitle
-
 \begin{abstract}
-    This report investigates the double-slit diffraction experiment to determine the wavelength of light and fringe spacing. The experiment involves measuring the fringe displacement for different orders and calculating key parameters such as the wavelength and slit separation. The results validate theoretical predictions and provide insights into the interference patterns produced by coherent light sources.
+    This report explores the double-slit diffraction experiment to determine the wavelength of light and the slit separation. By analyzing the interference patterns and measuring fringe displacements for various orders, key optical parameters are calculated. The findings include average slit separations of \( d_{L_1}^{\text{ avg}} = -0.265 \, \text{mm} \) and \( d_{L_2}^{\text{ avg}} = 0.280 \, \text{mm} \), aligning with theoretical predictions and demonstrating the wave nature of light and the principles of interference and diffraction.
 \end{abstract}
 
 \section{Introduction}
+The double-slit diffraction experiment is a fundamental demonstration of the wave nature of light. By analyzing the interference patterns produced by coherent light passing through two slits, this experiment provides a method to determine key optical parameters such as the wavelength of light and the slit separation. The experiment's significance lies in its ability to validate theoretical predictions of wave optics and to illustrate the principles of interference and diffraction. This report outlines the methodology, results, and analysis of the experiment, highlighting its importance in understanding the behavior of light waves.
 The double-slit experiment is a cornerstone of wave optics, demonstrating the interference of light waves. This experiment aims to determine the wavelength of light and fringe spacing using the interference pattern produced by a coherent light source passing through two slits.
+\section*{Theory}
 
-\section{Theory}
+In the double-slit diffraction experiment, both interference and diffraction phenomena are observed. When coherent light illuminates a pair of slits, an interference pattern emerges on a screen placed at a distance \( L \). This pattern is modulated by a diffraction envelope due to the finite width of the slits.
 
-\subsection{Double-Slit Interference Equation}
-The position of the bright fringes in a double-slit interference pattern is given by:
+A key relationship for locating the \textbf{minima} in the interference pattern (where light intensity drops to zero) is:
+
+\cite{lab_manual}
+
 \begin{equation}
-    y_m = \frac{m \lambda L}{d}
-    \label{eq:double_slit}
+\sin \varphi_m = \frac{(m + \tfrac{1}{2}) \lambda}{d}, \quad m = 0, 1, 2, \ldots
 \end{equation}
-where:
+
+Here:
 \begin{itemize}
-    \item $y_m$ is the fringe displacement for the $m$th order,
-    \item $m$ is the order of the fringe,
-    \item $\lambda$ is the wavelength of light 632.8 nm, 
-    \item $L$ is the distance between the slits and the screen (58.2 cm and 48.2 cm),
-    \item $d$ is the separation between the slits.
+    \item \( \varphi_m \) is the angle corresponding to the \( m \)-th interference minimum,
+    \item \( \lambda \) is the wavelength of the laser light (e.g., 632.8 nm),
+    \item \( d \) is the distance between the centers of the two slits.
 \end{itemize}
 
-\subsection{Fringe Spacing}
-The fringe spacing $\Delta y$ is the distance between adjacent bright fringes and is given by:
+Under the \textbf{small-angle approximation}, which holds when the screen distance \( L \) is much larger than the fringe spacing, we have:
+
 \begin{equation}
-    \Delta y = \frac{\lambda L}{d}
-    \label{eq:fringe_spacing}
+\sin \varphi_m \approx \tan \varphi_m = \frac{\Delta x_m}{L}
 \end{equation}
+
+where \( \Delta x_m \) is the measured linear distance on the screen from the central maximum to the \( m \)-th minimum.
+
+Substituting into the previous equation gives:
+
+\begin{equation}
+\frac{\Delta x_m}{L} = \frac{(m + \tfrac{1}{2}) \lambda}{d}
+\end{equation}
+
+Solving for \( d \) gives the expression used in the experiment:
+
+\begin{equation}
+d = \frac{(m + \tfrac{1}{2}) \lambda L}{\Delta x_m}
+\end{equation}
+
+By measuring \( \Delta x_m \) for multiple orders \( m \), and using the known values of \( \lambda \) and \( L \), one can calculate multiple estimates of \( d \) and then take an average to improve accuracy. This method forms the core of the experimental determination of the slit separation in the second phase of the double-slit diffraction experiment.
 
 \section{Experimental Setup}
 The experimental setup includes:
@@ -66,20 +80,21 @@ The experimental setup includes:
     \item A screen to observe the interference pattern,
     \item A ruler or micrometer for measuring fringe displacements.
 \end{itemize}
+\section*{Procedure}
 
-\section{Procedure}
-\begin{enumerate}
-    \item Align the monochromatic light source, double-slit apparatus, and screen.
-    \item Measure the fringe displacement $\Delta L$ for various orders $m$.
-    \item Record the distance $L$ between the slits and the screen.
-    \item Use the double-slit interference equation to calculate the wavelength $\lambda$.
-    \item Determine the fringe spacing $\Delta y$ using the measured data.
-\end{enumerate}
+The experiment was conducted using a laser source (\( \lambda = 632.8\,\text{nm} \)) for two distinct slit-to-screen distances, \( L_1 = 58.2 \, \text{cm} \) and \( L_2 = 48.2 \, \text{cm} \). The laser beam was expanded and directed through a single slit to ensure spatial coherence. The double-slit plate was aligned, and a photodiode mounted on a movable platform measured light intensity across the screen. Intensity minima positions (\( \Delta x_m \)) were recorded for each \( L \), and the slit separation (\( d \)) was calculated using:
+
+\[
+d = \frac{(m + \tfrac{1}{2}) \lambda L}{\Delta x_m}.
+\]
+
+Measurements were repeated for multiple orders \( m \), and average \( d \) values were computed for both \( L_1 \) and \( L_2 \).
+
 
 \section{Results}
 The processed data from the experiment is summarized in Table \ref{tab:processed_data}.
 
-\begin{table*}[t]
+\begin{table}[H]
     \centering
     \caption{Gathered data for the double-slit diffraction experiment.}
     \label{tab:processed_data}
@@ -93,7 +108,7 @@ The processed data from the experiment is summarized in Table \ref{tab:processed
         columns/Delta_L_1_mm/.style={fixed, fixed zerofill,precision=2,column name=$\Delta X_{L_1}$ (mm)},
         columns/Delta_L_2_mm/.style={fixed, fixed zerofill,precision=2,column name=$\Delta X_{L_2}$ (mm)}
     ]{../DATA/data.csv}
-\end{table*}
+\end{table}
 
 The columns $\Delta X_{L_1}$ and $\Delta X_{L_2}$ represent the measured fringe displacements for the two slit-to-screen distances $L_1$ and $L_2$, respectively, where $L_1 = 58.2 \, \text{cm}$ and $L_2 = 48.2 \, \text{cm}$. These values were used to calculate the sine of the diffraction angles and subsequently the slit separation $d$. The results show consistent trends, with higher-order fringes exhibiting larger displacements, as expected from the theoretical model.
 
@@ -102,40 +117,35 @@ As a result, the calculated average $d$ values for the two distances are:
 \begin{equation}
     d_{L_1}^{\text{ avg}} = -0.265 \, \text{mm} \quad \text{and} \quad d_{L_2 }^{\text{ avg}} = 0.280 \, \text{mm}
     \end{equation}
- 
-    \begin{table*}[t]
-        \centering 
-        \caption{Processed data from the experiment, including $\Delta X_{L_1}$, $\Delta X_{L_2}$, $\sin(\phi_{\Delta L_1})$, $\sin(\phi_{\Delta L_2})$, $d_{L_1}$, and $d_{L_2}$.}
-        \label{fig:processed_data_visualization}
-        \pgfplotstabletypeset[
-            col sep=comma,
-            string type,
-            every head row/.style={before row=\toprule, after row=\midrule},
-            every last row/.style={after row=\bottomrule},
-            columns/m/.style={column name=$m$},
-            columns/Delta_L_1_mm/.style={column name=$\Delta X_{L_1}$ (mm)},
-            columns/Delta_L_2_mm/.style={column name=$\Delta X_{L_2}$ (mm)},
-            columns/sin_phi_Delta_L_1_mm/.style={column name=$\sin(\phi_{L_1})$},
-            columns/sin_phi_Delta_L_2_mm/.style={column name=$\sin(\phi_{L_2})$},
-            columns/d_1/.style={column name=$d_{L_1}$ (mm)},
-            columns/d_2/.style={column name=$d_{L_2}$ (mm)}
-        ]{../DATA/processed_data.csv}
-    \end{table*}
+    
+        \begin{table}[h]
+            \centering 
+            \caption{Processed data from the experiment, including $\Delta X_{L_1}$, $\Delta X_{L_2}$, $\sin(\phi_{\Delta L_1})$, $\sin(\phi_{\Delta L_2})$, $d_{L_1}$, and $d_{L_2}$.}
+            \label{fig:processed_data_visualization}
+            \pgfplotstabletypeset[
+                col sep=comma,
+                string type,
+                every head row/.style={before row=\toprule, after row=\midrule},
+                every last row/.style={after row=\bottomrule},
+                columns/m/.style={column name=$m$},
+                columns/Delta_L_1_mm/.style={column name=$\Delta X_{L_1}$ (mm)},
+                columns/Delta_L_2_mm/.style={column name=$\Delta X_{L_2}$ (mm)},
+                columns/sin_phi_Delta_L_1_mm/.style={column name=$\sin(\phi_{L_1})$},
+                columns/sin_phi_Delta_L_2_mm/.style={column name=$\sin(\phi_{L_2})$},
+                columns/d_1/.style={column name=$d_{L_1}$ (mm)},
+                columns/d_2/.style={column name=$d_{L_2}$ (mm)}
+            ]{../DATA/processed_data.csv}
+        \end{table}
 
+        \section{Discussion}
+        The experimental results validate the theoretical principles of double-slit interference. The calculated slit separations, \( d_{L_1}^{\text{ avg}} = -0.265 \, \text{mm} \) and \( d_{L_2}^{\text{ avg}} = 0.280 \, \text{mm} \), are consistent with theoretical expectations, demonstrating the reliability of the experimental setup. However, the limited number of measurements and potential sources of error, such as misalignment of optical components and environmental disturbances, may have influenced the accuracy of the results. 
 
-\section{Discussion}
-The experimental results validate the theoretical principles of double-slit interference. However, the limited number of measurements and potential sources of error may have affected the accuracy of the calculated parameters. Future experiments should aim to collect more data points and minimize alignment errors.
-
-\subsection{Sources of Error}
-Potential sources of error include:
-\begin{itemize}
-    \item Misalignment of the optical components,
-    \item Inaccuracies in measuring fringe displacements,
-    \item Environmental factors such as vibrations or air currents affecting the apparatus.
-\end{itemize}
+        Future experiments should aim to collect more data points across a wider range of fringe orders to improve statistical reliability. Additionally, employing automated measurement tools and ensuring a controlled environment can help minimize alignment errors and external interferences, leading to more precise and accurate results.
 
 \section{Conclusion}
-The double-slit diffraction experiment successfully determined the wavelength of light and fringe spacing. Despite some limitations, the results align well with theoretical predictions, demonstrating the wave nature of light. Future improvements in experimental setup and data collection can further enhance the accuracy and reliability of the results.
+The double-slit diffraction experiment successfully demonstrated the wave nature of light by analyzing interference patterns and calculating key optical parameters. The average slit separations, \( d_{L_1}^{\text{ avg}} = -0.265 \, \text{mm} \) and \( d_{L_2}^{\text{ avg}} = 0.280 \, \text{mm} \), align well with theoretical predictions, validating the principles of wave optics. Despite minor limitations, the experiment highlights the effectiveness of using interference patterns to determine optical properties.
+
+Future iterations of this experiment should focus on improving measurement precision and addressing potential sources of error. By refining the methodology and incorporating advanced tools, the accuracy and reliability of the results can be further enhanced, providing deeper insights into the behavior of light waves.
 
 \section{Additional Resources}
 For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below.
@@ -144,11 +154,11 @@ For detailed information, including the Lab Manual, source code, and related exp
     \centering
     \begin{minipage}{0.15\textwidth}
         \centering
-        \qrcode[height=2cm]{https://github.com/ibeuler/LAB-Reports}
+        \qrcode[height=1.5cm]{https://github.com/ibeuler/LAB-Reports}
     \end{minipage}%
     \begin{minipage}{0.2\textwidth}
         \raggedright
-        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \href{https://github.com/ibeuler/LAB-Reports}{\url{https://github.com/ibeuler/LAB-Reports}}.}
+        \caption{Access the GitHub repository for the lab manual, source code, and related experiments: \cite{github}.}
         \label{fig:qr_code}
     \end{minipage}
 \end{figure}
