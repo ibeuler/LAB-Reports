@@ -25,7 +25,7 @@ Course \& Section Number: PHYS2405}}
 
 \maketitle
 \begin{abstract}
-    This report presents a quantitative investigation of the dispersion of light in a prism by measuring the refractive index for several wavelengths using the minimum deviation method. The refractive index was found to decrease from approximately 1.846 at 447.1\,nm (violet) to 1.872 at 706.5\,nm (red), confirming normal dispersion. The experimental data were accurately fitted to a Cauchy-type relation, \( n = 1.83022 + \frac{8.20694 \times 10^3}{\lambda^2} \), where \( \lambda \) is in nanometers. These results demonstrate the wavelength dependence of the refractive index and validate the dispersive properties of the prism material.
+    This report presents a quantitative investigation of the dispersion of light in a prism by measuring the refractive index for several wavelengths using the minimum deviation method. The refractive index was found to decrease from approximately 1.4142 at 447.1\,nm (violet) to 1.364 at 706.5\,nm (red), confirming normal dispersion. The experimental data were accurately fitted to a Cauchy-type relation, \( n = 1.33224 + \frac{1.60124 \times 10^2}{\lambda^2} \), where \( \lambda \) is in nanometers. These results demonstrate the wavelength dependence of the refractive index and validate the dispersive properties of the prism material.
 \end{abstract}
 
 \section{Introduction}
@@ -38,7 +38,11 @@ n = \frac{\sin\left(\frac{\delta_{\min} + A}{2}\right)}{\sin\left(\frac{A}{2}\ri
 \label{eq:refractive_index}
 \end{equation}
 where \( A \) is the apex angle of the prism.
-
+The minimum deviation angle \( \delta_{\min} \) is found by measuring the spectral line positions in two prism orientations:
+\begin{equation}
+\delta_{\min} = 2 \left| \text{Case 2} - \text{Case 1} \right| - A
+\end{equation}
+where \textit{Case 1} and \textit{Case 2} are the measured angles for the two orientations, and \( A \) is the apex angle. 
 
 Expanding the general Cauchy equation as a series in powers of \( 1/\lambda^2 \), we have:
 \begin{equation}
@@ -123,10 +127,10 @@ The processed data for different spectral lines are summarized in Table \ref{tab
 \subsection{Dispersion Relation}
 The refractive index values were plotted against wavelength and fitted to the Cauchy-type equation. The fit yielded:
 \begin{equation}
-n = 1.83022 + \frac{8.20694 \times 10^3}{\lambda^2}
+n = 1.33224 + \frac{1.60124 \times 10^2}{\lambda^2}
 \end{equation}
 where \( \lambda \) is in nanometers.
-meaning the constants \( A' = 1.83022 \) and \( B' = 8.20694 \times 10^3 \).
+meaning the constants \( A' = 1.33224 \) and \( B' = 1.60124 \times 10^2 \).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{../plots/npVSlambda.png}
@@ -134,13 +138,13 @@ meaning the constants \( A' = 1.83022 \) and \( B' = 8.20694 \times 10^3 \).
     \label{fig:np_vs_lambda}
 \end{figure}
 \section{Discussion}
-The experiment quantitatively confirmed the dispersive nature of the prism material. The refractive index was observed to decrease from approximately 1.846 for the violet line (\( \lambda = 447.1 \) nm) to about 1.872 for the red line (\( \lambda = 706.5 \) nm), consistent with normal dispersion. The measured data fit well to the Cauchy-type relation \( n = 1.83022 + \frac{8.20694 \times 10^3}{\lambda^2} \), as determined by the regression analysis in the accompanying calculations notebook (\texttt{calculations.ipynb}). The agreement between the theoretical model and the measured values (with deviations typically less than 0.002) demonstrates good theoretical alignment and validates both the experimental method and data processing.
+The experiment quantitatively confirmed the dispersive nature of the prism material. The refractive index was observed to decrease from approximately 1.4142 for the violet line (\( \lambda = 447.1 \) nm) to about 1.364 for the red line (\( \lambda = 706.5 \) nm), consistent with normal dispersion. The measured data fit well to the Cauchy-type relation \( n = 1.33224 + \frac{1.60124 \times 10^2}{\lambda^2} \), as determined by the regression analysis in the accompanying calculations notebook (\texttt{calculations.ipynb}). The agreement between the theoretical model and the measured values (with deviations typically less than 0.002) demonstrates good theoretical alignment and validates both the experimental method and data processing.
 
 Minor discrepancies between measured and fitted values were within 0.001–0.002, which can be attributed to experimental uncertainties such as manual angle readings, alignment errors, or slight misidentification of spectral lines. The apex angle was consistently measured as \( 60^\circ \), supporting the reliability of the geometric setup.
 
 Improvements could include automated angle measurement, higher-resolution spectrometers, and the use of additional spectral lines (including UV and IR) to further refine the dispersion curve and material constants.
 \section{Conclusion}
-The experiment accurately determined the refractive index of the prism for several wavelengths using the minimum deviation method. The measured values confirmed the expected decrease in refractive index with increasing wavelength, consistent with normal dispersion. The data fit well to the Cauchy-type relation, yielding constants \( A' = 1.83022 \) and \( B' = 8.20694 \times 10^3 \), demonstrating the validity of the theoretical model and the reliability of the experimental procedure for characterizing optical dispersion.
+The experiment accurately determined the refractive index of the prism for several wavelengths using the minimum deviation method. The measured values confirmed the expected decrease in refractive index with increasing wavelength, consistent with normal dispersion. The data fit well to the Cauchy-type relation, yielding constants \( A' = 1.33224 \) and \( B' = 1.60124 \times 10^2 \), demonstrating the validity of the theoretical model and the reliability of the experimental procedure for characterizing optical dispersion.
 
 \section{Additional Resources}
 For detailed information, including the Lab Manual, source code, and related experiments, visit the GitHub repository provided below.
