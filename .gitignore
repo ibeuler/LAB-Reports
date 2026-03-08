@@ -12,7 +12,6 @@ DOC-20241006-WA0002..pdf
 *.cb
 *.cb2
 .*.lb
-
 ## Intermediate documents:
 *.dvi
 *.xdv
@@ -120,6 +119,8 @@ acs-*.bib
 
 # uncomment this for glossaries-extra (will ignore makeindex's style files!)
 # *.ist
+
+%OUTDIR%
 
 # gnuplot
 *.gnuplot
