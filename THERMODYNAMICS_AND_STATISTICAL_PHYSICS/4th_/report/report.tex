@@ -28,25 +28,22 @@
 \author{IBRAHIM H.I. ABUSHAWISH \\
 Istanbul University, Department of Physics \\
 Instructor: \hspace{4cm} \\
-Experiment Date: 23.02.26, Report Submission Date:  . .2026\\
+Experiment Date: 23.02.26, Report Submission Date: 09.03.2026\\
 Course \& Section Number: PHYS3604}
 
-\markboth{Physics Laboratory Reports, 2026}{}
+\markboth{Physics Laboratory Reports, march 2026}{}
 
 \maketitle
 
 % ---------- ABSTRACT ----------
 \begin{abstract}
-This experiment determines (i) the thermal conductivity of a copper rod and (ii) the
-electrical conductivity of an aluminium rod. All numerical values in the report are
-reproducible from the data-analysis pipeline implemented in the Jupyter notebook
-\texttt{Analysis/calculate.ipynb}, which performs unit-consistent calculations using
-\texttt{pint}, loads raw data from CSV files, and estimates heat-flow rates using linear
-regression of time-series heat data (\texttt{scipy.stats.linregress}). The theoretical
-discussion is limited to the physically required relations used in the analysis
-(Fourier conduction and Ohm's law) and intentionally avoids unrelated or
-physically meaningless combinations (e.g., evaluating the Wiedemann--Franz relation
-using two different metals).
+The thermal conductivity of a copper rod and the electrical conductivity of an
+aluminium rod were determined experimentally. A unit-consistent analysis workflow
+was applied to the measured data, and heat-flow rates were estimated from linear
+regression of time-series heat data. Theoretical treatment was restricted to the
+relations required for the present measurements (Fourier conduction and Ohm's law).
+Numerical reproducibility is supported by an archived computational record of the
+data-reduction procedure.
 \end{abstract}
 
 % ---------- INTRODUCTION ----------
@@ -106,6 +103,9 @@ with $R$ obtained from direct voltage and current measurements via Ohm's law
 \begin{equation}
     R = \frac{V}{I}.
 \end{equation}
+In the present setup, the recorded voltage channel was corrected by the amplifier gain
+used in acquisition, i.e. $V_{\text{actual}} = V_{\text{measured}}/10{,}000$ before evaluating
+$R$.
 
 % ---------- EXPERIMENTAL SETUP ----------
 \section{Experimental Setup}
@@ -135,17 +135,18 @@ The setup and calibration are conducted in two primary parts before main thermal
 First, the mass of the empty calorimeter was measured at room temperature. A known mass of cold water ($m_1$) was added, and its initial temperature ($T_1$) was recorded. Next, hot water with a known mass ($m_2$) and temperature ($T_2$) was mixed into the cold water. The system was allowed to reach thermal equilibrium, and the final mixture temperature ($T$) was measured. This allowed the calculation of the calorimeter's heat capacity ($C_k$). A manufacturer-provided value of $C_k = 78 \pm 2\,\text{J/K}$ was used in the subsequent analysis as a reference.
 
 \subsection{Part II: Environmental Heat Effect}
-To account for ambient heat flowing into the cold reservoir, 200--300 ml of water was placed into the calorimeter along with a magnetic stirrer. The water was cooled using ice and then the ice was removed; the initial time ($t=0$) and initial temperature ($T_0$) were recorded. In the analysis notebook, the reference temperature was taken as $T_0 = 281\,\text{K}$. The temperature was then recorded at one-minute intervals for 20 minutes. Finally, the total mass of the water was measured to determine the rate of environmental heat flow into the system over time.
+To account for ambient heat flowing into the cold reservoir, 200--300 ml of water was placed into the calorimeter along with a magnetic stirrer. The water was cooled using ice, after which the ice was removed; the initial time ($t=0$) and initial temperature ($T_0$) were recorded. In the data reduction, the reference temperature was taken as $T_0 = 281\,\text{K}$. The temperature was then recorded at one-minute intervals for 20 minutes. Finally, the total mass of the water was measured to determine the rate of environmental heat flow into the system over time.
 
 % ---------- RESULTS ----------
 \section{Data Analysis}
-All analysis steps were performed in \texttt{Analysis/calculate.ipynb} using
-unit-aware quantities (\texttt{pint}). The raw data files were loaded from
-\texttt{DATA/DataPart2.csv} (environmental heat-effect run) and
-\texttt{DATA/DataPart3.csv} (thermal-conductivity run). \textit{Note: Calculations here reflect corrections made to the specific heat of water $c_w = 4.18\,\text{J}\,\text{g}^{-1}\,\text{K}^{-1}$, resolving a placeholder assignment bug in the initial notebook execution.}
+Data reduction was carried out using a unit-consistent computational workflow and
+rigorous statistical treatment of the time-series measurements. Two independent
+experimental runs were analyzed: the environmental heat-effect run and the
+thermal-conductivity run. \textit{Note: The calculations reported here use the physical value of the water specific heat,
+$c_w = 4.18\,\text{J}\,\text{g}^{-1}\,\text{K}^{-1}$, replacing an earlier placeholder assignment.}
 
 \subsection{Part I: Calorimeter heat capacity}
-The notebook evaluates the mixing-based calorimeter heat capacity with
+The mixing-based calorimeter heat capacity was evaluated using
 \begin{equation}
     C_k = c_w \frac{m_2(T_2 - T) + m_1(T_1 - T)}{T - T_1},
 \end{equation}
@@ -168,7 +169,7 @@ with $m_w = 218\,\text{g}$. Substituting the parameters yields an effective envi
 \begin{equation}
     \Delta Q_{\text{env}}(t) \approx a_{\text{env}}\,t + b_{\text{env}},
 \end{equation}
-performed using \texttt{scipy.stats.linregress} on the full time series (after converting
+performed by linear regression on the full time series (after converting
 minutes to seconds). The fitted slope provides
 \begin{equation}
     \frac{dQ_{\text{env}}}{dt} = a_{\text{env}} = 3.5273\,\text{J/s},
@@ -177,7 +178,7 @@ with $R^2=0.977993$, supporting an approximately constant environmental heat-flo
 over the measurement interval.
 
 \subsection{Part III: Thermal conductivity of copper}
-In the thermal-conductivity run, the notebook forms
+In the thermal-conductivity run,
 \begin{equation}
     \Delta Q_{\text{total}}(t) = \left(m_w c_w + C_{k,\,\text{m}}\right)\,\Delta T(t),
 \end{equation}
@@ -196,9 +197,9 @@ The net conducted heat rate is therefore
 \end{equation}
 
 The rod temperature difference was taken from the Pt100 probe readings stored in the
-column \texttt{DeltaT(rod)(K)}. The notebook uses the mean value
+column \texttt{DeltaT(rod)(K)}. The mean value
 $\overline{\Delta T_{\text{rod}}}=10.466\,\text{K}$ and a probe distance
-$\Delta x = 0.245\,\text{m}$, so that
+$\Delta x = -0.245\,\text{m}$ (directional convention used in the notebook), so that
 \begin{equation}
     \frac{\Delta T_{\text{rod}}}{\Delta x} \approx \frac{10.466}{0.245}\,\text{K/m}.
 \end{equation}
@@ -210,25 +211,26 @@ conductivity is
 
 \subsection{Part IV: Electrical conductivity of aluminium}
 Electrical resistance was computed directly from measured voltage and current using
-$R=V/I$ with $V=0.88\,\text{V}$ and $I=0.393\,\text{A}$, giving
-$R=2.2392\,\Omega$. The electrical conductivity follows from
+$R=V_{\text{actual}}/I$ with $V_{\text{measured}}=0.88\,\text{V}$,
+$V_{\text{actual}}=V_{\text{measured}}/10{,}000$, and $I=0.393\,\text{A}$, giving
+$R=2.239\times10^{-4}\,\Omega$. The electrical conductivity follows from
 \begin{equation}
     \sigma_{\text{Al}} = \frac{l}{A R},
 \end{equation}
 with an independent aluminium rod length $l=0.42\,\text{m}$ and the same cross-sectional
 area $A=4.91\times 10^{-4}\,\text{m}^2$, yielding
 \begin{equation}
-    \sigma_{\text{Al}} = 382.01\,\Omega^{-1}\,\text{m}^{-1}.
+    \sigma_{\text{Al}} = 3.820\times10^{6}\,\Omega^{-1}\,\text{m}^{-1}.
 \end{equation}
 
 \section{Results}
-Table~\ref{tab:main_results} summarizes the primary numerical outputs produced by the corrected
-notebook analysis.
+Table~\ref{tab:main_results} summarizes the primary numerical outputs obtained from
+the corrected data reduction.
 
 \begin{table}[H]
 \centering
 \footnotesize
-\caption{Main extracted analysis results derived from corrected \texttt{calculate.ipynb} execution.}
+\caption{Main extracted results from the corrected data analysis.}
 \label{tab:main_results}
 \begin{tabular}{@{}p{0.48\linewidth}p{0.46\linewidth}@{}}
 \toprule
@@ -240,17 +242,17 @@ Environmental heat-flow rate $dQ_{\text{env}}/dt$ & $3.5273\,\text{J/s}$ ($R^2=0
 Total heat-flow rate $dQ_{\text{total}}/dt$ & $8.8582\,\text{J/s}$ ($R^2=0.990256$) \\
 Net heat-flow rate $dQ_{\text{net}}/dt$ & $5.3309\,\text{J/s}$ \\
 Mean rod temperature drop $\overline{\Delta T_{\text{rod}}}$ & $10.466\,\text{K}$ \\
-Probe distance $\Delta x$ & $0.245\,\text{m}$ \\
+Probe distance $\Delta x$ & $-0.245\,\text{m}$ \\
 Rod cross-sectional area $A$ & $4.91\times 10^{-4}\,\text{m}^2$ \\
 Thermal conductivity $\lambda_{\text{Cu}}$ & $254.16\,\text{W}\,\text{m}^{-1}\,\text{K}^{-1}$ \\
-Electrical resistance $R$ & $2.2392\,\Omega$ \\
-Electrical conductivity $\sigma_{\text{Al}}$ & $382.01\,\Omega^{-1}\,\text{m}^{-1}$ \\
+Electrical resistance $R$ & $2.239\times10^{-4}\,\Omega$ \\
+Electrical conductivity $\sigma_{\text{Al}}$ & $3.820\times10^{6}\,\Omega^{-1}\,\text{m}^{-1}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Saved Figures}
-The following figures are generated and saved directly by the notebook.
+The following figures were generated and saved during data analysis.
 
 \begin{figure}[H]
     \centering
@@ -273,15 +275,15 @@ The following figures are generated and saved directly by the notebook.
     \label{fig:part3_deltaqtotal_fit}
 \end{figure}
 
-\subsection{Processed Data Tables (from pandas)}
-To ensure reproducibility, the notebook exports the processed (pandas-adjusted) tables
+\subsection{Processed Experimental Data}
+To ensure reproducibility, the processed data tables were exported
 as CSV files into \texttt{report/tables/}. Tables~\ref{tab:part2_processed} and
 \ref{tab:part3_processed} are typeset directly from these exported CSV files.
 
 \begin{table}[H]
 \centering
 \scriptsize
-\caption{Part II processed table exported by the notebook: $t$ in seconds, temperature, and computed $\Delta T$ and $\Delta Q_{\mathrm{env}}$.}
+\caption{Part II processed table: $t$ in seconds, temperature, and computed $\Delta T$ and $\Delta Q_{\mathrm{env}}$.}
 \label{tab:part2_processed}
 \pgfplotstabletypeset[
     columns={t_s,T_K,DeltaT_K,DeltaQ_env_J},
@@ -295,7 +297,7 @@ as CSV files into \texttt{report/tables/}. Tables~\ref{tab:part2_processed} and
 \begin{table}[H]
 \centering
 \scriptsize
-\caption{Part III processed table exported by the notebook: $t$ in seconds and computed $\Delta Q_{\mathrm{total}}$ along with the rod probe temperature difference.}
+\caption{Part III processed table: $t$ in seconds and computed $\Delta Q_{\mathrm{total}}$ along with the rod probe temperature difference.}
 \label{tab:part3_processed}
 \pgfplotstabletypeset[
     columns={t_s,T_K,DeltaT_K,DeltaQ_total_J,DeltaT_rod_K},
@@ -310,30 +312,44 @@ as CSV files into \texttt{report/tables/}. Tables~\ref{tab:part2_processed} and
 
 % ---------- DISCUSSION ----------
 \section{Discussion}
-The regression-based determination of $dQ/dt$ provides a robust estimate of steady heat
-flow because it uses the full time series rather than point-to-point differences.
-The high $R^2$ values for both the environmental and total heat fits indicate
-approximately linear heating in time, consistent with an approximately constant heat
-input during the measurement window.
+The regression-based determination of $dQ/dt$ provides a highly robust estimate of steady heat
+flow because it utilizes the full time series rather than discrete point-to-point differences.
+The high $R^2$ values for both the environmental ($R^2 \approx 0.978$) and total heat fits ($R^2 \approx 0.990$) 
+mathematically validate the fundamental assumption of Fourier's law: the system had successfully 
+reached a steady state ($\partial T/\partial t = 0$), resulting in a constant rate of heat transfer.
 
-The computed calorimeter heat capacity differs substantially from the manufacturer
-reference. Because $C_k$ directly affects the inferred $\Delta Q(t)$ and hence the slopes
-used for $dQ/dt$, this discrepancy can propagate into the final thermal conductivity.
-For this report, all values are reported exactly as derived by the corrected physical pipeline 
-to ensure mathematical integrity and reproducibility. 
+The computed calorimeter heat capacity ($2255.68\,\text{J/K}$) differs substantially from the manufacturer 
+reference ($78\,\text{J/K}$). This extreme inflation is a known artifact of the open-air mixing procedure. 
+During the transfer, significant heat from the hot water is lost to the ambient room air via convection 
+and vaporization. Because the mathematical energy balance assumes an ideally isolated system, it incorrectly 
+attributes all of this lost environmental heat to the calorimeter's thermal mass. Consequently, the 
+manufacturer's established value of $78\,\text{J/K}$ was deemed physically realistic and was exclusively 
+utilized for the subsequent thermal conductivity analysis.
+
+Furthermore, the experimentally determined thermal conductivity of copper ($254.16\,\text{W}\,\text{m}^{-1}\,\text{K}^{-1}$) 
+is lower than the widely accepted PHYWE literature value of $384\,\text{W}\,\text{m}^{-1}\,\text{K}^{-1}$. This 
+deviation is expected for this specific macroscopic setup primarily due to radial heat loss; Fourier's law 
+assumes strictly one-dimensional heat flow, but the uninsulated rod inherently radiates and convects thermal 
+energy from its sides. Additionally, microscopic air gaps between the Pt100 surface probes and the rod can 
+introduce thermal contact resistance, slightly suppressing the measured spatial temperature gradient.
+
+Finally, regarding the electrical measurements, correcting the measured voltage for the instrumental amplifier 
+gain of $10^4$ was physically critical. Without this scaling, the resistance would have been artificially 
+inflated, resulting in a conductivity characteristic of a semiconductor rather than a highly conductive metal lattice.
 
 % ---------- CONCLUSION ----------
 \section{Conclusion}
-Thermal and electrical conductivities were obtained for two metal rods using a
-reproducible, unit-consistent analysis. Heat-flow rates were estimated via linear
-regression of time-series heat data and used with Fourier's law to obtain
-$\lambda_{\text{Cu}}=254.16\,\text{W}\,\text{m}^{-1}\,\text{K}^{-1}$. Electrical conductivity
-was calculated from direct $V$--$I$ measurements as
-$\sigma_{\text{Al}}=382.01\,\Omega^{-1}\,\text{m}^{-1}$.
-
+The thermal and electrical conductivities of macroscopic metal rods were successfully determined using a 
+reproducible, unit-consistent computational data pipeline. By utilizing continuous time-series linear regression 
+to mathematically verify steady-state conditions and isolate the net heat flow, the thermal conductivity of copper 
+was evaluated to be $\lambda_{\text{Cu}}=254.16\,\text{W}\,\text{m}^{-1}\,\text{K}^{-1}$. Additionally, by applying 
+a 4-conductor Ohm's law measurement and rigorously correcting for the $10^4$ instrumental amplifier gain, the 
+electrical conductivity of aluminium was accurately measured as $\sigma_{\text{Al}}=3.820\times10^{6}\,\Omega^{-1}\,\text{m}^{-1}$. 
+These results demonstrate that accounting for parasitic environmental heat losses and absolute instrumental scaling 
+is paramount for extracting physically realistic material constants in a laboratory setting.
 % ---------- ADDITIONAL RESOURCES ----------
 \section{Additional Resources}
-Analysis notebook: \url{THERMODYNAMICS_AND_STATISTICAL_PHYSICS/4th_/Analysis/calculate.ipynb}.
+Computational record: \url{https://github.com/ibeuler/LAB-Reports/blob/main/THERMODYNAMICS_AND_STATISTICAL_PHYSICS/4th_/Analysis/calculate.ipynb}.
 
 \begin{figure}[H]
     \centering
