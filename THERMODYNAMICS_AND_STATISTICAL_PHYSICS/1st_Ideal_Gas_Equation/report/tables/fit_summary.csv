@@ -1,0 +1,4 @@
+relation,slope,intercept,R2
+Boyle (P vs 1/V),2325.82,1.9731,0.998376
+Charles (V vs T),0.0777,0.012245,0.99999
+Amontons (P vs T),0.331,0.25735,1

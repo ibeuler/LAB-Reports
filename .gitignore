@@ -23,6 +23,11 @@ DOC-20241006-WA0002..pdf
 *.sh
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
+.github
+.venv
+
+*.md
+!README.md
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -173,7 +178,7 @@ acs-*.bib
 *.slf[0-9]*
 *.slt[0-9]*
 *.stc[0-9]*
-
+.vscode
 # minted
 _minted*
 *.pyg

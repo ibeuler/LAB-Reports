@@ -1,0 +1,12 @@
+quantity,value
+R_mean_J_per_molK,8.18754
+R_std_J_per_molK,0.0342639
+R_reference_J_per_molK,8.31446
+R_percent_error,-1.52651
+p0_kPa,100.3
+T_const_K,303.15
+n_mmol,0.9536
+V0_ml_at_T0,21.236
+P0_kPa_at_T0,90.67
+gamma0_per_K,0.00365888
+beta0_per_K,0.0036506
