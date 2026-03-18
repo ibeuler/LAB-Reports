@@ -25,7 +25,7 @@ DOC-20241006-WA0002..pdf
 .pdf
 .github
 .venv
-
+.vscode
 *.md
 !README.md
 
@@ -178,7 +178,7 @@ acs-*.bib
 *.slf[0-9]*
 *.slt[0-9]*
 *.stc[0-9]*
-.vscode
+
 # minted
 _minted*
 *.pyg
