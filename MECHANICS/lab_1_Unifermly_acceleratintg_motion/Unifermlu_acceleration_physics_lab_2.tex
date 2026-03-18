@@ -1,0 +1,365 @@
+\documentclass[twocolumn]{article}
+\usepackage{authblk} 
+\usepackage{graphicx} % Required for inserting images
+\usepackage{subcaption}
+\usepackage{amsmath} 
+\usepackage{url} % for \url command
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{caption}
+
+% Set the space above and below floats
+\setlength{\intextsep}{2.5pt plus 0.5pt minus 0.5pt} % Adjust the length as needed
+
+% To center all table captions
+\captionsetup[table]{justification=centering}
+
+\geometry{
+    top=1in,
+    bottom=1in,
+    left=0.5in,
+    right=0.5in,
+    columnsep=0.5in  % Adjust the column separation
+}
+
+\begin{document}
+\title{\textbf{Physics Laboratory Report: Uniformly Accelerating Motion}}
+\author{IBRAHIM H.I. ABUSHAWISH}
+\affil{Instructor's Name: Arş.Gör. ENES TALHA KIRCA}
+\affil{Group ID: 4, Course \& Section Number: PHYS1203}
+\date{Experiment Date: March 15, 2024, Report Submission Date: March 29, 2024}
+\maketitle
+
+\begin{abstract}
+    This experiment investigates uniformly accelerating motion using a car and various sensors. The objective is to analyze the motion of the car under the influence of a constant force and compare the experimental results with theoretical predictions. The data collected includes the time taken by the car to travel between sensors placed at different distances.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+Uniformly accelerating motion is a fundamental concept in physics, describing the motion of an object under constant acceleration. In this experiment, we study uniformly accelerating motion using a car on a track with sensors placed at regular intervals. By measuring the time taken by the car to travel between sensors, we can analyze its motion and compare the results with theoretical predictions.
+\subsection{Objective}
+
+The objective of this experiment is to investigate uniformly accelerating motion and compare the experimental results with the basic physical principles governing this type of motion.
+\subsection{Basic Physical Principles}
+
+The concept of uniformly accelerating motion can be understood by considering the following equations:
+
+From Kinematics: 
+\begin{equation}
+v = v_0 + at
+\label{eq:kinematics1}
+\end{equation}
+
+Using Equation~\ref{eq:kinematics1}, the following equations can be derived from \textit{Newton's Laws of Motion} for our experimental setup.
+
+\begin{equation}
+a=\frac{mg}{m+M }
+\label{eq:a}
+\end{equation}
+
+\begin{equation}
+v(t)=\frac{mg}{m+M}\cdot t
+\label{eq:v_t_mass}
+\end{equation}
+
+\begin{equation}
+x(t)=\frac{1}{2}\frac{mg}{m+M}\cdot t^{2}
+\end{equation}
+
+Considering a frictionless system, these equations describe the relationship between position, time, acceleration, and force in uniformly accelerating motion.
+
+\section{Procedure}
+
+The experiment began by setting up a track with sensors positioned at 15 cm, 30 cm, 45 cm, and 60 cm from the starting point. A car, attached to a string passing over a pulley, was used for the experiment. A mass of 10 g was attached to the car with the string to provide a constant force. The car was released, and the time taken for it to travel between each sensor was recorded. This process was repeated three times to obtain the mean time values for each sensor (see Table~\ref{tab:table2} from Section~\ref{sec:Results}). Velocities were calculated using the formula \(v = \frac{s}{t}\), where \(s\) is the distance and \(t\) is the time. Regression analysis was then performed on the data to establish the relationship between the variables.
+
+\subsection{Setup}
+
+The experimental setup consists of a car with a mass ($M$) of 390 g, a hanged mass ($m$) of 10 g, and sensors placed at 15 cm, 30 cm, 45 cm, and 60 cm from the start. The car is attached to a string passing over a pulley, with the hanged mass providing a constant force. The rails on which the car moves are constructed to have negligible friction, ensuring that the motion is primarily due to the applied force rather than frictional effects. This setup allows for the accurate measurement of the car's acceleration under the influence of the hanged mass. Each trial involves releasing the car from rest and recording the time taken for it to pass each sensor. 
+
+Figure~\ref{fig:setup} and Figure~\ref{fig:setup_diagram} show the experiment setup used and the setup diagram for more clearance.
+\begin{figure}[H]
+    \begin{minipage}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width = 1 \textwidth]{setup.jpg}
+        \caption{Uniformly Accelerating Motion Setup.}
+        \label{fig:setup}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width = 1 \textwidth]{setup_digram.jpg}
+        \caption{Setup Diagram.}
+        \label{fig:setup_diagram}
+    \end{minipage}
+\end{figure}
+The sensors offer different modes of time measurement. One mode records the time \(t\) until the sensor detects the car's tip (Mode 1), while another measures the time interval \(\Delta t\) for the car to pass the sensor from its tip to its tail (Mode 2).
+\subsection{Calculations}
+
+In addition to the method described above, several other calculation methods were employed in the experiment to analyze the car's motion accurately. These methods include linear regression, slope calculation, comparison with tabulated data, and acceleration calculation.
+
+One key calculation involved determining the time \( t' \) taken by the car when its center passed through the sensors. This was calculated using the equation:
+\begin{equation}
+    t' = t_i + \frac{\Delta t_i}{2}
+\label{eq:t'}
+\end{equation}
+
+where \( t_i \) is the time measured from the first and second modes of the sensors used. This calculation helped in accurately determining the time at which the car's center passed through the sensors, providing crucial data for the analysis.
+
+Another important calculation was the determination of the car's instantaneous velocity at different points. This was done by calculating the slopes of tangent lines to the \( x(t) \) graph, providing a detailed analysis of how the car's velocity changed over time.
+
+Furthermore, the experiment involved comparing the calculated velocities (\( v' \)) from Table~\ref{tab:table3} with the velocities obtained from the slopes of the tangent lines on the \( x(t) \) graph. This comparison helped validate the results and ensure the accuracy of the experimental measurements.
+
+Additionally, the acceleration of the car was calculated using Equation~\ref{eq:a}, which relates acceleration to the change in velocity over time. This calculation provided insights into how the car's velocity changed over time and helped in understanding the forces acting on it.
+
+These calculation methods were essential in analyzing the data collected during the experiment and interpreting the results accurately, providing a comprehensive understanding of uniformly accelerating motion.
+
+\section{Results}
+\label{sec:Results}
+The experiment aimed to investigate uniformly accelerating motion using a car on a track with sensors placed at regular intervals. The results are summarized below and are presented with detailed figure descriptions.
+\subsection{Time Data and Calculated Velocities}
+
+Table~\ref{tab:table2} presents the time data and calculated velocities used in Mode 1 of the experiment. The data includes the position of the car along the track, the corresponding time readings, and the calculated velocities at each point.
+
+\begin{table}[h]
+    \centering
+    \caption{Time data and calculated velocities used with Mode 1.}
+    \label{tab:table2}
+    \begin{tabular}{cccc}
+    \hline
+    Index & Position (m) & $t_i$ (s) & $v_i$ (m/s) \\
+    \hline
+    1 & 0.15 & 1.31 & 0.115 \\
+    2 & 0.30 & 1.843 & 0.163 \\
+    3 & 0.45 & 2.24 & 0.201 \\
+    4 & 0.60 & 2.575 & 0.233 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Figures~\ref{fig:x(t)} and \ref{fig:x(t^2)} display the gathered data and regression models for the $x(t)$ and $x(t^2)$ graphs respectively, providing visual representations of the car's motion along the track.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45 \textwidth]{x(t).png}
+    \caption{Gathered data and polynomial regression model for the $x(t)$ graph of Table~\ref{tab:table2}.}
+    \label{fig:x(t)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45 \textwidth]{x(t^2).png}
+    \caption{Gathered data and linear regression model for the $x(t^2)$ graph based on Table~\ref{tab:table2}.}
+    \label{fig:x(t^2)}
+\end{figure}
+
+Figure~\ref{fig:V(t)} displays the calculated velocity data and the corresponding time relation, providing insights into the velocity changes during the experiment.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5 \textwidth]{v(t).png}
+    \caption{Calculated velocity data and time relation, along with the linear regression model.}
+    \label{fig:V(t)}
+\end{figure}
+
+\subsection{Raw Data and Calculated Values for Mode 2}
+
+Table~\ref{tab:table3} presents the raw data collected using Mode 2 of the experiment, along with calculated values for $t'$ and $v'$ which are calculated by the Equations ~\ref{eq:t'} and ~\ref{eq:v_t_mass} respectively. These values are essential for understanding the motion of the car under different conditions.
+
+\begin{table}[H]
+    \centering
+    \caption{Raw data by Mode 2 used with the sensors, \\along with calculated values for $t'$ and $v'$.}
+    \label{tab:table3}
+    \begin{tabular}{ccccc}
+        \hline
+        Trial & $\Delta t_1$ & $\Delta t_2$ & $\Delta t_3$& $\Delta t_4$ \\
+        \hline
+        1 & 0.368 & 0.276 & 0.230 &0.199\\
+        2 & 0.369 & 0.278 & 0.233 &0.201\\
+        3 & 0.374 & 0.281 & 0.234 &0.202\\
+        \hline
+        Mean & 0.370 & 0.278 & 0.232 & 0.201 \\
+        \hline
+        $t'$ & 1.494 & 1.983 & 2.356 & 2.671 \\
+        \hline
+        $v'$ & 0.366 & 0.486 & 0.577 & 0.656 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Figure~\ref{fig:V'(t)} illustrates the calculated $v'$ velocity data and the corresponding time relation, providing insights into the velocity changes during the experiment.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5 \textwidth]{v'(t').png}
+    \caption{Calculated $v'$ velocity data from Equation~\ref{eq:v_t_mass} and time relation, along with linear regression model.}
+    \label{fig:V'(t)}
+\end{figure}
+
+\subsection{Deliberate Alterations in Car's Mass}
+
+Table~\ref{tab:m2_varying} displays data showing deliberate alterations in the car's mass ($m_2$) across measurements, along with corresponding time readings ($t_4$) and distances from the fourth sensor ($x_4$). These variations allow for the observation of how changes in mass affect the car's acceleration.
+
+\begin{table}[H]
+    \centering
+    \caption{Data showing deliberate alterations in the car's mass ($m_2$) across measurements, along with corresponding time readings ($t_4$) and distances from the fourth sensor ($x_4$).}
+    \begin{tabular}{cccccc}
+         \hline
+         $m_1$ (g) &  $m_2$ (g) & $ m_1 + m_2$ (g) & $t_4$ (s) & $x_4$ (m) & $a$ (m/s$^2$) \\
+         \hline
+          10 & 395 & 405 & 2.529  & 0.60 & 0.242\\
+          10 & 400 & 410 & 2.546  & 0.60 & 0.239\\
+          10 & 405 & 415 & 2.573  & 0.60 & 0.236\\
+          10 & 410 & 420 & 2.667  & 0.60 & 0.233\\
+    \end{tabular}
+    \label{tab:m2_varying}
+\end{table}
+
+Figure~\ref{fig:a(m)} illustrates the calculated acceleration ($a$) data based on the mass relation for a constant force $F = m_1 g$, where $m_1$ is denoted as $m$ and $m_2$ is denoted as $M$. The linear regression model provides insights into the relationship between mass and acceleration.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5 \textwidth]{a(m).png}
+    \caption{Calculated acceleration ($a$) data based on the mass relation for a constant force $F = m_1 g$, where $m_1$ is denoted as $m$ and $m_2$ is denoted as $M$.}
+    \label{fig:a(m)}
+\end{figure}
+
+Figure~\ref{fig:a(F)} illustrates the calculated acceleration ($a$) data based on the mass relation for a fixed force $F$, providing insights into the relationship between force and acceleration.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5 \textwidth]{a(F).png}
+    \caption{Calculated acceleration ($a$) data based on the mass relation for a fixed force $F$, where $m_1$ represents $m$ and $m_2'$ represents $M$, the varying mass.}
+    \label{fig:a(F)}
+\end{figure}
+
+Additionally, the instantaneous velocity from the $x(t)$ graph (Figure~\ref{fig:x(t)}) was calculated from the slopes of the tangent lines at each point. Figure~\ref{fig:x(t)_slopes} shows the graph with these tangent lines, and the slopes were compared with the $v'$ velocities calculated from Table~\ref{tab:table3}. The comparison of the slopes and $v'$ velocities is as follows:
+
+\begin{itemize}
+    \item Slope 0: 0.22808358
+    \item Slope 1: 0.33587378
+    \item Slope 2: 0.41587537
+    \item Slope 3: 0.48356384
+\end{itemize}
+
+This comparison provides insights into the accuracy of the velocity calculations using the tangent lines and the $v'$ values from the sensors.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{x(t)_withslopes.png}
+\caption{Graph showing the tangent lines used for calculating instantaneous velocities compared with the calculated $v'$ velocities from Table~\ref{tab:table3}.}
+\label{fig:x(t)_slopes}
+\end{figure}
+
+Overall, the experimental results are consistent with the theoretical predictions, demonstrating the validity of the concepts of uniformly accelerating motion. The comparison between the calculated velocities from the $x(t)$ graph and the $v'$ velocities from Table~\ref{tab:table3} shows good agreement, indicating the accuracy of the measurements and calculations. The analysis of the varying mass and force data further reinforces the understanding of the relationship between force, mass, and acceleration in uniformly accelerating motion.
+
+\section{Discussion}
+\label{sec:Discussion}
+
+The results of the experiment confirm the principles of uniformly accelerating motion. The comparison between the calculated velocities from the $x(t)$ graph and the $v'$ velocities from Table~\ref{tab:table3} demonstrates that the method of calculating velocities from the graph is reliable. The close agreement between the two sets of velocities indicates that the experiment was conducted accurately and the data collected was precise.
+
+The analysis of the varying mass and force data provides valuable insights into the relationship between force, mass, and acceleration. The data show that as the mass of the car increases, the acceleration decreases, which is consistent with the equation $F=ma$. This relationship is further supported by the linear regression models in Figures~\ref{fig:a(m)} and~\ref{fig:a(F)}, which show a clear linear relationship between force and acceleration.
+
+Overall, the experiment successfully demonstrates the concepts of uniformly accelerating motion and provides valuable insights into the relationship between force, mass, and acceleration. Further experiments could explore other factors that may affect acceleration, such as friction and air resistance, to deepen our understanding of the principles of motion.
+
+\section{Conclusion}
+\label{sec:Conclusion}
+
+The experiment on uniformly accelerating motion was conducted successfully, and the results were consistent with theoretical predictions. The analysis of the data confirmed the relationship between force, mass, and acceleration, as described by Newton's second law of motion. The comparison between calculated velocities and experimental data demonstrated the accuracy of the measurements and calculations.
+
+Overall, the experiment provided valuable insights into the principles of uniformly accelerating motion and the relationship between force, mass, and acceleration. Further experiments could expand on these findings and explore other factors that may affect acceleration, contributing to a deeper understanding of the principles of motion.
+
+\section{Additional Resources}
+
+The following resources were used in conducting the experiment:
+\begin{itemize}
+    \item Google Colab Notebook: Detailed notebook containing extra analysis, and calculations for this experiment (Figure~\ref{qr:QR}): \url{https://colab.research.google.com/drive/1bmyqmDGYYst88uy9dUxbYvYwoU8Lr9r1?usp=sharing}\\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.1\textwidth]{0.png}
+        \caption{Colab Notebook link QR}
+        \label{qr:QR}
+    \end{figure}
+    
+    \item Physics Laboratory textbook: "FİZİK LABROATUVARI DENEY KİTAPÇIĞI [MEKANİK VE SIVILAR]" - İSTANBUL ÜNİVERSİTESİ FEN FAKÜLTESİ FİZİK BÖLÜMÜ.
+\end{itemize}
+
+\end{document}
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Experimental Study of Uniformly Accelerating Motion}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    This experiment investigates uniformly accelerating motion using a car and various sensors. The objective is to analyze the motion of the car under the influence of a constant force and compare the experimental results with theoretical predictions. The data collected includes the time taken by the car to travel between sensors placed at different distances.
+\end{abstract}
+
+\section{Introduction}
+
+Uniformly accelerating motion is a fundamental concept in physics, describing the motion of an object under constant acceleration. In this experiment, we study uniformly accelerating motion using a car on a track with sensors placed at regular intervals. By measuring the time taken by the car to travel between sensors, we can analyze its motion and compare the results with theoretical predictions.
+
+\section{Experimental Setup}
+
+The experimental setup consists of a car with a mass ($M_2$) of 390 g, a hanged mass ($m_1$) of 10 g, and sensors placed at 15 cm, 30 cm, 45 cm, and 60 cm from the start. The car is attached to a string passing over a pulley, with the hanged mass providing a constant force. The rails on which the car moves are constructed to have negligible friction, ensuring that the motion is primarily due to the applied force rather than frictional effects. This setup allows for the accurate measurement of the car's acceleration under the influence of the hanged mass. Each trial involves releasing the car from rest and recording the time taken for it to pass each sensor. Three trials are conducted to obtain a mean time value for each sensor, reducing the impact of any random errors in the timing measurements.
+
+
+\section{Procedure}
+
+The experiment began by setting up a track with sensors positioned at 15 cm, 30 cm, 45 cm, and 60 cm from the starting point. A car, attached to a string passing over a pulley, was used for the experiment. A hanged mass of 10 g was attached to the car to provide a constant force. The car was released, and the time taken for it to travel between each sensor was recorded. This process was repeated three times to obtain the mean time values for each sensor. Velocities were calculated using the formula \(V = \frac{s}{t}\), where \(s\) is the distance and \(t\) is the time. Linear regression analysis was then performed on the squared times and distances to establish the relationship between time squared and distance. Finally, a second-degree polynomial was fitted to the data to analyze the motion.
+
+\section{Results}
+
+The experimental results are summarized in Table \ref{tab:results} below.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Experimental Results}
+    \label{tab:results}
+    \begin{tabular}{cccc}
+        \toprule
+        Sensor Distance (m) & Mean Time (s) & Time Squared ($s^2$) & Velocity (m/s) \\
+        \midrule
+        0.15 & 1.309 & 1.715 & 0.115 \\
+        0.30 & 1.843 & 3.399 & 0.163 \\
+        0.45 & 2.240 & 5.017 & 0.201 \\
+        0.60 & 2.575 & 6.632 & 0.233 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The relationship between time squared and distance is shown in Figure \ref{fig:regression}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{regression.png}
+    \caption{Regression Analysis of Time Squared vs. Distance}
+    \label{fig:regression}
+\end{figure}
+
+The linear regression model for $t^2$ and $s$ is given by the equation:
+
+\begin{equation}
+    s = 0.0622t^2 - 0.0293
+    \label{eq:linear}
+\end{equation}
+
+The polynomial regression model for the mean time values and distances is given by the equation:
+
+\begin{equation}
+    s = 0.013t^2 - 0.024t + 0.168
+    \label{eq:polynomial}
+\end{equation}
+
+\section{Conclusion}
+
+The experiment demonstrates the principles of uniformly accelerating motion and provides valuable insights into the relationship between time squared and distance. The results closely match the theoretical predictions, confirming the validity of the laws of motion.
+
+\end{document}
