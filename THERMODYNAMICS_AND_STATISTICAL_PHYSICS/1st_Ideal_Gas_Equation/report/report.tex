@@ -120,13 +120,16 @@ The procedure is summarized directly from the lab manual \cite{lab_manual}.
 % ---------- DATA ANALYSIS ----------
 \section{Data Analysis}
 
+\subsection{Assumptions and applied corrections}
+In the data reduction, several apparatus-specific constants were required. The atmospheric reference pressure was not measured with a separate barometer during the experiment; instead, the value $p_0=\SI{100.3}{\kilo\pascal}$ provided in the PHYWE apparatus documentation was adopted as the baseline for $\Delta h=0$ \cite{phywe_manual}. In addition, the geometric volume model included a fixed additional volume $V_{\mathrm{add}}=\SI{1.01}{\milli\liter}$, corresponding to the dead volume of the tube section indicated in the apparatus documentation (``brown'' section) \cite{phywe_manual}. The amount of gas was treated as constant and taken as $n=\SI{0.9536}{\milli\mole}$ from the same source \cite{phywe_manual}. These assumptions affect the absolute scale of the calculated quantities (particularly $p$ and $R$) and are therefore stated explicitly here.
+
 \subsection{Pressure from manometer}
 With mercury in the manometer, the gas pressure was computed from the height difference $\Delta h$ as
 \begin{equation}
 	p = p_0 + \rho_{\mathrm{Hg}} g\,\Delta h,
 	\label{eq:manometer}
 \end{equation}
-where $p_0$ is the atmospheric pressure at the reference condition ($\Delta h=0$), $\rho_{\mathrm{Hg}}$ is the mercury density, and $g$ is gravitational acceleration.
+where $p_0$ is the atmospheric pressure at the reference condition ($\Delta h=0$), $\rho_{\mathrm{Hg}}$ is the mercury density, and $g$ is gravitational acceleration. In the analysis, $p_0=\SI{100.3}{\kilo\pascal}$ was adopted from the PHYWE apparatus documentation \cite{phywe_manual}, and $\rho_{\mathrm{Hg}}=\SI{13595}{\kilogram\per\meter\cubed}$ and $g=\SI{9.81}{\meter\per\second\squared}$ were used.
 
 \subsection{Volume from tube geometry}
 The gas volume was determined from the measured air-column length $L$ using a cylindrical model,
@@ -134,7 +137,7 @@ The gas volume was determined from the measured air-column length $L$ using a cy
 	V(L) = A L + V_{\mathrm{add}},\qquad A=\pi r^2,
 	\label{eq:volume_geom}
 \end{equation}
-with tube radius $r=\SI{5.7}{\milli\meter}$ (diameter \SI{11.4}{\milli\meter}). An additional dead volume $V_{\mathrm{add}}=\SI{1.01}{\milli\liter}$ was included in the volume model.
+with tube radius $r=\SI{5.7}{\milli\meter}$ (diameter \SI{11.4}{\milli\meter}). An additional dead volume $V_{\mathrm{add}}=\SI{1.01}{\milli\liter}$ was included in the volume model to account for the fixed volume of the apparatus tube section specified in the PHYWE documentation \cite{phywe_manual}.
 
 \subsection{Universal gas constant}
 For each isothermal data point (Part I), Eq.~\eqref{eq:ideal_gas} was rearranged to
@@ -142,7 +145,7 @@ For each isothermal data point (Part I), Eq.~\eqref{eq:ideal_gas} was rearranged
 	R = \frac{pV}{nT}.
 	\label{eq:R_calc}
 \end{equation}
-For Part I, the gas temperature was maintained at $T=\SI{303.15}{\kelvin}$ (\SI{30}{\celsius}) and the amount of gas was taken as $n=\SI{0.9536}{\milli\mole}$ (given in the manual). The resulting $R$ values are given in Table~\ref{tab:table1}. The mean and standard deviation were
+For Part I, the gas temperature was maintained at $T=\SI{303.15}{\kelvin}$ (\SI{30}{\celsius}) and the amount of gas was taken as $n=\SI{0.9536}{\milli\mole}$ as specified in the PHYWE apparatus documentation \cite{phywe_manual}. The resulting $R$ values are given in Table~\ref{tab:table1}. The mean and standard deviation were
 \begin{equation}
 	\bar{R} = \SI{8.188}{\joule\per\mole\per\kelvin},\qquad s_R=\SI{0.0343}{\joule\per\mole\per\kelvin}.
 	\label{eq:R_mean_std}
@@ -257,7 +260,7 @@ The required graphs are shown in Figures~\ref{fig:boyle}, \ref{fig:charles}, and
 \section{Discussion}
 The regression results support the ideal-gas predictions in Eqs.~\eqref{eq:boyle}--\eqref{eq:amontons}. The isobaric and isochoric datasets show excellent linearity ($R^2\approx 1$), consistent with stable temperature control and small experimental scatter.
 
-The gas constant obtained from the isothermal measurements, $\bar{R}=\SI{8.188}{\joule\per\mole\per\kelvin}$, differs from the reference value by about $\SI{-1.53}{\percent}$. Likely contributors are: (i) using an assumed atmospheric reference pressure $p_0$ rather than a calibrated barometer reading at the time of measurement, (ii) reading uncertainties in $\Delta h$ (parallax, meniscus) affecting Eq.~\eqref{eq:manometer}, (iii) geometric volume calibration and dead volume $V_{\mathrm{add}}$ in Eq.~\eqref{eq:volume_geom}, and (iv) small leaks or non-idealities (gas not perfectly ideal, temperature gradients between bath and gas column). Despite these effects, the internal consistency of the computed $R$ across the seven measurements is good (small $s_R$).
+The gas constant obtained from the isothermal measurements, $\bar{R}=\SI{8.188}{\joule\per\mole\per\kelvin}$, differs from the reference value by about $\SI{-1.53}{\percent}$. Likely contributors are: (i) adopting the reference pressure $p_0=\SI{100.3}{\kilo\pascal}$ from the PHYWE documentation rather than measuring atmospheric pressure during the session, (ii) reading uncertainties in $\Delta h$ (parallax, meniscus) affecting Eq.~\eqref{eq:manometer}, (iii) geometric volume calibration and the apparatus dead-volume correction $V_{\mathrm{add}}=\SI{1.01}{\milli\liter}$ in Eq.~\eqref{eq:volume_geom}, and (iv) small leaks or non-idealities (gas not perfectly ideal, temperature gradients between bath and gas column). Despite these effects, the internal consistency of the computed $R$ across the seven measurements is good (small $s_R$).
 
 The experimentally determined coefficients $\gamma_0$ and $\beta_0$ are close to $1/T_0$ as expected for an ideal gas, which further supports the applicability of the ideal-gas approximation in the explored pressure and temperature ranges.
 
@@ -285,6 +288,9 @@ Computational record: \url{https://github.com/ibeuler/LAB-Reports/blob/main/THER
 \begin{thebibliography}{9}
 \bibitem{lab_manual}
 	ISTANBUL UNIVERSITY, \textit{Thermodynamics and Statistical Physics Laboratory Experiments Manual}, Department of Physics.
+
+\bibitem{phywe_manual}
+	PHYWE Systeme GmbH \& Co. KG, \textit{Laboratory Experiments} (Gas laws apparatus documentation and reference values).
 \end{thebibliography}
 
 \end{document}
