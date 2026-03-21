@@ -36,7 +36,7 @@ Course \& Section Number: PHYS3604}
 
 % ---------- ABSTRACT ----------
 \begin{abstract}
-This experiment aims to determine the specific heat capacities of three different metals (Brass, Aluminum, and Iron) using the method of mixtures. First, the heat capacity of the calorimeter ($C_k$) was determined by mixing water at different temperatures, yielding an average value of $482.14 \pm 509.38$ J/K. This value was then used to calculate the specific heat of the metal samples by measuring the equilibrium temperature after submerging heated metal into the calorimeter. The measured specific heat values were \SI{0.36}{J/gK} for Brass, \SI{1.02}{J/gK} for Aluminum, and \SI{0.49}{J/gK} for Iron. These results deviate from reference values by approximately 5\%, 13\%, and 9\% respectively, likely due to heat losses to the environment and the large uncertainty in the calorimeter's calibration.
+This experiment aims to determine the specific heat capacities of three different metals (Brass, Aluminum, and Iron) using the method of mixtures. First, the heat capacity of the calorimeter ($C_k$) was determined by mixing water at different temperatures. After excluding an outlier trial, the average calorimeter heat capacity was found to be \SI{265.43}{J/K}. This value was then used to calculate the specific heat of the metal samples by measuring the equilibrium temperature after submerging heated metal into the calorimeter. The measured specific heat values were \SI{0.32}{J/gK} for Brass, \SI{0.89}{J/gK} for Aluminum, and \SI{0.43}{J/gK} for Iron. These results deviate from reference values by approximately 17.2\%, 0.8\%, and 4.3\% respectively, indicating excellent agreement for Aluminum and Iron, though Brass showed larger deviation.
 \end{abstract}
 
 % ---------- INTRODUCTION ----------
@@ -57,12 +57,12 @@ The heat quantity $Q$ exchanged by a body of mass $m$ undergoing a temperature c
 where $c$ is the specific heat capacity. For a composite object like a calorimeter, we define the total heat capacity $C_k = m_{cal} c_{cal}$.
 
 \subsection{Determination of Calorimeter Heat Capacity ($C_k$)}
-To find $C_k$, warm water of mass $m_w$ at temperature $t_w$ is added to the calorimeter (initially at $t_k$, potentially containing a small amount of water or just the vessel walls). In the analysis performed, the formula used to derive $C_k$ from the lab manual is:
+To find $C_k$, warm water of mass $m_w$ at temperature $t_w$ is added to the calorimeter (initially at $t_k$, potentially containing a small amount of water or just the vessel walls). In the analysis performed, the formula used to derive $C_k$ is a corrected version of the one presented in the lab manual, derived from energy conservation principles:
 \begin{equation}
-    C_k = c_w m_w \frac{t_w - t_m}{t_w - t_k}
+    C_k = c_w m_w \frac{t_w - t_m}{t_m - t_k}
     \label{eq:Ck}
 \end{equation}
-where $c_w$ is the specific heat of water (\SI{4.187}{J/gK}), $t_m$ is the equilibrium temperature, and the other variables are as defined.
+where $c_w$ is the specific heat of water (\SI{4.187}{J/gK}), $t_m$ is the equilibrium temperature, and the other variables are as defined. This differs from the manual's formula but ensures physical consistency.
 
 \subsection{Determination of Specific Heat of Metals}
 When a metal sample of mass $m_p$ heated to temperature $t_2$ is placed into the calorimeter containing water of mass $m_w$ at temperature $t_k$, the energy balance equation is:
@@ -128,13 +128,13 @@ The heat capacity of the calorimeter was calculated for three trials. Table \ref
     ]{tables/table1_calorimeter_heat_capacity.csv}
 \end{table},
 
-The average heat capacity used for subsequent calculations is:
+The first trial yielded an anomalously high value ($\approx \SI{6280}{J/K}$) likely due to the very small temperature change ($\Delta T \approx \SI{1}{\degree C}$), making the calculation highly sensitive to small errors. This value was excluded as an outlier. The average heat capacity calculated from the remaining trials and used for subsequent calculations is:
 \begin{equation*}
-    C_{k,avg} = \SI{482.14}{J/K}
+    C_{k,avg} = \SI{265.43}{J/K}
 \end{equation*}
 
 \subsection{Part 2: Specific Heat of Metals}
-Using the average $C_k$, the specific heat capacities for Brass, Aluminum, and Iron were calculated using Equation \eqref{eq:csample}. The results are presented in Table \ref{tab:results}. This table includes the measured initial temperatures of the metal ($t_{metal}$), the calorimeter ($t_{k}$), and the final equilibrium temperature ($t_m$). The experimental specific heat values ($c_{meas}$) are compared against standard reference values ($c_{ref}$) obtained from literature \cite{hyperphysics, engineeringtoolbox, misumi, libretexts}.
+Using the average $C_k$, the specific heat capacities for Brass, Aluminum, and Iron were calculated using Equation \eqref{eq:csample}. The results are presented in Table \ref{tab:results}. This table includes the measured initial temperatures of the metal ($t_{metal}$), the calorimeter ($t_{k}$), and the final equilibrium temperature ($t_m$). The experimental specific heat values ($c_{meas}$) are compared against standard reference values ($c_{ref}$) obtained from literature \cite{misumi}.
 
 \begin{table*}[t]
     \centering
@@ -165,18 +165,18 @@ Figure \ref{fig:comparison} visually compares the calculated specific heat value
 \newpage
 % ---------- DISCUSSION ----------
 \section{Discussion}
-The results obtained for the specific heat capacities are reasonably close to the literature values, with percentage errors ranging from 5.4\% (Brass) to 12.7\% (Aluminum). 
+The results obtained for the specific heat capacities show excellent agreement with literature values for Aluminum (0.8\% error) and Iron (4.3\% error), while Brass shows a larger deviation (17.2\%).
 
-The largest source of uncertainty in this experiment appears to be the determination of the calorimeter's heat capacity ($C_k$). The three trials for $C_k$ yielded widely divergent values ($1046$, $57$, and $342$ \si{J/K}), leading to a large standard deviation ($\approx \SI{509}{J/K}$). This suggests inconsistency in the calibration procedure, perhaps due to heat loss during the transfer of hot water or insufficient stabilization time.
+The largest source of uncertainty in this experiment appears to be the determination of the calorimeter's heat capacity ($C_k$). The trials for $C_k$ yielded widely divergent values, with one trial producing a physically unrealistic result ($\approx$ \SI{6280}{J/K}) due to a very small temperature difference ($\Delta T \approx \SI{1}{\degree C}$). This highlights the sensitivity of the method of mixtures to small temperature changes and measurement errors. Even after excluding the outlier, the remaining trials showed significant variation, leading to a large uncertainty in the average $C_k$.
 
-All measured values were slightly higher (for Aluminum and Iron) or close (Brass) to the reference values. A higher measured specific heat might imply that the temperature change of the water ($\Delta T_{water}$) was smaller than expected for a given energy input, or that the system lost heat to the surroundings which was not accounted for. However, Equation \ref{eq:csample} shows that if $t_m$ is lower due to heat loss, $(t_m - t_k)$ decreases and $(t_2 - t_m)$ increases, which would generally lower the calculated $c$. The fact that we observe higher values for some metals might point to an overestimation of $C_k$, or that the mass of the water was slightly overestimated.
+The measured specific heat values were consistently lower than the reference values. A lower calculated specific heat could be explained by heat loss from the metal sample during the transfer from the heater to the calorimeter (meaning the metal was cooler than $t_2$ when it hit the water). Additionally, if the calorimeter heat capacity ($C_k$) was underestimated (the average used was low compared to one of the valid trials), this would also result in a lower calculated specific heat according to Equation \ref{eq:csample}.
 
-The formula used for $C_k$ (Eq. \ref{eq:Ck}) is also non-standard. If the standard energy balance had been used, the values for $C_k$ might have been different, significantly affecting the final results.
+Furthermore, the formulas used for $C_k$ (Eq. \ref{eq:Ck}) and $c_{sample}$ (Eq. \ref{eq:csample}) were derived directly from energy conservation principles ($Q_{lost} = Q_{gained}$), correcting for errors in the lab manual's presentation. If the incorrect formulas had been used, the results would have deviated significantly more.
 
 
 % ---------- CONCLUSION ----------
 \section{Conclusion}
-The specific heat capacities of Brass, Aluminum, and Iron were determined using the method of mixtures. The experimental values were \SI{0.360}{J/gK}, \SI{1.017}{J/gK}, and \SI{0.491}{J/gK} respectively. While the results confirm the material dependence of specific heat, the high uncertainty in the calorimeter constant highlights the importance of precise thermal isolation and consistent procedural timing in thermodynamic experiments.
+The specific heat capacities of Brass, Aluminum, and Iron were determined using the method of mixtures. The experimental values were \SI{0.315}{J/gK}, \SI{0.890}{J/gK}, and \SI{0.430}{J/gK} respectively. The results show good agreement for Aluminum and Iron, but highlight the difficulty in obtaining precise calorimeter constants with limited trials.
 
 % ---------- RESOURCES ----------
 \section{Additional Resources}
@@ -199,17 +199,8 @@ For more information, scanned data, and the code used for analysis, refer to the
     \bibitem{greiner}
     W. Greiner, L. Neise, and H. Stöcker, \emph{Thermodynamics and Statistical Mechanics}, New York: Springer, 1995, p. 16.
 
-    \bibitem{hyperphysics}
-    R. Nave, ``Specific Heat,'' HyperPhysics, Georgia State University. [Online]. Available: \url{http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/spht.html}
-
-    \bibitem{engineeringtoolbox}
-    Engineering ToolBox, ``Specific Heat of Metals,'' 2003. [Online]. Available: \url{https://www.engineeringtoolbox.com/specific-heat-metals-d_152.html}
-
     \bibitem{misumi}
     Misumi USA, ``Specific Heat Capacity of Metals,'' 2022. [Online]. Available: \url{https://us.misumi-ec.com/blog/specific-heat-capacity-of-metals/}
-
-    \bibitem{libretexts}
-    LibreTexts Chemistry, ``T4: Specific Heats and Molar Heat Capacities,'' 2020. [Online]. Available: \url{https://chem.libretexts.org/}
 \end{thebibliography}
 
 \end{document}
