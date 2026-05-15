@@ -1,0 +1,3 @@
+phase,material,d_cm,q_out_W_m2,k_W_m2K,lambda_W_mK,Lambda_W_m2K
+Illumination (Wood),Wood,1.00,123,228,0.881,88.1
+Illumination (Normal glass),Normal glass,1.00,88.7,3550,8.87,887

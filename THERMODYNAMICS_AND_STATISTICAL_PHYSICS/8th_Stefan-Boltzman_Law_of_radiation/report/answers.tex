@@ -1,0 +1,60 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Answers to Laboratory Questions:\\ Stefan-Boltzmann's Law of Radiation}
+\author{Ibrahim Hamed \\ Istanbul University, Department of Physics}
+
+\maketitle
+
+% ---------- ANSWERS TO LABORATORY QUESTIONS ----------
+\section{Answers to Laboratory Questions}
+
+\textbf{1. Why do objects radiate?} \\
+Objects radiate due to the thermal motion of charged particles (chiefly electrons and protons) within their matter. As these particles interact, accelerate, and decelerate due to intrinsic thermal energy, they emit electromagnetic waves according to electrodynamic principles. The overall distribution governing this emission across an idealized spectrum depends primarily on the object's temperature.
+
+\textbf{2. What is thermoelectric power?} \\
+Thermoelectric power, also known as the Seebeck coefficient, characterizes the magnitude of an electromotive force (e.m.f.) induced by a temperature gradient across a material or a junction of two dissimilar materials. It represents the efficiency of converting temperature differences directly into an electric voltage. 
+
+\textbf{3. Is there a relationship between Stefan-Boltzmann radiation and the development of quantum physics? Explain.} \\
+Yes, there is a fundamental historical relationship. The Stefan-Boltzmann law initially emerged as an empirical and classical thermodynamic relation. However, classical physics failed to explain the full radiation spectrum (resulting in the "ultraviolet catastrophe"). Max Planck resolved this by introducing the hypothesis that energy oscillators in a black body are quantized ($E = nh\nu$). By applying this quantum hypothesis and integrating Planck's radiation formula over all frequencies, one rigorously derives the exact $T^4$ dependence of the Stefan-Boltzmann law.
+
+\textbf{4. Derive the flux density expression $L(T)$ starting from $dL(\lambda, T)/d\lambda$.} \\
+Starting with Planck's expression:
+\begin{equation*}
+    \frac{dL(\lambda,T)}{d\lambda} = \frac{2\pi h c^2 \lambda^{-5}}{e^{hc/\lambda k T} - 1}
+\end{equation*}
+We integrate this expression across all wavelengths $\lambda = 0$ to $\infty$:
+\begin{equation*}
+    L(T) = \int_0^\infty \frac{2\pi h c^2 \lambda^{-5}}{e^{hc/\lambda k T} - 1} d\lambda
+\end{equation*}
+By making the substitution $x = \frac{hc}{\lambda k T}$, we get $d\lambda = -\left(\frac{hc}{k T x^2}\right) dx$. Adjusting boundaries and simplifying gives:
+\begin{equation*}
+    L(T) = \frac{2\pi k^4 T^4}{h^3 c^2} \int_0^\infty \frac{x^3}{e^x - 1} dx
+\end{equation*}
+Using the standard identity $\int_0^\infty \frac{x^3}{e^x - 1} dx = \frac{\pi^4}{15}$, we arrive at:
+\begin{equation*}
+    L(T) = \left( \frac{2\pi^5 k^4}{15 h^3 c^2} \right) T^4 = \sigma T^4
+\end{equation*}
+
+\textbf{5. Provide the methods of heat transfer occurring due to a temperature difference and the conditions for them.} \\
+Heat transfer classically occurs via three mechanisms:
+\begin{itemize}
+    \item \textit{Conduction}: Occurs through direct physical contact where kinetic energy transfers between neighboring atoms/molecules. It primarily dominates in stationary solids under a thermal gradient.
+    \item \textit{Convection}: Involves the macroscopic movement of fluids (gases or liquids). It occurs when a fluid heated by a surface expands, decreases in density, and rises, creating thermal currents.
+    \item \textit{Radiation}: Occurs via electromagnetic wave propagation. It requires no physical medium (can happen in a vacuum) and dominates at very high temperatures.
+\end{itemize}
+
+\textbf{6. Research the working principle of a thermocouple.} \\
+A thermocouple operates strictly on the \textit{Seebeck Effect}. When two distinct electrical conductors or semiconductors are joined together at two points, and one junction experiences a different temperature than the other, an electromotive force (e.m.f.) is generated around the circuit. The resulting voltage is proportional to this temperature gradient.
+
+\textbf{7. What is the characteristic formula of a thermocouple used for? How is it determined?} \\
+The characteristic formula correlates the measured electrical voltage (e.m.f.) directly with the associated thermal difference between the hot and cold junctions. It serves as a calibration curve for the sensor and is determined practically by exposing the junctions to known precise reference environments (e.g., boiling water, ice baths) and standardizing the measured voltages mathematically. 
+
+\textbf{8. Comment on the graph you drew. Is it as expected? What does the slope correspond to, and what might have gone wrong? How does ignoring the reference temperature affect it?} \\
+The graph mapping $\log(U)$ against $\log(T)$ yields a linear trend with a slope of roughly $5.85$. Following the equation $\log(U_{\text{therm}}) \approx 4\log(T) + \text{const.}$, the theoretical expectation for the slope is $4$. The inflated experimental gradient indicates variations possibly caused by non-constant emissivity of the tungsten filament, convective heat losses out of the glass bulb, or inaccurate thermopile focal capturing configurations. Ignoring the reference room temperature ($T_0$) assumes $T^4 \gg T_0^4$; while this holds validly for heavily glowing states, at the lowest recorded voltages where the element warms barely beyond ambient background constraints, the failure to subtract $T_0^4$ introduces small positive-biased offsets onto the lower end of the logarithmic curve. 
+
+\end{document}

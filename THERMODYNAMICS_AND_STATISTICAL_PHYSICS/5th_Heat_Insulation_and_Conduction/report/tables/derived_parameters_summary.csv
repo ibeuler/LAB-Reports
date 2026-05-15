@@ -1,0 +1,5 @@
+Phase,Material,d (cm),theta_Li_mean (C),theta_Lo_mean (C),theta_wi_mean (C),theta_wo_mean (C),q_out_mean (W/m2),k_mean (W/m2.K),lambda_mean (W/m.K),Lambda_mean (W/m2.K),q_in_minus_q_out_mean (W/m2)
+Heating (3-min intervals),Wood,1.00,27.9,18.2,23.6,21.5,27.1,3.02,0.146,14.6,7.29
+Heating (3-min intervals),Normal glass,1.00,27.9,18.2,23.3,22.9,38.2,4.19,1.13,113,-1.13
+Illumination (Wood),Wood,1.00,18.6,18.0,31.9,33.3,123,312,4.84,484,-231
+Illumination (Normal glass),Normal glass,1.00,18.3,18.3,29.2,29.3,88.7,715,6.46,646,-177
