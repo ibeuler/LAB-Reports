@@ -1,0 +1,100 @@
+\documentclass[journal]{IEEEtran}
+
+% Common packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{siunitx}
+\usepackage{qrcode}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+% ---------- TITLE & AUTHOR ----------
+\title{Thermal Equation of State and Critical Point}
+\author{Ibrahim H.I. ABUSHWISH \\
+Istanbul University, Department of Physics \\
+Instructor: \\
+Course \& Section Number: PHYS3604}
+\markboth{Physics Laboratory Reports, May 2026}{}
+
+\maketitle
+
+% ---------- ABSTRACT ----------
+\begin{abstract}
+    This report shows the derivation of th e Van der Waals constatns theoretically.
+\end{abstract}
+
+% ---------- INTRODUCTION ----------
+\section{Introduction}
+Provide physical background and motivation for the experiment. State the aim and what will be measured.
+
+% ---------- THEORY ----------
+\section{Theory}
+The Van der Waals equation of state for a real gas is
+\begin{equation}
+P = \frac{RT}{V - b} - \frac{a}{V^2},
+\label{eq:vdw}
+\end{equation}
+where $P$ is pressure, $T$ temperature, $V$ molar volume, $R$ the gas constant, and $a,b$ are constants that account for intermolecular attraction and finite molecular size respectively.
+
+At the critical point $(P_c,T_c,V_c)$ the isotherm has a horizontal inflection, so
+\begin{equation}
+\left(\frac{\partial P}{\partial V}\right)_{T_c}=0,\qquad
+\left(\frac{\partial^2 P}{\partial V^2}\right)_{T_c}=0.
+\label{eq:critconds}
+\end{equation}
+
+Compute the derivatives from the Van der Waals form:
+\begin{align}
+\frac{\partial P}{\partial V} &= -\frac{RT}{(V-b)^2} + \frac{2a}{V^3},\\
+\frac{\partial^2 P}{\partial V^2} &= \frac{2RT}{(V-b)^3} - \frac{6a}{V^4}.
+\end{align}
+
+Applying the critical conditions at $V=V_c, T=T_c$ gives:
+\begin{align}
+-\frac{RT_c}{(V_c-b)^2} + \frac{2a}{V_c^3} &= 0, \label{eq:crit1}\\
+\frac{2RT_c}{(V_c-b)^3} - \frac{6a}{V_c^4} &= 0. \label{eq:crit2}
+\end{align}
+
+Dividing Eq.~\eqref{eq:crit2} by Eq.~\eqref{eq:crit1} yields
+\begin{equation}
+-\frac{2}{V_c-b} = \frac{3}{V_c},
+\end{equation}
+which gives
+\begin{equation}
+V_c = 3b.
+\end{equation}
+
+Substituting $V_c=3b$ into Eq.~\eqref{eq:crit1} leads to
+\begin{equation}
+T_c = \frac{8a}{27bR}.
+\end{equation}
+Evaluating the Van der Waals equation at the critical point produces
+\begin{equation}
+P_c = \frac{a}{27b^2}.
+\end{equation}
+
+Thus the standard critical-point relations are
+\begin{equation}
+V_c = 3b,\qquad P_c = \frac{a}{27b^2},\qquad T_c = \frac{8a}{27bR}.
+\end{equation}
+
+Solving for $a$ and $b$ from measurable critical constants $(P_c,T_c)$ gives
+\begin{equation}
+b = \frac{R T_c}{8P_c},\qquad a = \frac{27R^2 T_c^2}{64P_c}.
+\end{equation}
+
+The critical compressibility factor is
+\begin{equation}
+Z_c = \frac{P_c V_c}{R T_c} = \frac{3}{8}.
+\end{equation}
+
+These relations are used to determine Van der Waals constants from experimental critical data.
+\end{document}

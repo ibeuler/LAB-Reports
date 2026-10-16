@@ -1,0 +1,79 @@
+%% Theory and derivation of Van der Waals constants a and b
+\section*{Theory}
+The Van der Waals equation of state for a real gas is
+$$
+P = \frac{RT}{V - b} - \frac{a}{V^2},
+$$
+where $P$ is pressure, $T$ temperature, $V$ molar volume, $R$ the gas constant, and $a,b$ are constants that account for intermolecular attraction and finite molecular size respectively.
+
+At the critical point $(P_c,T_c,V_c)$ the isotherm has a horizontal inflection, so
+$$
+\left(\frac{\partial P}{\partial V}\right)_{T_c}=0,
+\qquad
+\left(\frac{\partial^2 P}{\partial V^2}\right)_{T_c}=0.
+$$
+
+Compute the derivatives from the Van der Waals form:
+$$
+\frac{\partial P}{\partial V} = -\frac{RT}{(V-b)^2} + \frac{2a}{V^3},
+\\
+\frac{\partial^2 P}{\partial V^2} = \frac{2RT}{(V-b)^3} - \frac{6a}{V^4}.
+$$
+
+Applying the critical conditions at $V=V_c, T=T_c$ gives two equations:
+$$
+ -\frac{RT_c}{(V_c-b)^2} + \frac{2a}{V_c^3} = 0,\tag{1}
+$$$$
+ \frac{2RT_c}{(V_c-b)^3} - \frac{6a}{V_c^4} = 0.\tag{2}
+$$
+
+Divide (2) by (1) to eliminate $a$ and $T_c$ dependence algebraically:
+$$
+\frac{2RT_c/(V_c-b)^3}{-RT_c/(V_c-b)^2} \;=\; \frac{6a/V_c^4}{2a/V_c^3}
+\quad\Rightarrow\quad -\frac{2}{V_c-b} = \frac{3}{V_c}.
+$$
+Solving for $V_c$ yields
+$$
+-2V_c = 3(V_c-b) \quad\Rightarrow\quad V_c = 3b.
+$$
+
+Substitute $V_c=3b$ back into (1) (or (2)) to find relations between $a,b,T_c$ and $P_c$. From (1):
+$$
+ -\frac{RT_c}{(3b-b)^2} + \frac{2a}{(3b)^3} = 0
+\quad\Rightarrow\quad -\frac{RT_c}{4b^2} + \frac{2a}{27b^3} = 0.
+$$
+Rearrange for $T_c$:
+$$
+T_c = \frac{8a}{27bR}.
+$$
+
+The critical pressure follows from the original Van der Waals equation evaluated at the critical point:
+$$
+P_c = \frac{R T_c}{V_c - b} - \frac{a}{V_c^2}.
+$$
+Substitute $V_c=3b$ and $T_c$ above:
+$$
+P_c = \frac{R\, (8a/(27bR))}{2b} - \frac{a}{9b^2} = \frac{4a}{27b^2} - \frac{a}{9b^2} = \frac{a}{27b^2}.
+$$
+
+Thus the standard critical-point results are
+$$
+V_c = 3b,\qquad P_c = \frac{a}{27b^2},\qquad T_c = \frac{8a}{27bR}.
+$$
+
+Solving these for $a$ and $b$ in terms of the measurable critical constants $P_c$ and $T_c$ gives
+$$
+b = \frac{R T_c}{8P_c},
+\qquad
+a = \frac{27R^2 T_c^2}{64P_c} = 27 b^2 P_c.
+$$
+
+The critical compressibility factor is
+$$
+Z_c = \frac{P_c V_c}{R T_c} = \frac{(a/(27b^2)) (3b)}{R(8a/(27bR))} = \frac{3}{8}.
+$$
+
+These expressions are the usual relations used to determine Van der Waals constants from experimental critical data, or conversely to predict critical constants from $a$ and $b$.
+
+%% End of theory
+

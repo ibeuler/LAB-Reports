@@ -1,0 +1,269 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry} % Reduced margins for less whitespace
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{pgfplots}
+\usepackage{palatino}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{tikz}
+
+\pgfplotsset{compat=1.18}
+
+\lstset{frame=, basicstyle={\footnotesize\ttfamily}}
+
+\begin{document}
+
+\raggedbottom
+\setstretch{1.05}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Elementary Charge and Millikan Experiment\par}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+% Compact Title Section
+\begin{center}
+{\Large \bfseries Elementary Charge and Millikan Experiment\par}
+\vspace{3pt}
+{\normalsize Muhammed Emin Duran | 0412220007\par}
+\vspace{4pt}
+\rule{\textwidth}{1pt}
+\end{center}
+
+\vspace{2pt}
+
+\setlength{\columnsep}{20pt}
+\setlength{\columnseprule}{0.5pt}
+
+\begin{multicols}{2}
+
+\section*{Introduction}
+The purpose of this experiment is to determine the elementary charge $e$ using charged
+oil droplets in the Millikan experiment. From their rise and fall times at different
+voltages, we calculate the droplets' charges and radii, then determine $e$ from their
+velocities in and against the direction of gravity. Finally, we estimate the electron's
+$e/m$ ratio.
+ 
+\section*{Theory and Methods}
+The rising and falling motion of charged oil droplets in the electric field of the
+capacitor is observed.\\
+
+The force $F$ applied to a sphere of radius $r$ and velocity $v$ in a viscous liquid of
+viscosity $\eta$ is given by Stokes' law:
+\begin{equation}
+    F_d = 6\pi r \eta v 
+\end{equation}
+
+A droplet of mass $m$, volume $V$, and density $\rho_1$ is located in Earth's
+gravitational field.
+\begin{equation}
+    F_g = mg = \rho_1 V g
+\end{equation}  
+
+Buoyant force $F_b$ is given by:
+\begin{equation}
+    F_b = \rho_2 V g, \quad \rho_2 \text{ :is the density of air}
+\end{equation}
+
+Electric force $F_e$ is given by:
+\begin{equation}
+    F_e = QE, \quad E = \frac{U}{d}
+\end{equation}
+
+While $Q$ is the charge on the droplets, ($Q = ne$) $U$ is the applied voltage,
+and $d$ is the distance between the plates of the capacitor.\\
+
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{figures/ForceDiagram.png}
+    \\
+    \textbf{Figure:} Forces acting on a droplet in the Millikan experiment.
+\end{center}
+
+\textbf{1. Falling Droplet ($v_1$)} \\
+When the droplet is falling, the forces acting on it are:
+\begin{equation}
+    F_b + F_d = F_g + F_e
+\end{equation}
+\begin{gather}
+    \frac{4}{3}\pi r^3 \rho_2 g + 6\pi \eta r v_1 = \frac{4}{3}\pi r^3 \rho_1 g + Q\frac{U}{d} \\
+    6\pi \eta r v_1 = Q\frac{U}{d} + \frac{4}{3}\pi r^3 g (\rho_1 - \rho_2) \\
+    v_1 = \frac{1}{6\pi \eta r} \left( Q\frac{U}{d} + \frac{4}{3}\pi r^3 g (\rho_1 - \rho_2) \right)
+\end{gather}
+
+\textbf{2. Rising Droplet ($v_2$)} \\
+When the droplet is rising, the forces acting on it are:
+\begin{equation}
+    F_b + F_e = F_g + F_d
+\end{equation}
+\begin{gather}
+    \frac{4}{3}\pi r^3 \rho_2 g + Q\frac{U}{d} = \frac{4}{3}\pi r^3 \rho_1 g + 6\pi \eta r v_2 \\
+    6\pi \eta r v_2 = Q\frac{U}{d} - \frac{4}{3}\pi r^3 g (\rho_1 - \rho_2) \\
+    v_2 = \frac{1}{6\pi \eta r} \left( Q\frac{U}{d} - \frac{4}{3}\pi r^3 g (\rho_1 - \rho_2) \right)
+\end{gather}
+
+By subtracting the equation for $v_2$ from $v_1$, the electric force terms cancel out, allowing us to 
+isolate the radius $r$:
+\begin{gather*}
+    v_1 - v_2 = \frac{4 r^2 g (\rho_1 - \rho_2)}{9\eta} \\
+    r^2 = \frac{9\eta (v_1 - v_2)}{4g (\rho_1 - \rho_2)} \\
+    r = \frac{3}{2} \sqrt{\frac{\eta}{g(\rho_1 - \rho_2)}} \sqrt{|v_1 - v_2|}
+\end{gather*}
+By grouping the experimental constants into $C_2$, the equation for the radius simplifies
+to:
+\begin{gather}
+    C_2 = 6.37 \cdot 10^{-5} \, (\text{m} \cdot \text{s})^{1/2} \\
+    r = C_2 \sqrt{|v_1 - v_2|}
+\end{gather}
+
+Similarly, by adding the equations for $v_1$ and $v_2$, the gravitational and buoyant 
+force terms cancel out, allowing us to find the charge $Q$:
+\begin{gather*}
+    v_1 + v_2 = \frac{1}{6\pi \eta r} \left( 2Q\frac{U}{d} \right) = \frac{QU}{3\pi \eta r d} \\
+    Q = \frac{3\pi \eta d (v_1 + v_2) r}{U}
+\end{gather*}
+Substituting the full expression for $r$ derived above into this equation gives:
+\begin{gather*}
+    Q = \left( \frac{9}{2} \pi d \sqrt{\frac{\eta^3}{g(\rho_1 - \rho_2)}} \right) \frac{v_1 + v_2}{U} \sqrt{|v_1 - v_2|}
+\end{gather*}
+By grouping these constants into $C_1$, the final equation for the charge of the droplet 
+is obtained:
+\begin{gather}
+    C_1 = 2.73 \cdot 10^{-11} \, \text{kg} \cdot \text{m} (\text{m} \cdot \text{s})^{-1/2} \\
+    Q = C_1 \frac{v_1 + v_2}{U} \sqrt{|v_1 - v_2|}
+\end{gather}
+
+
+\subsection*{Experimental Procedure}
+The eyepiece micrometer was calibrated using a stage micrometer. Oil droplets were
+introduced with the sprayer, and the microscope was focused on a charged droplet. Using
+the commutator switch, the droplet was moved between two calibrated positions while its
+ascent and descent times were recorded. The measurements were repeated at 400 V and
+500 V. The distances and times were then used to calculate the velocities, charges, and
+radii of the droplets.
+
+\section*{Results}
+\begin{center}
+\textbf{Table 1: Measured ascent and descent data} \\
+\vspace{5pt}
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c c c c c c c}
+\hline
+$U$ (V) & $t_1$ (s) & $s_1$ (div) & $s_1$ (mm) & $t_2$ (s) & $s_2$ (div) & $s_2$ (mm) \\
+\hline
+400 & 3.23 & 30 & 0.89 & 3.25 & 30 & 0.89 \\
+400 & 3.43 & 30 & 0.89 & 3.06 & 30 & 0.89 \\
+400 & 1.65 & 30 & 0.89 & 2.33 & 30 & 0.89 \\
+500 & 3.23 & 30 & 0.89 & 3.53 & 30 & 0.89 \\
+500 & 2.12 & 30 & 0.89 & 2.82 & 30 & 0.89 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+\vspace{10pt}
+\begin{center}
+\textbf{Table 2: Calculated velocities, charge, and radius} \\
+\vspace{5pt}
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c c c c c}
+\hline
+$U$ (V) & $v_1$ falling (m/s) & $v_2$ rising (m/s) & $Q$ (C) & $r$ (m) \\
+\hline
+400 & $2.7\times10^{-4}$ & $2.8\times10^{-4}$ & $4.9\times10^{-20}$ & $8.3\times10^{-8}$ \\
+400 & $2.9\times10^{-4}$ & $2.6\times10^{-4}$ & $2.1\times10^{-19}$ & $3.6\times10^{-7}$ \\
+400 & $3.8\times10^{-4}$ & $5.4\times10^{-4}$ & $7.9\times10^{-19}$ & $8.0\times10^{-7}$ \\
+500 & $2.5\times10^{-4}$ & $2.8\times10^{-4}$ & $1.4\times10^{-19}$ & $3.1\times10^{-7}$ \\
+500 & $3.2\times10^{-4}$ & $4.2\times10^{-4}$ & $4.1\times10^{-19}$ & $6.5\times10^{-7}$ \\
+\multicolumn{3}{r}{\textbf{Average } $Q$:} & $3.2\times10^{-19}$ & -- \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+\noindent\textbf{Sample calculations:} For the first 400 V measurement,
+\begin{gather*}
+v_1=\frac{0.00089}{3.25}=2.73846\times10^{-4}\ \mathrm{m/s},\\
+v_2=\frac{0.00089}{3.23}=2.75542\times10^{-4}\ \mathrm{m/s}.
+\end{gather*}
+Using the manual constants $C_1=2.73\times10^{-11}$ and
+$C_2=6.37\times10^{-5}$,
+\begin{align*}
+Q &= (2.73\times10^{-11})
+\frac{(2.73846\times10^{-4})+(2.75542\times10^{-4})}{400}\\
+&\quad\times\sqrt{|2.73846\times10^{-4}-2.75542\times10^{-4}|}\\
+&=4.8826\times10^{-20}\ \mathrm{C},\\
+r &= (6.37\times10^{-5})
+\sqrt{|2.73846\times10^{-4}-2.75542\times10^{-4}|}\\
+&=8.2948\times10^{-8}\ \mathrm{m}.
+\end{align*}
+
+For the first 500 V measurement, $v_1=0.00089/3.53=2.5\times10^{-4}$ m/s
+and $v_2=0.00089/3.23=2.8\times10^{-4}$ m/s. Therefore,
+$Q=1.4\times10^{-19}$ C and $r=3.1\times10^{-7}$ m.
+
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/plots/charge_vs_radius.png}
+\textbf{Figure:} Measured charge $Q$ as a function of droplet radius $r$.
+\end{center}
+
+\begin{center}
+\textbf{Table 3: Results} \\
+\vspace{5pt}
+\begin{tabular}{l c}
+\hline
+\textbf{Investigated levels} & $\Delta Q$ (C) \\
+\hline
+$Q=0$ to first level & $4.9\times10^{-20}$ \\
+First to second level & $9.1\times10^{-20}$ \\
+Second to third level & $7.0\times10^{-20}$ \\
+Third to fourth level & $2.0\times10^{-19}$ \\
+Fourth to fifth level & $3.8\times10^{-19}$ \\
+\hline
+\textbf{Average} & $1.580\times10^{-19}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The elementary charge was estimated from the average charge-level difference:
+\[
+e_{\mathrm{exp}}=1.580\times10^{-19}\ \mathrm{C}.
+\]
+This is close to the literature value
+$e_{\mathrm{lit}}=1.602\times10^{-19}\ \mathrm{C}$.
+
+\section*{Discussion}
+
+The measured elementary charge is close to the accepted value. The percentage error is
+\[
+\frac{|1.580-1.602|}{1.602}\times100=1.37\%.
+\]
+The small difference may come from errors in measuring time and distance, focusing the
+microscope, and reading the micrometer. The graph shows different measured charge
+values. Their average spacing gives an estimate of the elementary charge.
+
+Only five droplets were measured, so more measurements would give a stronger result.
+The electron mass was not measured; therefore, $e/m_e$ was calculated using the accepted
+mass:
+\[
+\frac{e}{m_e}=\frac{1.580\times10^{-19}}{9.109\times10^{-31}}
+=1.734\times10^{11}\ \mathrm{C/kg}.
+\]
+
+Overall, the measurements at 400 V and 500 V gave
+$e=1.580\times10^{-19}\ \mathrm{C}$ and
+$e/m_e=1.734\times10^{11}\ \mathrm{C/kg}$. The $e/m_e$ value is derived because
+the electron mass was taken from the accepted value.
+
+
+
+\end{multicols}
+\end{document}

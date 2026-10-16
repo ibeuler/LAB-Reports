@@ -1,0 +1,5 @@
+Method,em_val,Abs_Error,Rel_Error_pct,R_squared
+Setup 1 Direct Mean (Exact B),6.33 +/- 0.17,11.26,64.0,N/A
+Setup 1 Linear Fit (Exact B),6.74 +/- 0.72,10.85,61.7,0.9664
+"Setup 2 (Trial 6, Lab Sheet)",23.58,5.99,34.1,N/A
+Literature Accepted Value,17.59,0.00,0.0,1.0000

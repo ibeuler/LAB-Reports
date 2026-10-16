@@ -1,0 +1,6 @@
+level,interval,delta_Q
+1,0 to 1st level,0.49
+2,1st to 2nd level,0.91
+3,2nd to 3rd level,0.71
+4,3rd to 4th level,2.0
+5,4th to 5th level,3.79
