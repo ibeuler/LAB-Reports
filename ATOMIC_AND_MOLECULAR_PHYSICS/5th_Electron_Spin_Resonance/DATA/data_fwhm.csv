@@ -1,0 +1,6 @@
+parameter,value,unit
+I1,0.15,A
+I2,0.09,A
+delta_I,0.06,A
+delta_B_recorded,2.442e-4,T
+delta_B_lit,2.8e-4,T

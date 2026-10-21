@@ -1,0 +1,7 @@
+Parameter,Value,Unit
+Right Intersection Current ($I_1$),0.15,A
+Left Intersection Current ($I_2$),0.09,A
+Current Line Width ($\Delta I$),0.06,A
+Experimental FWHM ($\Delta B$),0.2442,mT
+Literature FWHM ($\Delta B_{\text{lit}}$),0.2800,mT
+Relative Error,12.79,\%
