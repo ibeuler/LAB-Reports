@@ -1,0 +1,6 @@
+color,order_m,d_manual_nm,theta_0_deg,theta_left_deg,theta_right_deg,lambda_lit_nm,transition,multiplicity,rel_intensity
+Red,1,1684.0,110.0,88.0,139.9,667.8,3 ^1D -> 2 ^1P,Singlet,6
+Yellow,1,1684.0,110.0,90.4,136.8,587.6,3 ^3D -> 2 ^3P,Triplet,10
+Green,1,1684.0,110.0,92.3,132.8,504.8,4 ^1S -> 2 ^1P,Singlet,2
+Blue,1,1684.0,110.0,95.5,130.7,447.1,4 ^3D -> 2 ^3P,Triplet,6
+Purple,1,1684.0,110.0,97.6,128.6,388.9,3 ^3P -> 2 ^3S,Triplet,10

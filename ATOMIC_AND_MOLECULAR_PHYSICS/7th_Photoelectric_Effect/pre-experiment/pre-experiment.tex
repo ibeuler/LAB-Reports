@@ -1,22 +1,64 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[top=0.6in,bottom=0.6in,left=0.7in,right=0.7in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{parskip}
 \usepackage{hyperref}
 
-\title{\textbf{Pre-Experiment Overview:\\ Photoelectric Effect}}
-\author{IBRAHIM H.I. ABUSHAWISH \\ Istanbul University, Department of Physics}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-1.0ex \@plus -0.2ex \@minus -.1ex}%
+                                   {0.3ex \@plus .1ex}%
+                                   {\normalfont\large\bfseries}}
+\makeatother
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+
+\title{\vspace{-2.8em}\textbf{Pre-Experiment Overview:\\ Photoelectric Effect and Determination of Planck's Constant}\vspace{-0.7em}}
+\author{\textbf{IBRAHIM H.I. ABUSHAWISH} \\ Istanbul University, Department of Physics}
 \date{}
 
 \begin{document}
 \maketitle
+\vspace{-1.4em}
 
 \section*{Purpose of the Experiment}
-According to the lab manual, the purpose of this experiment is to observe the photoelectric phenomenon experimentally, demonstrate the failure of classical wave theory, and determine Planck's constant, $h$, along with the photocathode's work function, $\Phi$, by measuring the stopping voltage as a function of the frequency of incident light.
+According to the laboratory manual, the principal objectives of this experiment are:
+\begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \item To observe and verify the photoelectric phenomenon experimentally, demonstrating the breakdown of classical wave theory.
+    \item To determine Planck's constant ($h$) by measuring the stopping voltage ($V_0$) across discrete spectral lines.
+    \item To represent the maximum kinetic energy of photoelectrons ($K_{\max} = e V_0$) as a function of incident light frequency ($\nu$).
+    \item To calculate the work function ($\Phi$) and threshold frequency ($\nu_0$) of the metallic photocathode.
+\end{enumerate}
 
-\section*{Importance and Significance}
-The photoelectric effect is historically one of the most decisive milestones in the birth of quantum mechanics. Classical electromagnetic wave theory predicted that electron ejection energy should depend on light intensity and that faint light would require a measurable time delay to liberate electrons. Instead, experiments by Lenard and Millikan proved that electron emission occurs instantaneously, and the maximum kinetic energy depends solely on light frequency, regardless of intensity. Albert Einstein explained this in 1905 by proposing that light behaves as localized packets of energy---photons---each carrying energy $E = h \nu$.
+\section*{Importance and Physical Significance}
+The photoelectric effect is a cornerstone of quantum mechanics that exposed the failure of classical electrodynamics. Under Maxwellian wave theory: (i) electron kinetic energy should increase with light intensity ($I \propto E_0^2$); (ii) faint illumination should produce a noticeable time delay while electrons accumulate sufficient energy; and (iii) emission should occur at any frequency if intensity is sufficiently high. 
 
-In the experimental setup, light from a high-pressure mercury lamp is passed through optical color filters to select discrete spectral wavelengths (e.g., yellow, green, blue, and violet). The monochromatic light strikes the photocathode in a phototube, liberating photoelectrons. By applying an opposing variable retarding potential (stopping voltage, $V_0$) across the collector plate until the photocurrent drops to zero, we measure the maximum kinetic energy of the ejected electrons: $e V_0 = E_{k,\text{max}} = h \nu - \Phi$. Plotting stopping voltage $V_0$ versus light frequency $\nu$ yields a linear graph whose slope is $h / e$ and whose vertical intercept gives the work function $\Phi$. Calculating Planck's constant from this slope provides direct confirmation of light quantization.
+Experiments by Philipp Lenard (1902) directly contradicted these predictions: electron emission is instantaneous ($< 10^{-9}\text{ s}$), emission ceases abruptly below a material-specific threshold frequency $\nu_0$ regardless of intensity, and the maximum kinetic energy depends solely on frequency. In 1905, Albert Einstein resolved this crisis by proposing that light propagates in discrete localized packets of energy---photons---each carrying energy $E = h\nu$. Absorbing a single photon transfers its energy to a conduction electron; overcoming the metallic work function $\Phi$ yields Einstein's photoelectric equation:
+\begin{equation}
+    K_{\max} = \frac{1}{2} m_e v_{\max}^2 = h\nu - \Phi
+\end{equation}
+Robert A. Millikan's meticulous 1916 measurements experimentally validated this relationship with high precision, earning Einstein (1921) and Millikan (1923) Nobel Prizes in Physics.
+
+\section*{Apparatus, Methodology, and Governing Relations}
+The experimental apparatus consists of an $80\text{ W}$ high-pressure mercury discharge lamp, an adjustable entrance slit, a collimating lens ($f = +100\text{ mm}$), a transmission diffraction grating ($600\text{ lines/mm}$), and an ultra-high input impedance phototube/electrometer ($R > 10^{13}\,\Omega$) mounted on a rotatable goniometer arm.
+
+Light from the mercury lamp is collimated and dispersed by the grating into discrete first-order ($m = 1$) spectral lines (violet, green, yellow, and red) at diffraction angles $\theta$ satisfying Bragg's grating equation:
+\begin{equation}
+    m \lambda = d \sin\theta \implies \lambda = d \sin\theta, \quad \nu = \frac{c}{\lambda} = \frac{c}{d \sin\theta}
+\end{equation}
+where the grating constant is $d = 1/600\text{ mm} \approx 1.667\,\mu\text{m}$. To prevent higher-order ultraviolet diffraction lines ($m = 2$, $\lambda \sim 289\text{ nm}$) from overlapping with first-order visible lines ($\sin\theta_{m=2} = \sin\theta_{m=1}$) and distorting measurements, optical transmission filters ($525\text{ nm}$ for yellow, $580\text{ nm}$ for red) are placed in front of the photocell entrance to absorb UV radiation.
+
+Incident monochromatic light ejects electrons from the photocathode, charging the electrometer until the opposing retarding potential balances the fastest electrons. At this stopping potential $V_0$, the photocurrent drops to zero ($e V_0 = K_{\max}$):
+\begin{equation}
+    e V_0 = h\nu - \Phi \implies V_0 = \left(\frac{h}{e}\right)\nu - \frac{\Phi}{e}
+\end{equation}
+Planck's constant is evaluated through two complementary methods: (1)~\textbf{Pairwise Binary Systems}, solving simultaneous equations for pairs of spectral lines: $h_{ij} = e \frac{V_{0,i} - V_{0,j}}{\nu_i - \nu_j}$; and (2)~\textbf{Linear Regression}, fitting $V_0$ versus $\nu$, where the slope directly gives $h/e$ (invariant to contact potential differences), the vertical intercept gives $-\Phi/e$, and the frequency intercept gives the threshold frequency $\nu_0 = \Phi/h$.
 
 \end{document}

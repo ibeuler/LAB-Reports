@@ -1,0 +1,6 @@
+Color,Transition,System,lambda_lit,lambda_man,err_man_pct,d_calc,lambda_dbar,err_dbar_pct
+Red,$3\;^{1}D \rightarrow 2\;^{1}P$,Singlet,667.8,736.9 $\pm$ 1.9,10.35,1526.1 $\pm$ 3.9,648.5 $\pm$ 5.9,2.89
+Yellow,$3\;^{3}D \rightarrow 2\;^{3}P$,Triplet,587.6,663.4 $\pm$ 1.9,12.90,1491.6 $\pm$ 4.3,583.8 $\pm$ 5.3,0.64
+Green,$4\;^{1}S \rightarrow 2\;^{1}P$,Singlet,504.8,582.9 $\pm$ 1.9,15.46,1458.5 $\pm$ 4.9,512.9 $\pm$ 4.8,1.61
+Blue,$4\;^{3}D \rightarrow 2\;^{3}P$,Triplet,447.1,509.2 $\pm$ 2.0,13.89,1478.7 $\pm$ 5.8,448.1 $\pm$ 4.3,0.23
+Purple,$3\;^{3}P \rightarrow 2\;^{3}S$,Triplet,388.9,450.0 $\pm$ 2.0,15.72,1455.3 $\pm$ 6.5,396.1 $\pm$ 3.9,1.84

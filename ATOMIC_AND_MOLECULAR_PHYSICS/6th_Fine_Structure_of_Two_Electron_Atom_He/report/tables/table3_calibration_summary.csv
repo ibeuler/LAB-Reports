@@ -1,0 +1,10 @@
+Parameter,Value,Unit,Diff_vs_Manual
+Accepted Manual Constant ($d_{\text{manual}}$),1684.0,nm,0.00\%
+Mean Experimental Constant ($\bar{d}$),1482.0 $\pm$ 12.9,nm,11.99\%
+Sample Std. Dev. of $d_i$ ($s_d$),28.8,nm,---
+OLS Calibration Slope ($d_{\text{cal}}$),1617.1 $\pm$ 52.3,nm,3.97\%
+OLS Calibration Intercept ($b$),-45.9 $\pm$ 18.6,nm,---
+OLS Coefficient of Determination ($R^2$),0.9969,---,---
+Zero-Intercept Slope ($d_{\text{eff}}$),1489.8 $\pm$ 13.6,nm,11.53\%
+Mean $\lambda$ Rel. Error (Manual $d$),13.66,\%,---
+Mean $\lambda$ Rel. Error (Mean $\bar{d}$),1.44,\%,---
